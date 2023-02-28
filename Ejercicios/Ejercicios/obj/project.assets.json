@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lyus\\Downloads\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
+      "projectUniqueName": "C:\\Proyectos\\Tecnara\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
       "projectName": "Ejercicios",
-      "projectPath": "C:\\Users\\lyus\\Downloads\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
+      "projectPath": "C:\\Proyectos\\Tecnara\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
       "packagesPath": "C:\\Users\\lyus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lyus\\Downloads\\Ejercicios\\Ejercicios\\obj\\",
+      "outputPath": "C:\\Proyectos\\Tecnara\\Ejercicios\\Ejercicios\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lyus\\AppData\\Roaming\\NuGet\\NuGet.Config",
