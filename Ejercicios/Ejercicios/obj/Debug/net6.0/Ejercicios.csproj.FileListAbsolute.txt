@@ -1,0 +1,30 @@
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.exe
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.deps.json
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.runtimeconfig.json
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.pdb
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.csproj.AssemblyReference.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.AssemblyInfoInputs.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.AssemblyInfo.cs
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.csproj.CoreCompileInputs.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\refint\Ejercicios.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.pdb
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.genruntimeconfig.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Módulo 1 - Conceptos básicos\Ejercicios\Ejercicios\Ejercicios\obj\Debug\net6.0\ref\Ejercicios.dll
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.exe
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.deps.json
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.runtimeconfig.json
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.dll
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\bin\Debug\net6.0\Ejercicios.pdb
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.csproj.AssemblyReference.cache
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.AssemblyInfoInputs.cache
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.AssemblyInfo.cs
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.csproj.CoreCompileInputs.cache
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.dll
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\refint\Ejercicios.dll
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.pdb
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.genruntimeconfig.cache
+C:\Users\lyus\Downloads\Ejercicios\Ejercicios\obj\Debug\net6.0\ref\Ejercicios.dll
