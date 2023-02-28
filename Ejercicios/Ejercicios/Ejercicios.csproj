@@ -7,9 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="EjerciciosOOP\JuegoOca\" />
-    <Folder Include="EjerciciosOOP\Parchis\" />
-  </ItemGroup>
-
 </Project>

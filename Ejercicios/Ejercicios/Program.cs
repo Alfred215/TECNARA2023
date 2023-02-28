@@ -3,7 +3,6 @@ using System;
 using System.Text.RegularExpressions;
 using Ejercicios.OOP.Ejercicio1;
 using Ejercicios.OOP.Ejercicio2;
-using Ejercicios.OOP.TresEnRaya;
 using Ejercicios.OOP.Ejercicio3;
 using Ejercicios.OOP.Ejercicio4;
 using Ejercicios.EjemploClase.Ejemplo1;
@@ -14,6 +13,7 @@ using Ejercicios.EjemploClase.GestionBiblioteca;
 using Ejercicios.EjemploClase.Ejemplo_Herencia;
 using Ejercicios.PrincipiosOOP.Abstraccion;
 using Ejercicios.PrincipiosOOP.Polimorfismo2;
+using Ejercicios.Juegos.Ahorcado;
 
 namespace Ejercicios
 {
@@ -49,7 +49,7 @@ namespace Ejercicios
 
             //new EjercicioAbstraccion();
 
-            new EjemploPolimorfismo().MetodoPrincipal();
+            //new EjemploPolimorfismo().MetodoPrincipal();
             #endregion
 
             #region Ejercicios de Clases y objetos
@@ -72,7 +72,7 @@ namespace Ejercicios
             //treEnRaya.Iniciar();
             #endregion
 
-
+            new Ahorcado().gameAhorcado();
         }
 
 
