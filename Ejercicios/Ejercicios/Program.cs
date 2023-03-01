@@ -14,6 +14,12 @@ using Ejercicios.EjemploClase.Ejemplo_Herencia;
 using Ejercicios.PrincipiosOOP.Abstraccion;
 using Ejercicios.PrincipiosOOP.Polimorfismo2;
 using Ejercicios.Juegos.Ahorcado;
+using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioFacultad;
+using Ejercicios.EjemploClase.EjPoliformismoEmpleado;
+using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioVehiculo;
+using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes;
+using Ejercicios.Juegos.TresEnRaya;
+using Ejercicios.Juegos.JuegoOca;
 
 namespace Ejercicios
 {
@@ -50,6 +56,9 @@ namespace Ejercicios
             //new EjercicioAbstraccion();
 
             //new EjemploPolimorfismo().MetodoPrincipal();
+
+            //EjercicioEmpleado ejercicioEmpleado = new EjercicioEmpleado();
+            //ejercicioEmpleado.Ejercicio();
             #endregion
 
             #region Ejercicios de Clases y objetos
@@ -68,11 +77,30 @@ namespace Ejercicios
             //Ejercicio4 ejercicio4 = new Ejercicio4();
             //ejercicio4.Ejercicio();
 
-            //TresEnRaya treEnRaya = new TresEnRaya();
-            //treEnRaya.Iniciar();
+
             #endregion
 
+            #region Juegos
             new Ahorcado().gameAhorcado();
+
+            //TresEnRaya treEnRaya = new TresEnRaya();
+            //treEnRaya.Iniciar();
+
+            //OcaGame oca = new OcaGame();
+            //oca.Ejercutar();
+            #endregion
+
+            #region Ejercicios de Herencia y Poliformismo
+            //Facultad facultad = new Facultad();
+            //facultad.Ejercicio();
+
+            //AlquilarVehiculo alquilarVehiculo = new AlquilarVehiculo();
+            //alquilarVehiculo.Ejercicio();
+
+            //EmpresaDeportes empresaDeportes = new EmpresaDeportes();
+            //empresaDeportes.Ejercicio();
+
+            #endregion
         }
 
 
