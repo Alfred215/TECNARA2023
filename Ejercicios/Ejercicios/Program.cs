@@ -20,6 +20,7 @@ using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioVehiculo;
 using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes;
 using Ejercicios.Juegos.TresEnRaya;
 using Ejercicios.Juegos.JuegoOca;
+using Ejercicios.Juegos.RueletaDeLaSuerte;
 
 namespace Ejercicios
 {
@@ -88,6 +89,8 @@ namespace Ejercicios
 
             //OcaGame oca = new OcaGame();
             //oca.Ejercutar();
+
+            Juego rulertaSuerte = new Juego();
             #endregion
 
             #region Ejercicios de Herencia y Poliformismo

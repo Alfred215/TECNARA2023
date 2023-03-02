@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Juegos\RueletaDeLaSuerte\" />
+    <None Remove=".gitignore" />
+    <None Remove=".gitignore - Copia" />
   </ItemGroup>
 
 </Project>
