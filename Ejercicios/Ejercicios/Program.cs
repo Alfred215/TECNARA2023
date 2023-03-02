@@ -81,7 +81,7 @@ namespace Ejercicios
             #endregion
 
             #region Juegos
-            new Ahorcado().gameAhorcado();
+            //new Ahorcado().gameAhorcado();
 
             //TresEnRaya treEnRaya = new TresEnRaya();
             //treEnRaya.Iniciar();
