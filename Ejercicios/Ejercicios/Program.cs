@@ -90,7 +90,7 @@ namespace Ejercicios
             //OcaGame oca = new OcaGame();
             //oca.Ejercutar();
 
-            Juego rulertaSuerte = new Juego();
+            //Juego rulertaSuerte = new Juego();
             #endregion
 
             #region Ejercicios de Herencia y Poliformismo
