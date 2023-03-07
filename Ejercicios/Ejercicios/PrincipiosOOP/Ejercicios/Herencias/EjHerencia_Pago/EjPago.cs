@@ -8,7 +8,7 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Pago
 {
     public class EjPago
     {
-        public EjPago()
+        public void EjercicioPago()
         {
             TarjetaDeCredito tarjeta = new TarjetaDeCredito();
             tarjeta.Nombre = "Visa";

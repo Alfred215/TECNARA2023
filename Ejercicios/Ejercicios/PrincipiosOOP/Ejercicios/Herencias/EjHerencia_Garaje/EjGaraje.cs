@@ -8,7 +8,7 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Garaje
 {
     public class EjGaraje
     {
-        public EjGaraje()
+        public void EjercicioGaraje()
         {
             Coche coche = new Coche();
             coche.Modelo = "Ford Mustang";

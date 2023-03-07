@@ -22,6 +22,11 @@ using Ejercicios.Juegos.JuegoOca;
 using Ejercicios.Juegos.RueletaDeLaSuerte;
 using Ejercicios.HerenciaProfesor.Ej1;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Pago;
+using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Garaje;
+using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal;
+using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Monedas;
+using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Paquetes;
+using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Robots;
 
 namespace Ejercicios
 {
@@ -106,9 +111,17 @@ namespace Ejercicios
             #endregion
 
             #region Ejercicios repaso Herencia
-            //new ejVehiculosGarajes().comprobar();
+            //new EjGaraje().EjercicioGaraje();
 
-            new EjPago(); 
+            //new EjPago().EjercicioPago(); 
+
+            //new EjMascotas();
+
+            //new EjMonedas();
+
+            //new EjEnvioPaquetes().EjercicioEnvioPaquetes();
+
+            //new EjPeleaRobots().combateRobot();
             #endregion
         }
 

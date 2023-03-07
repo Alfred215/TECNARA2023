@@ -10,9 +10,17 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal
     {
         public string Nombre { get; set; }
         public int Edad { get; set; }
-        public string Tipo { get; set; }
+        public TipoDeAnimal Tipo { get; set; }
         public string ColorPelaje { get; set; }
         public double Precio { get; set; }
+    }
+
+    public enum TipoDeAnimal
+    {
+        None = 0,
+        Perro = 1,
+        Gato = 2,
+        Pajaro = 3
     }
 
     // Clases que heredan de Mascota para definir las propiedades específicas de cada especie

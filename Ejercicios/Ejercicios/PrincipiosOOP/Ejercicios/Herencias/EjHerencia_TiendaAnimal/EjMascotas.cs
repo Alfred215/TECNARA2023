@@ -23,6 +23,8 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal
                 Console.Write("\nIngrese una opción: ");
                 string opcion = Console.ReadLine();
 
+                //OPCIONAL: Mostrar listado filtrado por tipo, por precio, etc.
+
                 switch (opcion)
                 {
                     case "1":

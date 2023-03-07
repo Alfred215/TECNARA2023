@@ -24,6 +24,19 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal
             int edad = int.Parse(Console.ReadLine());
             Console.Write("Tipo de animal (perro, gato o pajaro): ");
             string tipo = Console.ReadLine().ToLower();
+            var tipEnum = TipoDeAnimal.None;
+            if (tipo.Contains("perro"))
+            {
+                tipEnum = TipoDeAnimal.Perro;
+            } else if (tipo.Contains("gato"))
+            {
+                tipEnum = TipoDeAnimal.Gato;
+            } else if (tipo.Contains("pajaro"))
+            {
+                tipEnum = TipoDeAnimal.Pajaro;
+            }
+
+
             Console.Write("Color de pelaje: ");
             string colorPelaje = Console.ReadLine();
             Console.Write("Precio: ");
@@ -41,7 +54,7 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal
                     {
                         Nombre = nombre,
                         Edad = edad,
-                        Tipo = tipo,
+                        Tipo = tipEnum,
                         ColorPelaje = colorPelaje,
                         Precio = precio,
                         Raza = raza,
@@ -55,7 +68,7 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal
                     {
                         Nombre = nombre,
                         Edad = edad,
-                        Tipo = tipo,
+                        Tipo = tipEnum,
                         ColorPelaje = colorPelaje,
                         Precio = precio,
                         EsCazador = esCazador
@@ -70,7 +83,7 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal
                     {
                         Nombre = nombre,
                         Edad = edad,
-                        Tipo = tipo,
+                        Tipo = tipEnum,
                         ColorPelaje = colorPelaje,
                         Precio = precio,
                         Especie = especie,
@@ -93,7 +106,7 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal
 
             foreach (var mascota in mascotasOrdenadasPorTipo)
             {
-                Console.WriteLine($"\n{mascota.Tipo.ToUpper()}:");
+                Console.WriteLine($"\n{mascota.Tipo}:");
                 Console.WriteLine($"Nombre: {mascota.Nombre}");
                 Console.WriteLine($"Edad: {mascota.Edad}");
                 Console.WriteLine($"Color de pelaje: {mascota.ColorPelaje}");
