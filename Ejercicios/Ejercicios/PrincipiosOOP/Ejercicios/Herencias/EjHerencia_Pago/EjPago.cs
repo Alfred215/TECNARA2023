@@ -19,14 +19,16 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Pago
             paypal.DireccionDeCorreoElectronico = "ejemplo@paypal.com";
 
             CarritoDeCompras carrito = new CarritoDeCompras();
-            carrito.AgregarProducto("Libro de programación");
-            carrito.AgregarProducto("Mouse para computadora");
+            carrito.AgregarProducto("Cocacola");
+            carrito.AgregarProducto("Fanta naranja");
 
             carrito.SeleccionarMetodoDePago(tarjeta);
-            carrito.ProcesarPago(100.0); // Imprime "Se ha realizado un pago de 100 dólares con tarjeta de crédito"
+            carrito.ProcesarPago(100.0); 
+            // Imprime "Se ha realizado un pago de 100 dólares con tarjeta de crédito"
 
             carrito.SeleccionarMetodoDePago(paypal);
-            carrito.ProcesarPago(50.0); // Imprime "Se ha realizado un pago de 50 dólares con PayPal"
+            carrito.ProcesarPago(50.0); 
+            // Imprime "Se ha realizado un pago de 50 dólares con PayPal"
 
         }
     }

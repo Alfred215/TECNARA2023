@@ -10,7 +10,6 @@ using Ejercicios.EjemploClase.ListaDeContactos;
 using Ejercicios.EjemploClase.Ejemplo_Static;
 using Ejercicios.EjemploClase.Ejemplo_Static_Id;
 using Ejercicios.EjemploClase.GestionBiblioteca;
-using Ejercicios.EjemploClase.Ejemplo_Herencia;
 using Ejercicios.PrincipiosOOP.Abstraccion;
 using Ejercicios.PrincipiosOOP.Polimorfismo2;
 using Ejercicios.Juegos.Ahorcado;
@@ -21,6 +20,8 @@ using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes;
 using Ejercicios.Juegos.TresEnRaya;
 using Ejercicios.Juegos.JuegoOca;
 using Ejercicios.Juegos.RueletaDeLaSuerte;
+using Ejercicios.HerenciaProfesor.Ej1;
+using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Pago;
 
 namespace Ejercicios
 {
@@ -102,7 +103,12 @@ namespace Ejercicios
 
             //EmpresaDeportes empresaDeportes = new EmpresaDeportes();
             //empresaDeportes.Ejercicio();
+            #endregion
 
+            #region Ejercicios repaso Herencia
+            //new ejVehiculosGarajes().comprobar();
+
+            new EjPago(); 
             #endregion
         }
 

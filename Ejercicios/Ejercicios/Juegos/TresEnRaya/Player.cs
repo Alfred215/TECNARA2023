@@ -44,14 +44,7 @@ namespace Ejercicios.Juegos.TresEnRaya
 
         public int SwitchPlayer(int currentPlayer)
         {
-            if (currentPlayer == 1)
-            {
-                currentPlayer = 2;
-            }
-            else
-            {
-                currentPlayer = 1;
-            }
+            currentPlayer = currentPlayer == 1 ? 2 : 1;
 
             return currentPlayer;
         }

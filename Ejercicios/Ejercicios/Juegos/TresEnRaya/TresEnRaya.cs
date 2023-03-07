@@ -26,6 +26,7 @@ namespace Ejercicios.Juegos.TresEnRaya
             while (!check.Winner(board))
             {
                 board = player.Move(board, currentPlayer);
+                Console.Clear();
                 printBoard.Imprimir(board);
                 if (!check.Winner(board))
                 {

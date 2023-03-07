@@ -21,9 +21,9 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Pago
             productos.Add(producto);
         }
 
-        public void SeleccionarMetodoDePago(MetodoDePago metodoDePago)
+        public void SeleccionarMetodoDePago(MetodoDePago mpago)
         {
-            this.metodoDePago = metodoDePago;
+            metodoDePago = mpago;
         }
 
         public void ProcesarPago(double monto)
