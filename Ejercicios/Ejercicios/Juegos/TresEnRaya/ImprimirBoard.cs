@@ -10,8 +10,6 @@ namespace Ejercicios.Juegos.TresEnRaya
     {
         public void Imprimir(List<Board> board)
         {
-
-
             Console.WriteLine(" ");
             Console.WriteLine(" " + board[0].Value + " | " + board[1].Value + " | " + board[2].Value + " ");
             Console.WriteLine("---+---+---");

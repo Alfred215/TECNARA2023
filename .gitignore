@@ -1,8 +1,9 @@
 .vs
-/Ejercicios/Ejercicios/bin/Debug/net6.0/
+/Ejercicios/Ejercicios/bin
 /Ejercicios/Ejercicios/bin/Debug/net6.0/
 /Ejercicios/Ejercicios/bin/Debug/net6.0/Ejercicios.exe
 /Ejercicios/Ejercicios/bin/Debug/net6.0/Ejercicios.pdb
+/Ejercicios/Ejercicios/obj
 /Ejercicios/Ejercicios/obj/Ejercicios.csproj.nuget.dgspec.json
 /Ejercicios/Ejercicios/obj/Ejercicios.csproj.nuget.g.props
 /Ejercicios/Ejercicios/obj/project.assets.json
@@ -16,5 +17,6 @@
 /Ejercicios/Ejercicios/obj/Debug/net6.0/Ejercicios.pdb
 /Ejercicios/Ejercicios/obj/Debug/net6.0/ref/Ejercicios.dll
 /Ejercicios/Ejercicios/obj/Debug/net6.0/refint/Ejercicios.dll
+/Ejercicios/.vs/Ejercicios
 /Ejercicios/.vs/Ejercicios/v17/.suo
 /Ejercicios/.vs/Ejercicios/DesignTimeBuild/.dtbcache.v2

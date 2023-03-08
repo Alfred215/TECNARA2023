@@ -14,7 +14,6 @@ using Ejercicios.PrincipiosOOP.Abstraccion;
 using Ejercicios.PrincipiosOOP.Polimorfismo2;
 using Ejercicios.Juegos.Ahorcado;
 using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioFacultad;
-using Ejercicios.EjemploClase.EjPoliformismoEmpleado;
 using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioVehiculo;
 using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes;
 using Ejercicios.Juegos.TresEnRaya;
@@ -27,6 +26,7 @@ using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Monedas;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Paquetes;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Robots;
+using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EJHerenciaYPoliformismo_Empresa;
 
 namespace Ejercicios
 {
@@ -98,18 +98,7 @@ namespace Ejercicios
 
             //Juego rulertaSuerte = new Juego();
             #endregion
-
-            #region Ejercicios de Herencia y Poliformismo
-            //Facultad facultad = new Facultad();
-            //facultad.Ejercicio();
-
-            //AlquilarVehiculo alquilarVehiculo = new AlquilarVehiculo();
-            //alquilarVehiculo.Ejercicio();
-
-            //EmpresaDeportes empresaDeportes = new EmpresaDeportes();
-            //empresaDeportes.Ejercicio();
-            #endregion
-
+            
             #region Ejercicios repaso Herencia
             //new EjGaraje().EjercicioGaraje();
 
@@ -122,7 +111,21 @@ namespace Ejercicios
             //new EjEnvioPaquetes().EjercicioEnvioPaquetes();
 
             //new EjPeleaRobots().combateRobot();
+
+            //new EjercicioEmpleado().Ejercicio();
             #endregion
+
+            #region Ejercicios de Herencia y Poliformismo
+            //Facultad facultad = new Facultad();
+            //facultad.Ejercicio();
+
+            //AlquilarVehiculo alquilarVehiculo = new AlquilarVehiculo();
+            //alquilarVehiculo.Ejercicio();
+
+            //EmpresaDeportes empresaDeportes = new EmpresaDeportes();
+            //empresaDeportes.Ejercicio();
+            #endregion
+
         }
 
 

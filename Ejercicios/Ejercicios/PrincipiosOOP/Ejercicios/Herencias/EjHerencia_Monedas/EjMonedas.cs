@@ -9,7 +9,7 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Monedas
     public class EjMonedas
     {
         public EjMonedas() {
-            Console.WriteLine("Introduce la cantidad de € que deseas convertir.");
+            Console.WriteLine("Introduce la cantidad de euros que deseas convertir.");
             double cantidadEnEuros = Convert.ToInt32(Console.ReadLine());
             Euro euro = new Euro();
             Dolar dolar = new Dolar();
