@@ -87,18 +87,6 @@ namespace Ejercicios
 
             #endregion
 
-            #region Juegos
-            //new Ahorcado().gameAhorcado();
-
-            //TresEnRaya treEnRaya = new TresEnRaya();
-            //treEnRaya.Iniciar();
-
-            //OcaGame oca = new OcaGame();
-            //oca.Ejercutar();
-
-            //Juego rulertaSuerte = new Juego();
-            #endregion
-            
             #region Ejercicios repaso Herencia
             //new EjGaraje().EjercicioGaraje();
 
@@ -110,7 +98,7 @@ namespace Ejercicios
 
             //new EjEnvioPaquetes().EjercicioEnvioPaquetes();
 
-            //new EjPeleaRobots().combateRobot();
+            //new EjPeleaRobots().CombateRobot();
 
             //new EjercicioEmpleado().Ejercicio();
             #endregion
@@ -126,8 +114,18 @@ namespace Ejercicios
             //empresaDeportes.Ejercicio();
             #endregion
 
+            #region Juegos
+            //new Ahorcado().gameAhorcado();
+
+            //TresEnRaya treEnRaya = new TresEnRaya();
+            //treEnRaya.Iniciar();
+
+            //OcaGame oca = new OcaGame();
+            //oca.Ejercutar();
+
+            Juego rulertaSuerte = new Juego();
+            #endregion
+
         }
-
-
     }
 }

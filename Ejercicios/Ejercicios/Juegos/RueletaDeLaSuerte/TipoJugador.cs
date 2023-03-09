@@ -11,5 +11,6 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
         Ganador = 0,
         Eliminado = 1,
         Juega = 2,
+        Jugando = 3,
     }
 }

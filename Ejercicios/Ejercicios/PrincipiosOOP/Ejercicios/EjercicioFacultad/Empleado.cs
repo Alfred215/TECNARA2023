@@ -18,7 +18,7 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioFacultad
             this.numDespacho = numDespacho;
         }
 
-        public void ReasignarDespacho(string nuevoNumDespacho)
+        public virtual void ReasignarDespacho(string nuevoNumDespacho)
         {
             this.numDespacho = nuevoNumDespacho;
         }

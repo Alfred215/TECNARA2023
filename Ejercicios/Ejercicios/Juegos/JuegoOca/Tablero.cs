@@ -6,21 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.Juegos.JuegoOca
 {
-    public class Casilla
-    {
-        public TipoCasilla TipoCasilla { get; set; }
-        public string Nombre { get; set; }
-
-        public Casilla(TipoCasilla tipo, string nombre)
-        {
-            TipoCasilla = tipo;
-            Nombre = nombre;
-        }
-    }
-    
     public class Tablero : Dado
     {
-        List<Casilla> tablero = new List<Casilla>();
+        private List<Casilla> tablero = new List<Casilla>();
 
         public Tablero() : base()
         {
@@ -47,7 +35,7 @@ namespace Ejercicios.Juegos.JuegoOca
 
         public string GetNombreCasilla(int posicion)
         {
-            return tablero[posicion].Nombre;
+            return tablero[posicion].GetNombreCasilla();
         }
 
         public int MayorTablero(int posicion)
@@ -63,14 +51,14 @@ namespace Ejercicios.Juegos.JuegoOca
         public TipoCasilla VerificarCasilla (int posicion)
         {
             
-            return tablero[MayorTablero(posicion)].TipoCasilla;
+            return tablero[MayorTablero(posicion)].GetCasilla();
         }
 
         public int RioToRio(int posicion)
         {
             for(int i = posicion-1; i > 0; i--)
             {
-                if (tablero[i].TipoCasilla == TipoCasilla.Rio)
+                if (tablero[i].GetCasilla() == TipoCasilla.Rio)
                 {
                     Console.WriteLine("De Rio en Rio");
                     return i;
@@ -84,7 +72,7 @@ namespace Ejercicios.Juegos.JuegoOca
         {
             for (int i = posicion + 1; i < tablero.Count(); i++)
             {
-                if (tablero[i].TipoCasilla == TipoCasilla.Oca)
+                if (tablero[i].GetCasilla() == TipoCasilla.Oca)
                 {
                     Console.WriteLine("De Oca en Oca");
                     return i;

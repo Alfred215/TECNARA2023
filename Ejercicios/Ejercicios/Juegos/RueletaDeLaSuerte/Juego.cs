@@ -14,7 +14,6 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
             Console.WriteLine("Cuantos jugadores son: ");
             var cantJugadores = Int32.Parse(Console.ReadLine());
             List<Jugador> jugadores = new List<Jugador>();
-            Tablero tablero = new Tablero();
 
             for (int i = 0; i < cantJugadores; i++)
             {
@@ -22,23 +21,7 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
                 jugadores.Add(new Jugador(Console.ReadLine()));
             }
 
-            do
-            {
-                foreach(var jugador in jugadores)
-                {
-
-                    Console.WriteLine("\n{0} =>", jugador.GetNombre());
-                    Console.WriteLine("Escribe una letra: ");
-                    var letra = Console.ReadLine();
-                    int cantLetras = tablero.ComprobarLetra(letra.ToString());
-
-                    jugador.Tirada(cantLetras);
-                    
-                    Console.WriteLine("Tus puntos en esta ronda son: {0}", jugador.GetPuntos());
-                    Console.WriteLine("________________________________________________________");
-                }
-
-            } while (true);
+            new Ronda(jugadores);
         }
     }
 }

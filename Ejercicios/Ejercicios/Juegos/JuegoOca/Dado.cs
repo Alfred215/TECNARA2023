@@ -17,9 +17,10 @@ namespace Ejercicios.Juegos.JuegoOca
 
         public int Tirar()
         {
+            Console.Write("Pulsa Enter para realizar la tirada: ");
             Console.ReadKey();
             var dado = _rnd.Next(1, 6);
-            Console.WriteLine("Has sacado un {0}",dado);
+            Console.WriteLine("\nHas sacado un {0}",dado);
             return dado;
         }
     }

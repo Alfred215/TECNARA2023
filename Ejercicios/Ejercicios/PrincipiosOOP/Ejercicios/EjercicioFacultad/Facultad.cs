@@ -19,20 +19,20 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioFacultad
             estudiante.CambiarEstadoCivil("Casado");
             estudiante.MatricularEnCurso("Administración");
 
-            Console.WriteLine("\n Estudiante modificado:");
+            Console.WriteLine("\nEstudiante modificado:");
             estudiante.ImprimirInformacion();
             #endregion
 
             #region Empleado
-            Empleado empleado = new Empleado("Paco", "García", "12345678Z", "Casado", 2021, "3");
-            Console.WriteLine("\n Empleado:");
-            empleado.ImprimirInformacion();
+            //Empleado empleado = new Empleado("Paco", "García", "12345678Z", "Casado", 2021, "3");
+            //Console.WriteLine("\n Empleado:");
+            //empleado.ImprimirInformacion();
 
-            empleado.CambiarEstadoCivil("Viudo");
-            empleado.ReasignarDespacho("12");
+            //empleado.CambiarEstadoCivil("Viudo");
+            //empleado.ReasignarDespacho("12");
 
-            Console.WriteLine("\n Empleado modificado:");
-            empleado.ImprimirInformacion();
+            //Console.WriteLine("\n Empleado modificado:");
+            //empleado.ImprimirInformacion();
             #endregion
 
             #region Profesor
@@ -43,19 +43,19 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioFacultad
             profesor.ReasignarDespacho("3");
             profesor.CambiarDepartamento("Mates");
 
-            Console.WriteLine("\n Profesor modificado:");
+            Console.WriteLine("\nProfesor modificado:");
             profesor.ImprimirInformacion();
             #endregion
 
             #region PersonalServicio
             PersonalServicio personalServicio = new PersonalServicio("Paco", "García", "12345678Z", "Casado", 2021, "50", "Biblioteca");
-            Console.WriteLine("\n PersonalServicio:");
+            Console.WriteLine("\nPersonalServicio:");
             personalServicio.ImprimirInformacion();
 
             personalServicio.ReasignarDespacho("200");
             personalServicio.TrasladarSeccion("Comedor");
 
-            Console.WriteLine("\n PersonalServicio modificado:");
+            Console.WriteLine("\nPersonalServicio modificado:");
             personalServicio.ImprimirInformacion();
             #endregion
         }

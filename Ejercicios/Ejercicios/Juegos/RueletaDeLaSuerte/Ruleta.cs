@@ -11,10 +11,7 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
     public class Ruleta : Puntuacion
     {
         private int Puntos = 0;
-        public Ruleta() : base()
-        {
-
-        }
+        public Ruleta() : base() {}
 
         public virtual void Tirada(int cantidad)
         {
@@ -24,6 +21,11 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
         public virtual int GetPuntos()
         {
             return Puntos;
+        }
+
+        public void RestarCompra()
+        {
+            Puntos = Puntos - 100;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Robots
 {
     internal class EjPeleaRobots
     {
-        public void combateRobot()
+        public void CombateRobot()
         {
             // Se crean dos robots de combate
             RobotDeCombate robot1 = new RobotDeCombate
