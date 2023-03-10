@@ -16,7 +16,7 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
         {
             Puntos = new List<int>()
             {
-                10,25,50,75,100,200
+                10,50,75,10,100,10,200,50,25,25,50,10,25,10,75,10,25
             };
         }
 

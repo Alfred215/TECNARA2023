@@ -15,6 +15,20 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
         {
         }
 
+        public override void DimeTipoAveria()
+        {
+            Console.WriteLine("Tiene roto el pedal de freno");
+        }
+
+        public override void DimeVelocidad()
+        {
+            Console.WriteLine("60 km/h");
+        }
+
+        public override void Conducir()
+        {
+            Console.WriteLine("Estas conduciendo el buggy");
+        }
         public void PonerDobleTraccion()
         {
             DobleTraccion = true;

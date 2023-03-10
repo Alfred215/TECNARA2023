@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.Juegos.RueletaDeLaSuerte
 {
-    public class Frase
+    public class Frase : ListFrases
     {
         private string FraseCompleta = "";
         private string LetrasIntroducidas = "";
@@ -16,7 +16,7 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 
         public Frase() 
         {
-            FraseCompleta = new ListFrases().RecogerFraseAleatoria();
+            FraseCompleta = base.RecogerFraseAleatoria();
 
             foreach(char letra in FraseCompleta)
             {

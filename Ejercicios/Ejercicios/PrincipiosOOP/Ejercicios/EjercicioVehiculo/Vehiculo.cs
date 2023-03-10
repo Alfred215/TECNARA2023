@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.PrincipiosOOP.Ejercicios.Ejercicio1
 {
-    public abstract class Vehiculo
+    public class Vehiculo
     {
         public string Matricula { get; }
         public string Marca { get; }
@@ -21,7 +21,9 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.Ejercicio1
             DiasAlquiler = diasAlquiler;
         }
 
-        public abstract decimal CalcularPrecioAlquiler();
+        public virtual decimal CalcularPrecioAlquiler() {
+            return DiasAlquiler * 50;
+        }
     }
 
 }

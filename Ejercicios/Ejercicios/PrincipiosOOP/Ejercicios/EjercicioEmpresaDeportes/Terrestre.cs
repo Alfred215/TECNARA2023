@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
 {
-    public class Terrestre : Vehiculo
+    public abstract class Terrestre : Vehiculo
     {
         private int codigoTerrestre = 0;
         private int numeroRuedas;
@@ -30,19 +30,10 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
             return cilindrada;
         }
 
-        public override string DimeTipoAveria()
-        {
-            return "El vehiculo terrestre tiene problemas con la rueda";
-        }
+        public abstract override void DimeTipoAveria();
 
-        public override double DimeVelocidad()
-        {
-            return 120;
-        }
+        public abstract override void DimeVelocidad();
 
-        public void Conducir()
-        {
-            Console.WriteLine("Estoy conduciendo el vehículo terrestre.");
-        }
+        public abstract void Conducir();
     }
 }

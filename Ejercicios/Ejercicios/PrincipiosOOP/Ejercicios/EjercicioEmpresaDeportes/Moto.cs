@@ -14,6 +14,22 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
         {
         }
 
+        public override void DimeTipoAveria()
+        {
+            Console.WriteLine("Tiene roto el motor");
+        }
+
+        public override void DimeVelocidad()
+        {
+            Console.WriteLine("120 km/h");
+        }
+
+        public override void Conducir()
+        {
+            Console.WriteLine("Estas conduciendo la moto");
+        }
+
+
         public new void ElegirCilindrada(int cilindrada)
         {
             base.ElegirCilindrada(cilindrada);

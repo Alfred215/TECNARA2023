@@ -52,24 +52,9 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
         #endregion
 
         #region Set Tipo de jugador
-        public void SetTipoJuega()
+        public void SetTipojugador(TipoJugador tipo)
         {
-            Tipo = TipoJugador.Juega;
-        }
-
-        public void SetTipoJugando()
-        {
-            Tipo = TipoJugador.Jugando;
-        }
-
-        public void SetTipoGana()
-        {
-            Tipo = TipoJugador.Ganador;
-        }
-
-        public void SetTipoEliminado()
-        {
-            Tipo = TipoJugador.Eliminado;
+            Tipo = tipo;
         }
         #endregion
     }

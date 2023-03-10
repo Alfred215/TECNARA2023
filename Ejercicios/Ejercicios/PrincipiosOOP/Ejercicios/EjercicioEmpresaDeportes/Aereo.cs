@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
 {
-    public class Aereo : Vehiculo
+    public abstract class Aereo : Vehiculo
     {
         // Atributos
         private int codigoAereo;
@@ -25,19 +25,10 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
         }
 
         // Métodos
-        public virtual void Volar()
-        {
-            // Obligamos a que se implemente en las clases hijas
-        }
+        public abstract void Volar();
 
-        public override string DimeTipoAveria()
-        {
-            return "El barco tiene problemas con la vela";
-        }
+        public abstract override void DimeTipoAveria();
 
-        public override double DimeVelocidad()
-        {
-            return 200;
-        }
+        public abstract override void DimeVelocidad();
     }
 }

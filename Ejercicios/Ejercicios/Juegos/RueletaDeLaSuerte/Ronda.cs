@@ -9,14 +9,14 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 {
     public class Ronda : Tablero
     {
-        public Ronda( List<Jugador> jugadores) : base()
+        public Ronda(List<Jugador> jugadores) : base()
         {
             bool ronda = true;
             do
             {
                 foreach (var jugador in jugadores)
                 {
-                    jugador.SetTipoJugando();
+                    jugador.SetTipojugador(TipoJugador.Jugando);
 
                     //Bucle para que si el jugador acierta, siga jugando
                     while(jugador.GetTipo() == TipoJugador.Jugando)

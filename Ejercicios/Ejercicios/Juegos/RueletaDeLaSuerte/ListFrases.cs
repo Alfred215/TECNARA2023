@@ -8,6 +8,8 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 {
     public class ListFrases
     {
+        Random ran = new Random();
+
         List<string> Frases = new List<string>() 
         {
             "Hola chicos soy alfredo",
@@ -18,7 +20,6 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 
         public string RecogerFraseAleatoria()
         {
-            Random ran = new Random();
             return Frases[ran.Next(Frases.Count)];
         }
     }

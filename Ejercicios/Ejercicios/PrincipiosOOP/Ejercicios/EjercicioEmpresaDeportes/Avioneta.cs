@@ -17,6 +17,22 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
             helicesEncendidas = false;
         }
 
+        public override void DimeTipoAveria()
+        {
+            Console.WriteLine("No tiene helices");
+        }
+
+        public override void DimeVelocidad()
+        {
+            Console.WriteLine("320 km/h");
+        }
+
+        public override void Volar()
+        {
+            Console.WriteLine("Estas volando");
+        }
+
+
         // Métodos
         public void EncenderHelices()
         {
@@ -28,17 +44,6 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
         {
             helicesEncendidas = false;
             Console.WriteLine("Las hélices han sido apagadas.");
-        }
-
-        public override void Volar()
-        {
-            if (!helicesEncendidas)
-            {
-                Console.WriteLine("No se puede volar sin encender las hélices.");
-                return;
-            }
-
-            Console.WriteLine("La avioneta está volando.");
         }
     }
 }

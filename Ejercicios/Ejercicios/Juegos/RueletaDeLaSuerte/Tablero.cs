@@ -34,7 +34,7 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 
                     if(cantLetras <= 0) 
                     {
-                        jugador.SetTipoJuega();
+                        jugador.SetTipojugador(TipoJugador.Juega);
                         return true;
                     }
                     jugador.Tirada(cantLetras);
@@ -55,7 +55,7 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 
                         if (base.ComprarVocal(letraV))
                         {
-                            jugador.SetTipoJuega();
+                            jugador.SetTipojugador(TipoJugador.Juega);
                             return true;
 
                         }
@@ -72,11 +72,11 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
                     var frase = Console.ReadLine();
 
                     if (base.Resolver(frase)){
-                        jugador.SetTipoGana();
+                        jugador.SetTipojugador(TipoJugador.Ganador);
                         return true;
                     }
 
-                    jugador.SetTipoEliminado();
+                    jugador.SetTipojugador(TipoJugador.Eliminado);
                     return true;
 
                 default:

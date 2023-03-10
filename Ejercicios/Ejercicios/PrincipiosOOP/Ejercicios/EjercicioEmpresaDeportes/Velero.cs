@@ -13,6 +13,21 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
         {
         }
 
+        public override void DimeTipoAveria()
+        {
+            Console.WriteLine("Tiene rota la vela");
+        }
+
+        public override void DimeVelocidad()
+        {
+            Console.WriteLine("32 km/h");
+        }
+
+        public override void Navegar()
+        {
+            Console.WriteLine("Estas navegando");
+        }
+
         public void IzarVelas()
         {
             Console.WriteLine("Izando velas...");

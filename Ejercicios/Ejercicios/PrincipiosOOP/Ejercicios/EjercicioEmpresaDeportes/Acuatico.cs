@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
 {
-    public class Acuatico : Vehiculo
+    public abstract class Acuatico : Vehiculo
     {
         private int codigoAcuatico = 0;
         private int numeroVelas;
@@ -18,19 +18,10 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
             this.numeroVelas = numeroVelas;
         }
 
-        public override string DimeTipoAveria()
-        {
-            return "El barco tiene problemas con la vela";
-        }
+        public abstract override void DimeTipoAveria();
 
-        public override double DimeVelocidad()
-        {
-            return 20;
-        }
+        public abstract override void DimeVelocidad();
 
-        public void Navegar()
-        {
-            Console.WriteLine("El barco está navegando...");
-        }
+        public abstract void Navegar();
     }
 }

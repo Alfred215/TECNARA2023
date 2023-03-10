@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
 {
-    public class Vehiculo
+    public abstract class Vehiculo
     {
         private int CodigoVehiculo { get ; set; }
         private string Nombre { get; set; }
@@ -31,21 +31,8 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes
             Marca = marca;
         }
 
-        public void BorrarVehiculo()
-        {
-            
-        }
+        public abstract void DimeTipoAveria();
 
-        public virtual string DimeTipoAveria()
-        {
-            // Obligamos a que se implemente en las clases hijas
-            return "";
-        }
-
-        public virtual double DimeVelocidad()
-        {
-            // Obligamos a que se implemente en las clases hijas
-            return 0;
-        }
+        public abstract void DimeVelocidad();
     }
 }

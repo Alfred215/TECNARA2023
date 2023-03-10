@@ -23,18 +23,6 @@ namespace Ejercicios.PrincipiosOOP.Ejercicios.EjercicioFacultad
             estudiante.ImprimirInformacion();
             #endregion
 
-            #region Empleado
-            //Empleado empleado = new Empleado("Paco", "García", "12345678Z", "Casado", 2021, "3");
-            //Console.WriteLine("\n Empleado:");
-            //empleado.ImprimirInformacion();
-
-            //empleado.CambiarEstadoCivil("Viudo");
-            //empleado.ReasignarDespacho("12");
-
-            //Console.WriteLine("\n Empleado modificado:");
-            //empleado.ImprimirInformacion();
-            #endregion
-
             #region Profesor
             Profesor profesor = new Profesor("Paco", "García", "12345678Z", "Casado", 2021, "1","Informatica");
             Console.WriteLine("\n Profesor:");
