@@ -8,7 +8,7 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 {
     public class Frase
     {
-        private string FraseCompleta = "Hola chicos soy alfredo";
+        private string FraseCompleta = "";
         private string LetrasIntroducidas = "";
         private string LetraValidas = "";
         private string VocalesCompradas = "";
@@ -16,6 +16,8 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 
         public Frase() 
         {
+            FraseCompleta = new ListFrases().RecogerFraseAleatoria();
+
             foreach(char letra in FraseCompleta)
             {
                 if (Char.IsWhiteSpace(letra))
@@ -63,8 +65,12 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
                     if (letraFrase.ToString().ToLower().Equals(letra)) cont++;
                 }
                 LetrasIntroducidas += letra;
-                AñadirLetras(letra);
                 Console.WriteLine("Existen {0} en la frase", cont);
+            }
+            if(cont > 0)
+            {
+                LetraValidas += letra;
+                AñadirLetras();
             }
 
             return cont;
@@ -86,7 +92,8 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
             if (!existe)
             {
                 VocalesCompradas += letra;
-                AñadirLetras(letra);
+                LetraValidas+= letra;
+                AñadirLetras();
             }
 
             return existe;
@@ -101,13 +108,31 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
             return false;
         }
 
-        public void AñadirLetras(string letraNew)
+        //Mirar este método para comprobar porque no inserta las letras en el string
+        public void AñadirLetras()
         {
+            FraseIncompleta = "";
             for (int i = 0; i < FraseCompleta.Length; i++)
             {
-                if (FraseCompleta.ToArray()[i].ToString().Equals(letraNew))
+                bool añadida = false;
+                foreach(var letra in LetraValidas)
                 {
-                    FraseIncompleta.ToArray()[i] = letraNew;
+                    if (FraseCompleta.ToList()[i].ToString().ToLower().Equals(letra.ToString()))
+                    {
+                        FraseIncompleta += letra;
+                        añadida = true;
+                    }
+                }
+                if (!añadida)
+                {
+                    if (Char.IsWhiteSpace(FraseCompleta.ToList()[i]))
+                    {
+                        FraseIncompleta += " ";
+                    }
+                    else
+                    {
+                        FraseIncompleta += "_";
+                    }
                 }
             }
         }

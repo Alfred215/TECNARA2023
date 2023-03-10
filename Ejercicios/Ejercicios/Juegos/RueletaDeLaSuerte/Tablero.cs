@@ -3,12 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Ejercicios.Juegos.RueletaDeLaSuerte
 {
     public class Tablero : Frase
     {
+        Regex regexLetras = new Regex("[aeiou]");
+
         public Tablero() : base()
         {
             
@@ -20,6 +23,13 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
             {
                 case 1:
                     var letraC = EscribeLetra();
+
+                    if(regexLetras.IsMatch(letraC.ToLower())) 
+                    {
+                        Console.WriteLine("No puedes escribir una vocal.");
+                        return true;
+                    }
+
                     int cantLetras = base.ComprobarLetra(letraC);
 
                     if(cantLetras <= 0) 
@@ -37,7 +47,13 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
                     {
                         var letraV = EscribeLetra();
 
-                        if (!base.ComprarVocal(letraV))
+                        if (!regexLetras.IsMatch(letraV.ToLower()))
+                        {
+                            Console.WriteLine("No puedes escribir una consonante.");
+                            return true;
+                        }
+
+                        if (base.ComprarVocal(letraV))
                         {
                             jugador.SetTipoJuega();
                             return true;
@@ -79,9 +95,8 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
         {
             Console.WriteLine("\nFrase de la Ronda");
             base.ImprimirFrase();
-            Console.WriteLine("Letras introducidas: {0}", base.GetLetrasIntroducidas());
+            Console.WriteLine("\nLetras introducidas: {0}", base.GetLetrasIntroducidas());
             Console.WriteLine("Vocales compradas: {0}", base.GetVocalesCompradas());
-            Console.WriteLine("\n_______________________________");
         }
     }
 }

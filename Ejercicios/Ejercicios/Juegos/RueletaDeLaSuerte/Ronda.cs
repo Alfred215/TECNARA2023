@@ -11,7 +11,7 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
     {
         public Ronda( List<Jugador> jugadores) : base()
         {
-
+            bool ronda = true;
             do
             {
                 foreach (var jugador in jugadores)
@@ -24,10 +24,12 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
                         //Bucle para pedir opción
                         while (true)
                         {
+                            Console.Clear();
                             Console.WriteLine("\n{0} =>", jugador.GetNombre());
+                            Console.WriteLine("Tus puntos => {0}", jugador.GetPuntos());
                             base.ImprimirFrase();
 
-                            Console.WriteLine("\nEscoge una acción: \n1-Decir letra \n2-Comprar Vocal (100 puntos) \n 3-Resolver");
+                            Console.WriteLine("\nEscoge una acción: \n1-Decir letra \n2-Comprar Vocal (100 puntos) \n3-Resolver");
                             if(base.Acciones(Convert.ToInt32(Console.ReadLine()), jugador))
                             {
                                 break;
@@ -41,11 +43,17 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 
                     if(jugador.GetTipo() == TipoJugador.Ganador)
                     {
+                        Console.Clear();
+                        Console.WriteLine("Has ganado la ronda {0}", jugador.GetNombre());
                         jugador.SumarPuntosTotal();
+                        ronda = false;
+                        break;
                     }
-                }
 
-            } while (true);
+                    Console.WriteLine("El turno pasa al siguiente jugador");
+                    Console.ReadKey();
+                }
+            } while (ronda);
         }
     }
 }

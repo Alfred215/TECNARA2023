@@ -22,7 +22,7 @@ namespace Ejercicios.Juegos.RueletaDeLaSuerte
 
         public int GetPuntos()
         {
-            return Puntos[rad.Next(0, 6)];
+            return Puntos[rad.Next(Puntos.Count)];
         }
     }
 }
