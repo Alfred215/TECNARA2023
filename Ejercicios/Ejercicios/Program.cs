@@ -107,11 +107,11 @@ namespace Ejercicios
             //Facultad facultad = new Facultad();
             //facultad.Ejercicio();
 
-            AlquilarVehiculo alquilarVehiculo = new AlquilarVehiculo();
-            alquilarVehiculo.Ejercicio();
+            //AlquilarVehiculo alquilarVehiculo = new AlquilarVehiculo();
+            //alquilarVehiculo.Ejercicio();
 
-            //EmpresaDeportes empresaDeportes = new EmpresaDeportes();
-            //empresaDeportes.Ejercicio();
+            EmpresaDeportes empresaDeportes = new EmpresaDeportes();
+            empresaDeportes.Ejercicio();
             #endregion
 
             #region Juegos
