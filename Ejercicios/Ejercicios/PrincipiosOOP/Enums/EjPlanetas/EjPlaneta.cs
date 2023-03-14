@@ -17,7 +17,7 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjPlanetas
                 TipoAtmosfera = TipoAtmosferaPlaneta.AtmosferaRespirable
             };
 
-            double temperaturaTierra = tierra.CalcularTemperatura(tierra.DistanciaSol);
+            double temperaturaTierra = tierra.CalcularTemperatura();
             Console.WriteLine($"La temperatura promedio en {tierra.Nombre} es de {temperaturaTierra} grados Celsius.");
 
         }

@@ -27,6 +27,10 @@ using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Monedas;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Paquetes;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Robots;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EJHerenciaYPoliformismo_Empresa;
+using Ejercicios.EjemploClase.EjemploNulos;
+using Ejercicios.PrincipiosOOP.Enums;
+using Ejercicios.PrincipiosOOP.Enums.EjProductos2;
+using Ejercicios.PrincipiosOOP.Enums.EjCajeros;
 
 namespace Ejercicios
 {
@@ -66,6 +70,14 @@ namespace Ejercicios
 
             //EjercicioEmpleado ejercicioEmpleado = new EjercicioEmpleado();
             //ejercicioEmpleado.Ejercicio();
+
+            //new Nulos().ej();
+
+            //new ExplicacionEnum2();
+
+            //new ExplicacionEnum().Explain();
+
+            //new EjProducto2().EjercicioDeEjemplo();
             #endregion
 
             #region Ejercicios de Clases y objetos
@@ -110,8 +122,8 @@ namespace Ejercicios
             //AlquilarVehiculo alquilarVehiculo = new AlquilarVehiculo();
             //alquilarVehiculo.Ejercicio();
 
-            EmpresaDeportes empresaDeportes = new EmpresaDeportes();
-            empresaDeportes.Ejercicio();
+            //EmpresaDeportes empresaDeportes = new EmpresaDeportes();
+            //empresaDeportes.Ejercicio();
             #endregion
 
             #region Juegos
@@ -124,6 +136,10 @@ namespace Ejercicios
             //oca.Ejercutar();
 
             //Juego rulertaSuerte = new Juego();
+            #endregion
+
+            #region Ejercicios de Nums
+            new EjCajero().TiempoCajero();
             #endregion
 
         }

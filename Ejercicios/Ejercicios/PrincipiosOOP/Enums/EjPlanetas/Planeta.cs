@@ -12,7 +12,7 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjPlanetas
         public double DistanciaSol { get; set; }
         public TipoAtmosferaPlaneta TipoAtmosfera { get; set; }
 
-        public double CalcularTemperatura(double distanciaAlSol)
+        public double CalcularTemperatura()
         {
             double temperatura = 0;
 
@@ -22,7 +22,7 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjPlanetas
                     temperatura = -270;
                     break;
                 case TipoAtmosferaPlaneta.AtmosferaRespirable:
-                    if (distanciaAlSol < 150000000)
+                    if (DistanciaSol < 150000000)
                     {
                         temperatura = 15;
                     }
@@ -32,7 +32,7 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjPlanetas
                     }
                     break;
                 case TipoAtmosferaPlaneta.AtmosferaNoRespirable:
-                    if (distanciaAlSol < 100000000)
+                    if (DistanciaSol < 100000000)
                     {
                         temperatura = 50;
                     }
