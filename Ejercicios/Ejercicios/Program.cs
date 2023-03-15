@@ -31,6 +31,12 @@ using Ejercicios.EjemploClase.EjemploNulos;
 using Ejercicios.PrincipiosOOP.Enums;
 using Ejercicios.PrincipiosOOP.Enums.EjProductos2;
 using Ejercicios.PrincipiosOOP.Enums.EjCajeros;
+using Ejercicios.PrincipiosOOP.Enums.EjFutbolTipos;
+using Ejercicios.PrincipiosOOP.Enums.EjEventos;
+using Ejercicios.PrincipiosOOP.Enums.EjPlanetas;
+using Ejercicios.PrincipiosOOP.Enums.EjFicheros;
+using Ejercicios.PrincipiosOOP.Enums.EjReservas;
+using Ejercicios.PrincipiosOOP.Enums.EjDiasLaborales;
 
 namespace Ejercicios
 {
@@ -139,9 +145,18 @@ namespace Ejercicios
             #endregion
 
             #region Ejercicios de Nums
-            new EjCajero().TiempoCajero();
+            //new EjPlaneta().EjCalcularTempPlaneta();
+            //new EjEquipoFutbol().EjEquipos();
+            //new EjCajero().TiempoCajero();
+            //new EjFileEnums().MenuFile();
+
             #endregion
 
+            #region DATE TIME
+            //new EjEvento();
+            //new EjReserva();
+            new EjDiasLaborales();
+            #endregion
         }
     }
 }

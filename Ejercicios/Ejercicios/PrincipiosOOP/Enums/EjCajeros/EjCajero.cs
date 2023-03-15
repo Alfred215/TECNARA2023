@@ -15,10 +15,10 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjCajeros
             cajero1.TipoCajero = TipoCajeroEnum.VIP;
             cajero1.Estado = EstadoCajeroEnum.Disponible;
 
-            //Cajero cajero2 = new Cajero();
-            //cajero2.Nombre = "María";
-            //cajero2.TipoCajero = TipoCajeroEnum.Express;
-            //cajero2.Estado = EstadoCajeroEnum.Disponible;
+            Cajero cajero2 = new Cajero();
+            cajero2.Nombre = "María";
+            cajero2.TipoCajero = TipoCajeroEnum.Express;
+            cajero2.Estado = EstadoCajeroEnum.Disponible;
 
             Console.WriteLine("Iniciando atención de clientes...");
 
@@ -34,14 +34,14 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjCajeros
                     cajero1.Estado = EstadoCajeroEnum.Disponible;
                     Console.WriteLine($"Cliente {i} atendido en cajero {cajero1.Nombre}");
                 }
-                //else if (cajero2.Estado == EstadoCajeroEnum.Disponible)
-                //{
-                //    cajero2.Estado = EstadoCajeroEnum.Ocupado;
-                //    Console.WriteLine($"Atendiendo cliente {i} en cajero {cajero2.Nombre} ({cajero2.TipoCajero})...");
-                //    cajero2.AtenderCliente();
-                //    cajero2.Estado = EstadoCajeroEnum.Disponible;
-                //    Console.WriteLine($"Cliente {i} atendido en cajero {cajero2.Nombre}");
-                //}
+                else if (cajero2.Estado == EstadoCajeroEnum.Disponible)
+                {
+                    cajero2.Estado = EstadoCajeroEnum.Ocupado;
+                    Console.WriteLine($"Atendiendo cliente {i} en cajero {cajero2.Nombre} ({cajero2.TipoCajero})...");
+                    cajero2.AtenderCliente();
+                    cajero2.Estado = EstadoCajeroEnum.Disponible;
+                    Console.WriteLine($"Cliente {i} atendido en cajero {cajero2.Nombre}");
+                }
                 else
                 {
                     Console.WriteLine("Todos los cajeros están ocupados. Por favor, espere...");
