@@ -37,6 +37,7 @@ using Ejercicios.PrincipiosOOP.Enums.EjPlanetas;
 using Ejercicios.PrincipiosOOP.Enums.EjFicheros;
 using Ejercicios.PrincipiosOOP.Enums.EjReservas;
 using Ejercicios.PrincipiosOOP.Enums.EjDiasLaborales;
+using Ejercicios.PrincipiosOOP.Enums.EjReunión;
 
 namespace Ejercicios
 {
@@ -147,7 +148,7 @@ namespace Ejercicios
             #region Ejercicios de Nums
             //new EjPlaneta().EjCalcularTempPlaneta();
             //new EjEquipoFutbol().EjEquipos();
-            new EjCajero().TiempoCajero();
+            //new EjCajero().TiempoCajero();
             //new EjFileEnums().MenuFile();
 
             #endregion
@@ -156,6 +157,7 @@ namespace Ejercicios
             //new EjEvento();
             //new EjReserva();
             //new EjDiasLaborales();
+            //new EjReunion();
             #endregion
         }
     }
