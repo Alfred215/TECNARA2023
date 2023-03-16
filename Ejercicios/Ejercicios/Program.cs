@@ -147,7 +147,7 @@ namespace Ejercicios
             #region Ejercicios de Nums
             //new EjPlaneta().EjCalcularTempPlaneta();
             //new EjEquipoFutbol().EjEquipos();
-            //new EjCajero().TiempoCajero();
+            new EjCajero().TiempoCajero();
             //new EjFileEnums().MenuFile();
 
             #endregion
@@ -155,7 +155,7 @@ namespace Ejercicios
             #region DATE TIME
             //new EjEvento();
             //new EjReserva();
-            new EjDiasLaborales();
+            //new EjDiasLaborales();
             #endregion
         }
     }

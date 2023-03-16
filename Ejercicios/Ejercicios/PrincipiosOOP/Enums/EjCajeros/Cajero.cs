@@ -18,17 +18,18 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjCajeros
             {
                 case TipoCajeroEnum.Normal:
                     //System.Threading.Thread.Sleep(1000);
-                    Thread.Sleep(1000); // tiempo de espera de 1 segundo
+                    Thread.Sleep(100); // tiempo de espera de 1 segundo
                     break;
                 case TipoCajeroEnum.VIP:
-                   Thread.Sleep(500); // tiempo de espera de medio segundo
+                   Thread.Sleep(50); // tiempo de espera de medio segundo
                     break;
                 case TipoCajeroEnum.Express:
-                    Thread.Sleep(750); // tiempo de espera de 0.75 segundos
+                    Thread.Sleep(75); // tiempo de espera de 0.75 segundos
                     break;
                 default:
                     throw new Exception("Tipo de cajero desconocido");
             }
+            Estado = EstadoCajeroEnum.Disponible;
         }
     }
 
