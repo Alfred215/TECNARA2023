@@ -28,6 +28,11 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjFicheros
         {
             return new Random().Next(1, 1000);
         }
+
+        public virtual int Duration()
+        {
+            return 0;
+        }
     }
 
     enum FileType
@@ -71,6 +76,11 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjFicheros
         {
             DurationInSeconds = durationInSeconds;
             BitRate = bitRate;
+        }
+
+        public override int Duration()
+        {
+            return DurationInSeconds;
         }
     }
 

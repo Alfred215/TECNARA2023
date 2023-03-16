@@ -19,7 +19,6 @@ using Ejercicios.PrincipiosOOP.Ejercicios.EjercicioEmpresaDeportes;
 using Ejercicios.Juegos.TresEnRaya;
 using Ejercicios.Juegos.JuegoOca;
 using Ejercicios.Juegos.RueletaDeLaSuerte;
-using Ejercicios.HerenciaProfesor.Ej1;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Pago;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Garaje;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_TiendaAnimal;
@@ -38,6 +37,7 @@ using Ejercicios.PrincipiosOOP.Enums.EjFicheros;
 using Ejercicios.PrincipiosOOP.Enums.EjReservas;
 using Ejercicios.PrincipiosOOP.Enums.EjDiasLaborales;
 using Ejercicios.PrincipiosOOP.Enums.EjReunión;
+using Ejercicios.PrincipiosOOP.Hilos.EjSuma;
 
 namespace Ejercicios
 {
@@ -149,7 +149,7 @@ namespace Ejercicios
             //new EjPlaneta().EjCalcularTempPlaneta();
             //new EjEquipoFutbol().EjEquipos();
             //new EjCajero().TiempoCajero();
-            //new EjFileEnums().MenuFile();
+            new EjFileEnums().MenuFile();
 
             #endregion
 
@@ -158,6 +158,10 @@ namespace Ejercicios
             //new EjReserva();
             //new EjDiasLaborales();
             //new EjReunion();
+            #endregion
+
+            #region Hilos
+            //new EjSuma();
             #endregion
         }
     }

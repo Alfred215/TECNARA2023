@@ -14,8 +14,17 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjFicheros
 
             // Creamos algunos objetos de prueba
             files.Add(new TextFile( "Archivo de texto", ".txt", DateTime.Now, 10));
-            files.Add(new ImageFile( "Imagen", ".jpg", DateTime.Now.AddDays(-1), 800, 600 ));
-            files.Add(new AudioFile ( "Cancion", ".mp3", DateTime.Now.AddMonths(-1), 240, 128 ));
+            files.Add(new TextFile( "Archivo de texto1", ".txt", DateTime.Now, 10));
+            files.Add(new TextFile( "Archivo de texto2", ".txt", DateTime.Now, 10));
+            files.Add(new TextFile( "Archivo de texto3", ".txt", DateTime.Now, 10));
+            files.Add(new ImageFile( "Img", ".jpg", DateTime.Now.AddDays(-1), 800, 600 ));
+            files.Add(new ImageFile( "Img", ".jpg", DateTime.Now.AddDays(-3), 800, 600 ));
+            files.Add(new ImageFile( "Img", ".jpg", DateTime.Now.AddDays(10), 800, 600 ));
+            files.Add(new ImageFile( "Img", ".jpg", DateTime.Now.AddDays(2), 800, 600 ));
+            files.Add(new AudioFile ( "Cancion", ".mp3", DateTime.Now.AddMonths(1), 245, 128 ));
+            files.Add(new AudioFile ( "Cancion1", ".mp3", DateTime.Now.AddMonths(2), 220, 128 ));
+            files.Add(new AudioFile ( "Cancion2", ".mp3", DateTime.Now.AddMonths(7), 260, 128 ));
+            files.Add(new AudioFile ( "Cancion3", ".mp3", DateTime.Now.AddMonths(-1), 20, 128 ));
 
             while (true)
             {
@@ -24,7 +33,10 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjFicheros
                 Console.WriteLine("2. Renombrar un objeto del listado por otro nombre que pida por consola.");
                 Console.WriteLine("3. Borrar del listado un objeto por el nombre que introduces.");
                 Console.WriteLine("4. Ordenar archivos por tamaño");
-                Console.WriteLine("5. Salir");
+                Console.WriteLine("5. Mostrar listado de todos los archivos que tienen una A");
+                Console.WriteLine("6. Mostrar listado de audios ordenados por tiempo.");
+                Console.WriteLine("7. Mostrar listado ordenado por fecha de creación descendente.");
+                Console.WriteLine("8. Salir");
 
                 string option = Console.ReadLine();
 
@@ -87,6 +99,30 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjFicheros
                         }
                         break;
                     case "5":
+                        var fileWithA = files.Where(x => x.Name.ToLower().Contains("a")).ToList();
+                        foreach(var file in fileWithA)
+                        {
+                            Console.WriteLine(file.Name);
+                        }
+                        Console.WriteLine();
+                        return;
+                    case "6":
+                        var fileAudioOrderTime = files.Where(x => x.FileType == FileType.Audio).OrderBy(x => x.Duration()).ToList();
+                        foreach (var file in fileAudioOrderTime)
+                        {
+                            Console.WriteLine(file.Name);
+                        }
+                        Console.WriteLine();
+                        return;
+                    case "7":
+                        var fileOrderDesc = files.OrderByDescending(x => x.CreationDate).ToList();
+                        foreach (var file in fileOrderDesc)
+                        {
+                            Console.WriteLine(file.Name);
+                        }
+                        Console.WriteLine();
+                        return;
+                    case "8":
                         // Salir
                         return;
                     default:

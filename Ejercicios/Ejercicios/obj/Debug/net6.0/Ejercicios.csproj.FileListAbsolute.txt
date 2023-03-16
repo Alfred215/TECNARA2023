@@ -58,3 +58,4 @@ C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\obj
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.pdb
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.genruntimeconfig.cache
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\obj\Debug\net6.0\ref\Ejercicios.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\Planificación.xlsx
