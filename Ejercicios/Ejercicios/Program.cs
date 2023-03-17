@@ -38,6 +38,7 @@ using Ejercicios.PrincipiosOOP.Enums.EjReservas;
 using Ejercicios.PrincipiosOOP.Enums.EjDiasLaborales;
 using Ejercicios.PrincipiosOOP.Enums.EjReunión;
 using Ejercicios.PrincipiosOOP.Hilos.EjSuma;
+using Ejercicios.PrincipiosOOP.Hilos.EjCarrera;
 
 namespace Ejercicios
 {
@@ -149,7 +150,7 @@ namespace Ejercicios
             //new EjPlaneta().EjCalcularTempPlaneta();
             //new EjEquipoFutbol().EjEquipos();
             //new EjCajero().TiempoCajero();
-            new EjFileEnums().MenuFile();
+            //new EjFileEnums().MenuFile();
 
             #endregion
 
@@ -162,6 +163,7 @@ namespace Ejercicios
 
             #region Hilos
             //new EjSuma();
+            new EjCarrera();
             #endregion
         }
     }

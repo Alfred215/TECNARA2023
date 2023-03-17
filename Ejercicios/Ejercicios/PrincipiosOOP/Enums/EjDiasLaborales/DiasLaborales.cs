@@ -19,20 +19,28 @@ namespace Ejercicios.PrincipiosOOP.Enums.EjDiasLaborales
             int dia = 1;
             int diasLaborables = 0;
 
-            DateTime fecha = FechaEntrada;
-            do
+            for(DateTime date = FechaEntrada; date < FechaSalida; date = date.AddDays(1))
             {
-                int diasEnMes = DateTime.DaysInMonth(fecha.Year, fecha.Month);
-                for (int i = 0; i <= diasEnMes; i++)
+                if (date.DayOfWeek != DayOfWeek.Saturday && date.DayOfWeek != DayOfWeek.Sunday)
                 {
-                    fecha = FechaEntrada.AddDays(dia);
-                    if (fecha.DayOfWeek != DayOfWeek.Saturday && fecha.DayOfWeek != DayOfWeek.Sunday && FechaEntrada.AddDays(dia) < FechaSalida)
-                    {
-                        diasLaborables++;
-                    }
-                    dia++;
+                    diasLaborables++;
                 }
-            } while (FechaEntrada.AddDays(dia) <= FechaSalida);
+            }
+
+            //DateTime fecha = FechaEntrada;
+            //do
+            //{
+            //    int diasEnMes = DateTime.DaysInMonth(fecha.Year, fecha.Month);
+            //    for (int i = 0; i <= diasEnMes; i++)
+            //    {
+            //        fecha = FechaEntrada.AddDays(dia);
+            //        if (fecha.DayOfWeek != DayOfWeek.Saturday && fecha.DayOfWeek != DayOfWeek.Sunday && FechaEntrada.AddDays(dia) < FechaSalida)
+            //        {
+            //            diasLaborables++;
+            //        }
+            //        dia++;
+            //    }
+            //} while (FechaEntrada.AddDays(dia) <= FechaSalida);
 
             Console.WriteLine("Has estado en la empresa {0}, {1} dias laborales", NombreEmpresa, diasLaborables);
         }

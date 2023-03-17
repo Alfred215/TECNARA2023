@@ -10,7 +10,7 @@ namespace Ejercicios.PrincipiosOOP.Hilos.EjSuma
     public class EjSuma
     {
         int threadCount = 5;
-        long sum = 0;
+        static long sum = 0;
         static int hilo = 0;
 
         public EjSuma()
