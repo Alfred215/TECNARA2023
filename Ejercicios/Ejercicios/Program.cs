@@ -27,18 +27,13 @@ using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Paquetes;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EjHerencia_Robots;
 using Ejercicios.PrincipiosOOP.Ejercicios.Herencias.EJHerenciaYPoliformismo_Empresa;
 using Ejercicios.EjemploClase.EjemploNulos;
-using Ejercicios.PrincipiosOOP.Enums;
-using Ejercicios.PrincipiosOOP.Enums.EjProductos2;
-using Ejercicios.PrincipiosOOP.Enums.EjCajeros;
-using Ejercicios.PrincipiosOOP.Enums.EjFutbolTipos;
-using Ejercicios.PrincipiosOOP.Enums.EjEventos;
-using Ejercicios.PrincipiosOOP.Enums.EjPlanetas;
-using Ejercicios.PrincipiosOOP.Enums.EjFicheros;
-using Ejercicios.PrincipiosOOP.Enums.EjReservas;
-using Ejercicios.PrincipiosOOP.Enums.EjDiasLaborales;
-using Ejercicios.PrincipiosOOP.Enums.EjReunión;
-using Ejercicios.PrincipiosOOP.Hilos.EjSuma;
-using Ejercicios.PrincipiosOOP.Hilos.EjCarrera;
+using Ejercicios.LenguajeAvanzado.ExFicheros.LeerYCalcularMedia;
+using Ejercicios.LenguajeAvanzado.ExFicheros.Agenda;
+using Ejercicios.LenguajeAvanzado.ExLinq.ExMetodo;
+using Ejercicios.LenguajeAvanzado.ExLinq.ExConsulta;
+using Ejercicios.LenguajeAvanzado.ExRegex;
+using Ejercicios.LenguajeAvanzado.ExFicheros;
+using Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena;
 
 namespace Ejercicios
 {
@@ -146,7 +141,7 @@ namespace Ejercicios
             //Juego rulertaSuerte = new Juego();
             #endregion
 
-            #region Ejercicios de Nums
+            #region ex ENUMS
             //new EjPlaneta().EjCalcularTempPlaneta();
             //new EjEquipoFutbol().EjEquipos();
             //new EjCajero().TiempoCajero();
@@ -154,16 +149,34 @@ namespace Ejercicios
 
             #endregion
 
-            #region DATE TIME
+            #region ex DATETIME
             //new EjEvento();
             //new EjReserva();
             //new EjDiasLaborales();
             //new EjReunion();
             #endregion
 
-            #region Hilos
+            #region ex THREADS
             //new EjSuma();
-            new EjCarrera();
+            //new EjCarrera();
+            #endregion
+
+            #region ex FILES
+            //new ExTheory();
+            //new CalcularMedia();
+            //new EjTaskManager();
+            new PasswordGenerator();
+            #endregion
+
+            #region ex LINQ
+            //new ExEstadisticas();
+            //new ExConsultaPersonasBD(); 
+            #endregion
+
+            #region ex REGEX
+            //new TheoryRegex();
+            //new RegexContraseña();
+            //new RegexCorreo();
             #endregion
         }
     }
