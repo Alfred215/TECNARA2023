@@ -14,7 +14,7 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena
 
             // Leer todas las palabras del archivo y guardarlas en un arreglo
             string[] allWords = File.ReadAllLines(path);
-
+            
             // Pedir al usuario cuántas palabras quiere combinar
             Console.Write("Ingrese la cantidad de palabras que desea combinar en la contraseña: ");
             int numWords = int.Parse(Console.ReadLine());

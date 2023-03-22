@@ -163,9 +163,9 @@ namespace Ejercicios
 
             #region ex FILES
             //new ExTheory();
-            //new CalcularMedia();
+            new CalcularMedia();
             //new EjTaskManager();
-            new PasswordGenerator();
+            //new PasswordGenerator();
             #endregion
 
             #region ex LINQ

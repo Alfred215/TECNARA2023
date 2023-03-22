@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,34 +14,39 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.LeerYCalcularMedia
         {
             try
             {
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..");
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\LenguajeAvanzado\ExFicheros\LeerYCalcularMedia");
                 string fullpath = Path.GetFullPath(path);
-                string realPath = Path.Combine(fullpath, $"LenguajeAvanzado\\ExFicheros\\LeerYCalcularMedia");
 
-                string fileName = Path.Combine(realPath, "numeros.txt");
-                string outputFileName = Path.Combine(realPath, "media.txt");
+                string origen = Path.Combine(fullpath, "numeros.txt");
+                string salida = Path.Combine(fullpath, "resultado.txt");
 
-                var leer = File.ReadAllText(fileName);
+                var leer = File.ReadAllText(origen);
                 var arraySeparado = leer.Split(',');
-                var arrayQuitarEspacios = arraySeparado.Select(x => x.Trim());
-                var comprobaciónDouble = arrayQuitarEspacios.Select(num =>
+                var arraySinEspacio = arraySeparado.Select(x => x.Trim()).ToList();
+
+                List<double> doubles = new List<double>();
+                foreach (var snum in arraySinEspacio)
                 {
-                    // alternativa: (Regex.IsMatch(s, @"^\d+(\.\d+)?$"))
-                    if (double.TryParse(num, out double result))
-                        return result;
-                    else
-                        throw new FormatException($"El número {num} no es válido");
-                });
+                    if (double.TryParse(snum, NumberStyles.Float, CultureInfo.InvariantCulture, out double resultado)) 
+                    {
+                        //doubles.Add(double.Parse(snum, CultureInfo.InvariantCulture));
+                        doubles.Add(resultado);
+                    } else
+                    {
+                        Console.WriteLine($"El numero {snum} no es valido");
+                        //throw new FormatException($"El numero {snum} no es valido");
+                    }
+                }
 
-                double media = comprobaciónDouble.Average();
+                double media = doubles.Average();
 
-                File.WriteAllText(outputFileName, $"La media de los números en {fileName} es {media}");
+                File.WriteAllText(salida, $"La media de los numeros es {media}");
 
-                Console.WriteLine($"Se ha calculado la media correctamente y se ha guardado en {outputFileName}");
-            }
-            catch (Exception ex)
+                Console.WriteLine("El programa ha finalizado");
+
+            } catch (Exception ex)
             {
-                Console.WriteLine($"Ha ocurrido un error: {ex.Message}");
+                Console.WriteLine(ex.Message);
             }
         }
     }
