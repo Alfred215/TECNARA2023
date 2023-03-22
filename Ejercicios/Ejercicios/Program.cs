@@ -34,6 +34,7 @@ using Ejercicios.LenguajeAvanzado.ExLinq.ExConsulta;
 using Ejercicios.LenguajeAvanzado.ExRegex;
 using Ejercicios.LenguajeAvanzado.ExFicheros;
 using Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena;
+using Ejercicios.LenguajeAvanzado.ExFicheros.TrivialJuego;
 
 namespace Ejercicios
 {
@@ -163,9 +164,11 @@ namespace Ejercicios
 
             #region ex FILES
             //new ExTheory();
-            new CalcularMedia();
+            new ExRepasoFicheros();
+            //new CalcularMedia();
             //new EjTaskManager();
             //new PasswordGenerator();
+            //new Trivial();
             #endregion
 
             #region ex LINQ
