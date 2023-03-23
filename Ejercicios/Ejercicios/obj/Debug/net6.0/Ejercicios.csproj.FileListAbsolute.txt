@@ -60,3 +60,11 @@ C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\obj
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\obj\Debug\net6.0\ref\Ejercicios.dll
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\Planificación.xlsx
 C:\Proyectos\Tecnara\Ejercicios\Ejercicios\bin\Debug\net6.0\Planificación.xlsx
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\ClosedXML.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\ExcelNumberFormat.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\Irony.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\SixLabors.Fonts.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\System.IO.Packaging.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\XLParser.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.csproj.CopyComplete

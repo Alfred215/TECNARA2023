@@ -10,11 +10,14 @@ namespace Ejercicios.Juegos.Ahorcado
     {
         public void gameAhorcado()
         {
+            Random rnd = new Random();
             DibujarAhorcado dibujar = new DibujarAhorcado();
             Palabras palabras = new Palabras();
             Intentos intentos = new Intentos();
 
-            var palabraAdivinar = palabras.GetPalabras();
+            var listPalabraAdivinar = palabras.GetPalabras();
+
+            var palabraAdivinar = listPalabraAdivinar[rnd.Next(listPalabraAdivinar.Count())];
 
             char[] palabraAdivinarArreglo = palabraAdivinar.ToCharArray();
 

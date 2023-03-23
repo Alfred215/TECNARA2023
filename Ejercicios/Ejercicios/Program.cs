@@ -35,6 +35,7 @@ using Ejercicios.LenguajeAvanzado.ExRegex;
 using Ejercicios.LenguajeAvanzado.ExFicheros;
 using Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena;
 using Ejercicios.LenguajeAvanzado.ExFicheros.TrivialJuego;
+using Ejercicios.LenguajeAvanzado.ExClosedXML.Pruebas;
 
 namespace Ejercicios
 {
@@ -131,7 +132,6 @@ namespace Ejercicios
             #endregion
 
             #region Juegos
-            //new Ahorcado().gameAhorcado();
 
             //TresEnRaya treEnRaya = new TresEnRaya();
             //treEnRaya.Iniciar();
@@ -164,10 +164,11 @@ namespace Ejercicios
 
             #region ex FILES
             //new ExTheory();
-            new ExRepasoFicheros();
+            //new ExRepasoFicheros();
             //new CalcularMedia();
             //new EjTaskManager();
             //new PasswordGenerator();
+            //new Ahorcado().gameAhorcado();
             //new Trivial();
             #endregion
 
@@ -180,6 +181,10 @@ namespace Ejercicios
             //new TheoryRegex();
             //new RegexContraseña();
             //new RegexCorreo();
+            #endregion
+
+            #region ex CLOSED_XML
+            new EjPruebas().AbrirExcel();
             #endregion
         }
     }

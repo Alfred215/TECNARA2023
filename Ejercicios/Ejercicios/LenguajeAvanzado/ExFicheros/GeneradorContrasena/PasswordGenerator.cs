@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena
@@ -44,25 +45,19 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena
         static bool IsPasswordValid(string password)
         {
             // Validar que la contraseña tenga al menos 8 caracteres
-            if (password.Length < 8)
-                return false;
+            if (password.Length < 8) return false;
 
-            //// Validar que la contraseña contenga al menos una letra mayúscula
-            //if (!password.Any(char.IsUpper))
-            //    return false;
+            // Validar que la contraseña contenga al menos una letra mayúscula
+            if (!Regex.IsMatch(password, "^[A-Z]*$")) return false;
 
-            //// Validar que la contraseña contenga al menos una letra minúscula
-            //if (!password.Any(char.IsLower))
-            //    return false;
+            // Validar que la contraseña contenga al menos una letra minúscula
+            if (!Regex.IsMatch(password, "[a-z]")) return false;
 
             //// Validar que la contraseña contenga al menos un número
-            //if (!password.Any(char.IsDigit))
-            //    return false;
+            if (!Regex.IsMatch(password, "[0-9]")) return false;
 
             //// Validar que la contraseña contenga al menos un caracter especial
-            //string specialChars = @"!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
-            //if (!password.Any(c => specialChars.Contains(c)))
-            //    return false;
+            if (!Regex.IsMatch(password, "[!#$%&()*+,-./:;<=>?@[\\]^_`{|}~]")) return false;
 
             // Si la contraseña pasa todas las validaciones, es válida
             return true;
