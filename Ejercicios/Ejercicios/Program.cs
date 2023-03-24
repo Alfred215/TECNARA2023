@@ -37,6 +37,7 @@ using Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena;
 using Ejercicios.LenguajeAvanzado.ExFicheros.TrivialJuego;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.Pruebas;
 using Ejercicios.LenguajeAvanzado.ExFicheros.CrearCSV;
+using Ejercicios.LenguajeAvanzado.ExClosedXML.TableroAjedrez;
 
 namespace Ejercicios
 {
@@ -170,7 +171,7 @@ namespace Ejercicios
             //new CalcularMedia();
             //new EjTaskManager();
             //new PasswordGenerator();
-            new Ahorcado().gameAhorcado();
+            //new Ahorcado().gameAhorcado();
             //new Trivial();
             //new EjCsv();
             #endregion
@@ -191,6 +192,7 @@ namespace Ejercicios
             //new EjPruebas().CrearExcel();
             //new EjPruebas().EliminarExcel();
             //new EjPruebas().CrearExcelAsignaturas();
+            new EjTablero();
             #endregion
         }
     }
