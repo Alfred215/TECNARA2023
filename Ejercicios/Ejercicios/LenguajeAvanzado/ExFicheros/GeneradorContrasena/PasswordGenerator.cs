@@ -13,24 +13,18 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena
 
             string path = "../../../LenguajeAvanzado/ExFicheros/GeneradorContrasena/archivo.txt";
 
-            // Leer todas las palabras del archivo y guardarlas en un arreglo
             string[] allWords = File.ReadAllLines(path);
             
-            // Pedir al usuario cuántas palabras quiere combinar
             Console.Write("Ingrese la cantidad de palabras que desea combinar en la contraseña: ");
             int numWords = int.Parse(Console.ReadLine());
 
-            // Generar un arreglo aleatorio de índices que representen las palabras que se usarán
             Random rnd = new Random();
             int[] wordIndexes = Enumerable.Range(0, allWords.Length).OrderBy(x => rnd.Next()).Take(numWords).ToArray();
 
-            // Unir las palabras seleccionadas en una sola contraseña
             string password = string.Join("", wordIndexes.Select(i => allWords[i]));
 
-            // Validar la contraseña generada
             bool isValid = IsPasswordValid(password);
 
-            // Mientras la contraseña no sea válida, generar una nueva hasta que lo sea
             while (!isValid)
             {
                 wordIndexes = Enumerable.Range(0, allWords.Length).OrderBy(x => rnd.Next()).Take(numWords).ToArray();
@@ -38,7 +32,6 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena
                 isValid = IsPasswordValid(password);
             }
 
-            // Imprimir la contraseña generada
             Console.WriteLine("Contraseña generada: " + password);
         }
 
@@ -48,16 +41,16 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena
             if (password.Length < 8) return false;
 
             // Validar que la contraseña contenga al menos una letra mayúscula
-            if (!Regex.IsMatch(password, "^[A-Z]*$")) return false;
+            //if (!Regex.IsMatch(password, "^[A-Z]*$")) return false;
 
-            // Validar que la contraseña contenga al menos una letra minúscula
-            if (!Regex.IsMatch(password, "[a-z]")) return false;
+            //// Validar que la contraseña contenga al menos una letra minúscula
+            //if (!Regex.IsMatch(password, "[a-z]")) return false;
 
-            //// Validar que la contraseña contenga al menos un número
-            if (!Regex.IsMatch(password, "[0-9]")) return false;
+            ////// Validar que la contraseña contenga al menos un número
+            //if (!Regex.IsMatch(password, "[0-9]")) return false;
 
             //// Validar que la contraseña contenga al menos un caracter especial
-            if (!Regex.IsMatch(password, "[!#$%&()*+,-./:;<=>?@[\\]^_`{|}~]")) return false;
+            //if (!Regex.IsMatch(password, "[!#$%&()*+,-./:;<=>?@[\\]^_`{|}~]")) return false;
 
             // Si la contraseña pasa todas las validaciones, es válida
             return true;

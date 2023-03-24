@@ -48,7 +48,7 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.Agenda
 
         public void MarkAsComplete(int index)
         {
-            if (index < 0 || index >= tasks.Count)
+            if (index-1 < 0 || index-1 >= tasks.Count)
             {
                 Console.WriteLine("La tarea especificada no existe.");
             }

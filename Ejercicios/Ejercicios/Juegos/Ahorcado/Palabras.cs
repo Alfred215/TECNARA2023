@@ -12,7 +12,7 @@ namespace Ejercicios.Juegos.Ahorcado
         public List<string> GetPalabras()
         {
             List<string> palabras = new List<string>();
-            string[] lines = File.ReadAllLines("../../../Juegos/ExFicheros/Ahorcado/palabras.txt");
+            string[] lines = File.ReadAllLines("../../Juegos/ExFicheros/Ahorcado/palabras.txt");
 
             foreach(var line in lines)
             {

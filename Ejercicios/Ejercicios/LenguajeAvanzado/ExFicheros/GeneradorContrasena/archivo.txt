@@ -5,6 +5,7 @@ playa
 tortuga
 palmera
 lluvia
+Mesa2
 estrella
 guitarra
 manzana
@@ -22,6 +23,7 @@ océano
 pingüino
 pizza
 rana
+Mesa2
 ballena
 zanahoria
 abeja
@@ -50,6 +52,7 @@ conejo
 pulpo
 helado
 león
+Mesa2
 rueda
 araña
 sombrero
@@ -102,3 +105,4 @@ café
 jirafa
 nube
 león
+Mesa2

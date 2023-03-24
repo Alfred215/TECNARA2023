@@ -11,7 +11,6 @@ namespace Ejercicios.Juegos.Ahorcado
         public void gameAhorcado()
         {
             Random rnd = new Random();
-            DibujarAhorcado dibujar = new DibujarAhorcado();
             Palabras palabras = new Palabras();
             Intentos intentos = new Intentos();
 

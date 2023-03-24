@@ -36,6 +36,7 @@ using Ejercicios.LenguajeAvanzado.ExFicheros;
 using Ejercicios.LenguajeAvanzado.ExFicheros.GeneradorContrasena;
 using Ejercicios.LenguajeAvanzado.ExFicheros.TrivialJuego;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.Pruebas;
+using Ejercicios.LenguajeAvanzado.ExFicheros.CrearCSV;
 
 namespace Ejercicios
 {
@@ -140,6 +141,7 @@ namespace Ejercicios
             //oca.Ejercutar();
 
             //Juego rulertaSuerte = new Juego();
+
             #endregion
 
             #region ex ENUMS
@@ -168,8 +170,9 @@ namespace Ejercicios
             //new CalcularMedia();
             //new EjTaskManager();
             //new PasswordGenerator();
-            //new Ahorcado().gameAhorcado();
+            new Ahorcado().gameAhorcado();
             //new Trivial();
+            //new EjCsv();
             #endregion
 
             #region ex LINQ
@@ -184,7 +187,10 @@ namespace Ejercicios
             #endregion
 
             #region ex CLOSED_XML
-            new EjPruebas().AbrirExcel();
+            //new EjPruebas().AbrirExcel();
+            //new EjPruebas().CrearExcel();
+            //new EjPruebas().EliminarExcel();
+            //new EjPruebas().CrearExcelAsignaturas();
             #endregion
         }
     }
