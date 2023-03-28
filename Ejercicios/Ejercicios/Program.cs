@@ -42,6 +42,9 @@ using Ejercicios.LenguajeAvanzado.ExClosedXML.CsvConverter;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.Ventas;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.LeerExcel;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.AddExcel;
+using DocumentFormat.OpenXml.Wordprocessing;
+using Ejercicios.BBDD.Prueba1;
+using Ejercicios.BBDD.Entities;
 
 namespace Ejercicios
 {
@@ -49,8 +52,6 @@ namespace Ejercicios
     {
         static void Main(string[] args)
         {
-            //Ejercicios ejercicios = new Ejercicios();
-            //ejercicios.LlamarEjercicios();
 
             #region Ejemplos de Clases y objetos
             //Ejemplo_Persona ejemplo1 = new Ejemplo_Persona();
@@ -202,6 +203,13 @@ namespace Ejercicios
             //new ConvertirCsv();
             new GananciasMes();
             //new AddToExcel();
+            #endregion
+
+            #region BBDDTecnara
+            using (var db = new BBDDTecnaraContext())
+            {
+                new Consultas(db);
+            }
             #endregion
         }
     }
