@@ -187,7 +187,7 @@ namespace Ejercicios
             //new EjTaskManager();
             //new PasswordGenerator();
             //new Ahorcado().gameAhorcado();
-            new Trivial();
+            //new Trivial();
             //new EjCsv();
             #endregion
 
@@ -197,10 +197,10 @@ namespace Ejercicios
             //new EjPruebas().EliminarExcel();
             //new EjPruebas().CrearExcelAsignaturas();
 
+            //new VentasProducto();
             //new EjTablero();
             //new ConvertirCsv();
-            //new VentasProducto();
-            //new GananciasMes();
+            new GananciasMes();
             //new AddToExcel();
             #endregion
         }

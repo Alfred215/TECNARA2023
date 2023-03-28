@@ -11,7 +11,7 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.CrearCSV
     {
         public string Nombre { get; set; }
         public string Contraseña { get; set; }
-        public string ContraseñaHash { get; set; }
+        public int ContraseñaHash { get; set; }
         public int Edad { get; set; }
         public string Banco { get; set; }
         public int Saldo { get; set; }
@@ -20,7 +20,7 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.CrearCSV
         {
             Nombre = nombre;
             Contraseña = contraseña;
-            ContraseñaHash = ComputeHash(contraseña);
+            ContraseñaHash = contraseña.GetHashCode();
             Edad = edad;
             Banco = banco;  
             Saldo = saldo;

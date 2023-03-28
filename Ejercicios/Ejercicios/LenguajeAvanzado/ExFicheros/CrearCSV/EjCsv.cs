@@ -62,13 +62,13 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.CrearCSV
 
                 if (row == lines.FirstOrDefault()) //Cabecera
                 {
-                    Console.WriteLine("{0,-15} {1,-20} {2,-35} {3,-10} {4,-20} {5,-10} ",
+                    Console.WriteLine("{0,-15} {1,-20} {2,-30} {3,-10} {4,-20} {5,-10} ",
                         columns[0], columns[1], columns[2], columns[3], columns[4], columns[5]);
                     Console.WriteLine("-----------------------------------------------------------------------------------------------------------------");
                 } 
                 else
                 {
-                    Console.WriteLine("{0,-15} {1,-20} {2,-35} {3,-10} {4,-20} {5,-10} ", 
+                    Console.WriteLine("{0,-15} {1,-20} {2,-30} {3,-10} {4,-20} {5,-10} ", 
                         columns[0], columns[1], columns[2], columns[3], columns[4], columns[5]);
                 }
             }
