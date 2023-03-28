@@ -20,7 +20,10 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.TrivialJuego
             for (int i = 0; i < preguntas.Count; i++)
             {
                 Console.WriteLine(preguntas[i].Enunciado);
-                Console.WriteLine(preguntas[i].Opciones);
+                foreach (var op in preguntas[i].Opciones)
+                {
+                    Console.WriteLine(op.ToString());
+                }
                 Console.Write("Tu respuesta: ");
 
                 string respuesta = Console.ReadLine().ToUpper();

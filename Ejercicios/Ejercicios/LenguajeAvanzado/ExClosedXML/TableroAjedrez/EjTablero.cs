@@ -11,10 +11,8 @@ namespace Ejercicios.LenguajeAvanzado.ExClosedXML.TableroAjedrez
     {
         public EjTablero() 
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..");
-            string fullpath = Path.GetFullPath(path);
-            string realPath = Path.Combine(fullpath, $"LenguajeAvanzado\\ExClosedXML\\TableroAjedrez");
-            string filename = Path.Combine(realPath, "tablero.xlsx");
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\LenguajeAvanzado\ExClosedXML\TableroAjedrez\tablero.xlsx");
+            string filename = Path.GetFullPath(path);
 
             var workbook = new XLWorkbook();
             var worksheet = workbook.Worksheets.Add("Tablero de ajedrez");

@@ -68,3 +68,11 @@ C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\System.IO.Packaging.dll
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\bin\Debug\net6.0\XLParser.dll
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.csproj.CopyComplete
+C:\Proyectos\Tecnara\Ejercicios\Ejercicios\bin\Debug\net6.0\ClosedXML.dll
+C:\Proyectos\Tecnara\Ejercicios\Ejercicios\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Proyectos\Tecnara\Ejercicios\Ejercicios\bin\Debug\net6.0\ExcelNumberFormat.dll
+C:\Proyectos\Tecnara\Ejercicios\Ejercicios\bin\Debug\net6.0\Irony.dll
+C:\Proyectos\Tecnara\Ejercicios\Ejercicios\bin\Debug\net6.0\SixLabors.Fonts.dll
+C:\Proyectos\Tecnara\Ejercicios\Ejercicios\bin\Debug\net6.0\System.IO.Packaging.dll
+C:\Proyectos\Tecnara\Ejercicios\Ejercicios\bin\Debug\net6.0\XLParser.dll
+C:\Proyectos\Tecnara\Ejercicios\Ejercicios\obj\Debug\net6.0\Ejercicios.csproj.CopyComplete

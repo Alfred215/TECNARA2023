@@ -38,6 +38,10 @@ using Ejercicios.LenguajeAvanzado.ExFicheros.TrivialJuego;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.Pruebas;
 using Ejercicios.LenguajeAvanzado.ExFicheros.CrearCSV;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.TableroAjedrez;
+using Ejercicios.LenguajeAvanzado.ExClosedXML.CsvConverter;
+using Ejercicios.LenguajeAvanzado.ExClosedXML.Ventas;
+using Ejercicios.LenguajeAvanzado.ExClosedXML.LeerExcel;
+using Ejercicios.LenguajeAvanzado.ExClosedXML.AddExcel;
 
 namespace Ejercicios
 {
@@ -165,17 +169,6 @@ namespace Ejercicios
             //new EjCarrera();
             #endregion
 
-            #region ex FILES
-            //new ExTheory();
-            //new ExRepasoFicheros();
-            //new CalcularMedia();
-            //new EjTaskManager();
-            //new PasswordGenerator();
-            //new Ahorcado().gameAhorcado();
-            //new Trivial();
-            //new EjCsv();
-            #endregion
-
             #region ex LINQ
             //new ExEstadisticas();
             //new ExConsultaPersonasBD(); 
@@ -187,12 +180,28 @@ namespace Ejercicios
             //new RegexCorreo();
             #endregion
 
+            #region ex FILES
+            //new ExTheory();
+            //new ExRepasoFicheros();
+            //new CalcularMedia();
+            //new EjTaskManager();
+            //new PasswordGenerator();
+            //new Ahorcado().gameAhorcado();
+            new Trivial();
+            //new EjCsv();
+            #endregion
+
             #region ex CLOSED_XML
             //new EjPruebas().AbrirExcel();
             //new EjPruebas().CrearExcel();
             //new EjPruebas().EliminarExcel();
             //new EjPruebas().CrearExcelAsignaturas();
-            new EjTablero();
+
+            //new EjTablero();
+            //new ConvertirCsv();
+            //new VentasProducto();
+            //new GananciasMes();
+            //new AddToExcel();
             #endregion
         }
     }

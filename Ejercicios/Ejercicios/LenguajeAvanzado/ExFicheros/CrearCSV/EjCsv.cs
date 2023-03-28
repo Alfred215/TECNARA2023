@@ -13,10 +13,8 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.CrearCSV
 
         public EjCsv() 
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..");
-            string fullpath = Path.GetFullPath(path);
-            string realPath = Path.Combine(fullpath, $"LenguajeAvanzado\\ExFicheros\\CrearCSV");
-            string filePath = Path.Combine(realPath, "file.csv");
+            string path = Path.GetFullPath(@"..\..\..\LenguajeAvanzado\ExFicheros\CrearCSV");
+            string filePath = Path.Combine(path, "file.csv");
 
             List<Persona> personas= new List<Persona>()
             {
@@ -42,16 +40,14 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.CrearCSV
 
                 foreach(var persona in personas)
                 {
-                    var line= persona.Nombre+delimiter +
+                    var line = persona.Nombre + delimiter +
                         persona.Contraseña + delimiter +
                         persona.ContraseñaHash + delimiter +
                         persona.Edad + delimiter +
                         persona.Banco + delimiter +
                         persona.Saldo + delimiter;
 
-                    writer.WriteLine(
-                        line
-                    );
+                    writer.WriteLine(line);
                 }
             }
         }
@@ -60,19 +56,21 @@ namespace Ejercicios.LenguajeAvanzado.ExFicheros.CrearCSV
         {
             string[] lines = File.ReadAllLines(filePath);
 
-            string[] headers = lines[0].Split(delimiter);
-            int numColumns = headers.Length;
-
-            for (int i = 1; i < lines.Length; i++)
+            foreach (var row in lines)
             {
-                string[] values = lines[i].Split(delimiter);
-                Console.WriteLine(string.Join("\t", headers));
+                var columns = row.Split(delimiter);
 
-                for (int j = 0; j < numColumns; j++)
+                if (row == lines.FirstOrDefault()) //Cabecera
                 {
-                    Console.Write(values[j] + "\t");
+                    Console.WriteLine("{0,-15} {1,-20} {2,-35} {3,-10} {4,-20} {5,-10} ",
+                        columns[0], columns[1], columns[2], columns[3], columns[4], columns[5]);
+                    Console.WriteLine("-----------------------------------------------------------------------------------------------------------------");
+                } 
+                else
+                {
+                    Console.WriteLine("{0,-15} {1,-20} {2,-35} {3,-10} {4,-20} {5,-10} ", 
+                        columns[0], columns[1], columns[2], columns[3], columns[4], columns[5]);
                 }
-                Console.WriteLine("\n");
             }
         }
     }
