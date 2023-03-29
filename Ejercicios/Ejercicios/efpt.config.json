@@ -1,13 +1,13 @@
 ﻿{
    "CodeGenerationMode": 2,
-   "ContextClassName": "BBDDTecnaraContext",
+   "ContextClassName": "dbContextEjerciciosRelaciones",
    "ContextNamespace": null,
    "DefaultDacpacSchema": null,
    "FilterSchemas": false,
    "IncludeConnectionString": true,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "BBDD\\Entities",
+   "OutputPath": "BBDD\\Ejercicios_Con_Relaciones\\Entidades",
    "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "Ejercicios",
    "Schemas": null,
@@ -15,11 +15,23 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[Persona]",
+         "Name": "[dbo].[Client]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Empleado]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Empresa]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Person]",
          "ObjectType": 0
       }
    ],
-   "UiHint": "PORT-330\\SQLEXPRESS.BBDDTecnara",
+   "UiHint": "PORT-330\\SQLEXPRESS.BBDDTecnara_Relationals",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

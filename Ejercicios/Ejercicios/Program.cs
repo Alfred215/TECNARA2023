@@ -45,6 +45,10 @@ using Ejercicios.LenguajeAvanzado.ExClosedXML.AddExcel;
 using DocumentFormat.OpenXml.Wordprocessing;
 using Ejercicios.BBDD.Prueba1;
 using Ejercicios.BBDD.Entities;
+using Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD;
+using Ejercicios.BBDD.Ejercicios.Entidades;
+using Ejercicios.LenguajeAvanzado.ExClosedXML.Banco;
+using Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD;
 
 namespace Ejercicios
 {
@@ -201,14 +205,22 @@ namespace Ejercicios
             //new VentasProducto();
             //new EjTablero();
             //new ConvertirCsv();
-            new GananciasMes();
+            //new GananciasMes();
             //new AddToExcel();
+            //new EjercicioBanco();
             #endregion
 
             #region BBDDTecnara
-            using (var db = new BBDDTecnaraContext())
+            //using (var db = new BBDDTecnaraContext())
+            //{
+            //    new Consultas(db);
+
+            //}
+
+            using (var dbEjercicios = new dbContextEjercicios())
             {
-                new Consultas(db);
+                //new Ejercicio1_BBDD(dbEjercicios);
+                new Ejercicio2_BBDD(dbEjercicios);
             }
             #endregion
         }

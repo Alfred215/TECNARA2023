@@ -17,29 +17,32 @@ namespace Ejercicios.BBDD.Prueba1
         {
             db = _db;
 
+            #region Pruebas
             #region GET
-            GetList();
+            //GetList();
             //GetById(2);
             //GetByName("Alfredo");
             //FilterByAge();
             #endregion
 
             #region AddEdit
-            var person = new Persona();
-            person.Name = "Alberto";
-            person.Surname1 = "Alvarez";
-            person.Surname2 = "Rus";
-            person.Age = 22;
-            CreatePersonAsync(person);
+            //var person = new Persona();
+            //person.Name = "Alberto";
+            //person.Surname1 = "Alvarez";
+            //person.Surname2 = "Rus";
+            //person.Age = 22;
+            //CreatePersonAsync(person);
 
             //EditPersonAsync();
             #endregion
 
             #region DELETE
-            DeletePerson();
+            //DeletePerson();
+            #endregion
             #endregion
         }
 
+        #region Pruebas
         #region GET
         public void GetList()
         {
@@ -114,6 +117,7 @@ namespace Ejercicios.BBDD.Prueba1
             GetList();
 
         }
+        #endregion
         #endregion
 
     }

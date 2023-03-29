@@ -28,4 +28,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BBDD\Ejercicios_Con_Relaciones\" />
+  </ItemGroup>
+
 </Project>
