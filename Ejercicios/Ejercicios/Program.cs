@@ -49,6 +49,7 @@ using Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD;
 using Ejercicios.BBDD.Ejercicios.Entidades;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.Banco;
 using Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD;
+using Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD;
 
 namespace Ejercicios
 {
@@ -220,7 +221,8 @@ namespace Ejercicios
             using (var dbEjercicios = new dbContextEjercicios())
             {
                 //new Ejercicio1_BBDD(dbEjercicios);
-                new Ejercicio2_BBDD(dbEjercicios);
+                //new Ejercicio2_BBDD(dbEjercicios);
+                new Ejercicio3_BBDD(dbEjercicios);
             }
             #endregion
         }

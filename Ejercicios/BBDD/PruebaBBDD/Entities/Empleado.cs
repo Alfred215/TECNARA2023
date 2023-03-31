@@ -6,25 +6,20 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Entidades
+namespace BBDD.PruebaBBDD.Entities
 {
     public partial class Empleado
     {
         [Key]
-        public Guid Id { get; set; }
-        public Guid PersonId { get; set; }
-        public Guid EmpresaId { get; set; }
+        public int Id { get; set; }
+        [StringLength(50)]
+        public string Nombre { get; set; }
+        [StringLength(50)]
+        public string Empresa { get; set; }
         [StringLength(50)]
         public string Puesto { get; set; }
         public TimeSpan? HoraEntrada { get; set; }
         public TimeSpan? HoraSalida { get; set; }
         public int? PrecioPorHora { get; set; }
-
-        [ForeignKey("EmpresaId")]
-        [InverseProperty("Empleado")]
-        public virtual Empresa Empresa { get; set; }
-        [ForeignKey("PersonId")]
-        [InverseProperty("Empleado")]
-        public virtual Person Person { get; set; }
     }
 }

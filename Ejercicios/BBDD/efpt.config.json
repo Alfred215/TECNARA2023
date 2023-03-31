@@ -1,29 +1,37 @@
 ﻿{
    "CodeGenerationMode": 2,
-   "ContextClassName": "dbContextEjerciciosRelaciones",
+   "ContextClassName": "dbContextPrueba",
    "ContextNamespace": null,
    "DefaultDacpacSchema": null,
    "FilterSchemas": false,
    "IncludeConnectionString": true,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "BBDD\\Ejercicios_Con_Relaciones\\Ejercicio3_BBDD\\Entidades",
+   "OutputPath": "PruebaBBDD\\Entities",
    "PreserveCasingWithRegex": true,
-   "ProjectRootNamespace": "Ejercicios",
+   "ProjectRootNamespace": "BBDD",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[BankAccount]",
+         "Name": "[dbo].[Cliente]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Cliente]",
+         "Name": "[dbo].[Empleado]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Empresa]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Persona]",
          "ObjectType": 0
       }
    ],
-   "UiHint": "PORT-330\\SQLEXPRESS.BBDDTecnara_Banco",
+   "UiHint": "PORT-330\\SQLEXPRESS.BBDDTecnara",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

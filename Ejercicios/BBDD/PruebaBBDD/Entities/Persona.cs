@@ -6,31 +6,17 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Entidades
+namespace BBDD.PruebaBBDD.Entities
 {
-    public partial class Person
+    public partial class Persona
     {
-        public Person()
-        {
-            Client = new HashSet<Client>();
-            Empleado = new HashSet<Empleado>();
-        }
-
         [Key]
-        public Guid Id { get; set; }
-        [StringLength(50)]
+        public int Id { get; set; }
         public string Name { get; set; }
         [Column("Surname_1")]
-        [StringLength(50)]
         public string Surname1 { get; set; }
         [Column("Surname_2")]
-        [StringLength(50)]
         public string Surname2 { get; set; }
         public int? Age { get; set; }
-
-        [InverseProperty("Person")]
-        public virtual ICollection<Client> Client { get; set; }
-        [InverseProperty("Person")]
-        public virtual ICollection<Empleado> Empleado { get; set; }
     }
 }
