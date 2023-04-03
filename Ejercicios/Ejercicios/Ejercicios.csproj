@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BBDD\**" />
+    <EmbeddedResource Remove="BBDD\**" />
+    <None Remove="BBDD\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove=".gitignore" />
     <None Remove=".gitignore - Copia" />
   </ItemGroup>
@@ -26,13 +32,6 @@
     <None Update="Planificación.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="BBDD\Ejercicios_Con_Relaciones\Ejercicio6_BBDD\Controllers\ClientController\" />
-    <Folder Include="BBDD\Ejercicios_Con_Relaciones\Ejercicio6_BBDD\Controllers\EmployeeController\" />
-    <Folder Include="BBDD\Ejercicios_Con_Relaciones\Ejercicio6_BBDD\Controllers\CompanyController\" />
-    <Folder Include="BBDD\Ejercicios_Con_Relaciones\Ejercicio6_BBDD\Controllers\PersonController\" />
   </ItemGroup>
 
 </Project>

@@ -17,9 +17,9 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD
         }
 
         #region GET
-        public List<BankAccount> GetListIngresosClient(int id)
+        public List<BankAccount> GetListIngresosClient(int idClient)
         {
-            var banks = db.BankAccount.Where(x => x.ClientId == id && x.Retirada == 0).ToList();
+            var banks = db.BankAccount.Where(x => x.ClientId == idClient && x.Retirada == 0).ToList();
 
             if (banks.Count == 0)
             {
@@ -37,9 +37,9 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD
             return banks;
         }
 
-        public List<BankAccount> GetListRetiradasClient(int id)
+        public List<BankAccount> GetListRetiradasClient(int idClient)
         {
-            var banks = db.BankAccount.Where(x => x.ClientId == id && x.Ingreso == 0).ToList();
+            var banks = db.BankAccount.Where(x => x.ClientId == idClient && x.Ingreso == 0).ToList();
 
             if (banks.Count == 0)
             {
@@ -57,9 +57,9 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD
             return banks;
         }
 
-        public List<BankAccount> GetListMovimentClient(int id)
+        public List<BankAccount> GetListMovimentClient(int idClient)
         {
-            var banks = db.BankAccount.Where(x => x.ClientId == id).ToList();
+            var banks = db.BankAccount.Where(x => x.ClientId == idClient).ToList();
 
             if (banks.Count == 0)
             {
@@ -77,64 +77,55 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD
             return banks;
         }
 
-        public BankAccount GetLastMovimentByClient(int clientId)
+        public BankAccount GetLastMovimentByClient(int? idClient)
         {
-            return db.BankAccount.Where(x => x.ClientId == clientId).LastOrDefault();
+            return db.BankAccount.Where(x => x.ClientId == idClient).OrderBy(x => x.Id).LastOrDefault();
         }
         #endregion
 
         #region SET
-        public async Task IngresoAsync(int ingreso)
+        public async Task CreateAccountAsync(BankAccount bankAccount)
         {
-            Console.WriteLine("Id del cliente");
-            var clientId = Convert.ToInt32(Console.ReadLine());
-            var lastBankAccount = GetLastMovimentByClient(clientId);
-
-            var bank = new BankAccount();
-            bank.Id = 0;
-            bank.Saldo = lastBankAccount.Saldo + ingreso;
-            bank.Retirada = 0;
-            bank.Ingreso = ingreso;
-            bank.ClientId = clientId;
-
-            await db.AddAsync(bank);
+            await db.AddAsync(bankAccount);
             db.SaveChanges();
         }
 
-        public async Task RetiradaAsync(int retirada)
+        public async Task IngresoAsync(BankAccount bankAccount)
         {
-            Console.WriteLine("Id del cliente");
-            var clientId = Convert.ToInt32(Console.ReadLine());
-            var lastBankAccount = GetLastMovimentByClient(clientId);
+            var lastBankAccount = GetLastMovimentByClient(bankAccount.ClientId);
 
-            var bank = new BankAccount();
-            bank.Id = 0;
-            bank.Saldo = lastBankAccount.Saldo - retirada;
-            bank.Retirada = retirada;
-            bank.Ingreso = 0;
-            bank.ClientId = clientId;
+            bankAccount.Id = 0;
+            bankAccount.Retirada = 0;
+            bankAccount.Saldo = lastBankAccount.Saldo + bankAccount.Ingreso;
 
-            await db.AddAsync(bank);
+            await db.AddAsync(bankAccount);
             db.SaveChanges();
         }
 
-        public async Task CreateBankAccount(int clientId)
+        public async Task RetiradaAsync(BankAccount bankAccount)
         {
-            Console.WriteLine("Saldo inicial?");
-            var saldo = Convert.ToInt32(Console.ReadLine());
+            var lastBankAccount = GetLastMovimentByClient(bankAccount.ClientId);
 
-            var bank = new BankAccount();
-            bank.Id = 0;
-            bank.Saldo = saldo;
-            bank.Retirada = 0;
-            bank.Ingreso = saldo;
-            bank.ClientId = clientId;
+            bankAccount.Id = 0;
+            bankAccount.Ingreso = 0;
+            bankAccount.Saldo = lastBankAccount.Saldo - bankAccount.Retirada;
 
-            await db.AddAsync(bank);
+            await db.AddAsync(bankAccount);
             db.SaveChanges();
         }
-
         #endregion
 
+        #region DELETE
+        public void DeleteAccountBank(int idClient)
+        {
+            var listBankAccount = GetListMovimentClient(idClient);
+            foreach (var account in listBankAccount) 
+            {
+                db.Remove(account);
+                db.SaveChanges();
+            }
+            
+        }
+        #endregion
     }
 }

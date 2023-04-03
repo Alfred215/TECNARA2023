@@ -1,12 +1,10 @@
 ﻿using Ejercicios.BBDD.Ejercicios.Entidades;
-using Ejercicios.BBDD.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ClosedXML.Excel.XLPredefinedFormat;
 
 namespace Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD
 {

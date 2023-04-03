@@ -32,6 +32,7 @@ namespace BBDD.PruebaBBDD
         #region SET
         public async Task AddPersonAsync(Persona persona)
         {
+            persona.Id = 0;
             await db.AddAsync(persona);
 
             db.SaveChanges();

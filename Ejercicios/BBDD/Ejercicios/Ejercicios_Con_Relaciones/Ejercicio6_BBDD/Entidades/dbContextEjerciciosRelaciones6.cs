@@ -7,13 +7,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio6_BBDD.Entidades
 {
-    public partial class dbContextEjerciciosRelaciones : DbContext
+    public partial class dbContextEjerciciosRelaciones6 : DbContext
     {
-        public dbContextEjerciciosRelaciones()
+        public dbContextEjerciciosRelaciones6()
         {
         }
 
-        public dbContextEjerciciosRelaciones(DbContextOptions<dbContextEjerciciosRelaciones> options)
+        public dbContextEjerciciosRelaciones6(DbContextOptions<dbContextEjerciciosRelaciones6> options)
             : base(options)
         {
         }

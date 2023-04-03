@@ -1,5 +1,4 @@
 ﻿using Ejercicios.BBDD.Ejercicios.Entidades;
-using Ejercicios.BBDD.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

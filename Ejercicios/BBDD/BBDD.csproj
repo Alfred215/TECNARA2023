@@ -11,4 +11,11 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio6_BBDD\Controllers\ClientController\" />
+    <Folder Include="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio6_BBDD\Controllers\CompanyController\" />
+    <Folder Include="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio6_BBDD\Controllers\EmployeeController\" />
+    <Folder Include="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio6_BBDD\Controllers\PersonController\" />
+  </ItemGroup>
+
 </Project>
