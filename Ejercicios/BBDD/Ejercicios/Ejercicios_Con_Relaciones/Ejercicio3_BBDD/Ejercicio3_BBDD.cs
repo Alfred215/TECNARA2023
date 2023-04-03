@@ -37,7 +37,7 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD
                         Console.WriteLine("\nEscribe una contraseña");
                         newClient.ContraseñaHash = Console.ReadLine();
 
-                        client.AddAsync(newClient);
+                        await client.AddAsync(newClient);
                         var cliente = client.GetClientByNameAndPassword(newClient.Nombre, ComputeHash(newClient.ContraseñaHash));
                         #endregion
 

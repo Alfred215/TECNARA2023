@@ -43,14 +43,6 @@ using Ejercicios.LenguajeAvanzado.ExClosedXML.Ventas;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.LeerExcel;
 using Ejercicios.LenguajeAvanzado.ExClosedXML.AddExcel;
 using DocumentFormat.OpenXml.Wordprocessing;
-using Ejercicios.BBDD.Prueba1;
-using Ejercicios.BBDD.Entities;
-using Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD;
-using Ejercicios.BBDD.Ejercicios.Entidades;
-using Ejercicios.LenguajeAvanzado.ExClosedXML.Banco;
-using Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD;
-using Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD;
-using Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD.Entidades;
 using Ejercicios.EjerciciosC;
 
 namespace Ejercicios
@@ -213,24 +205,6 @@ namespace Ejercicios
             //new EjercicioBanco();
             #endregion
 
-            #region BBDDTecnara
-            //using (var db = new BBDDTecnaraContext())
-            //{
-            //    new Consultas(db);
-            //}
-
-            using (var dbEjercicios = new dbContextEjercicios())
-            {
-                //new Ejercicio1_BBDD(dbEjercicios);
-                //new Ejercicio2_BBDD(dbEjercicios);
-                
-            }
-
-            using (var dbEjercicio3 = new dbContextEjerciciosRelaciones())
-            {
-                new Ejercicio3_BBDD(dbEjercicio3);
-            }
-            #endregion
         }
     }
 }

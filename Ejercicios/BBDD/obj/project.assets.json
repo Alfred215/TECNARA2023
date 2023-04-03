@@ -3223,24 +3223,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alfredo.garcia\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\lyus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BBDD\\BBDD.csproj",
+      "projectUniqueName": "C:\\Proyectos\\Tecnara\\Ejercicios\\BBDD\\BBDD.csproj",
       "projectName": "BBDD",
-      "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BBDD\\BBDD.csproj",
-      "packagesPath": "C:\\Users\\alfredo.garcia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BBDD\\obj\\",
+      "projectPath": "C:\\Proyectos\\Tecnara\\Ejercicios\\BBDD\\BBDD.csproj",
+      "packagesPath": "C:\\Users\\lyus\\.nuget\\packages\\",
+      "outputPath": "C:\\Proyectos\\Tecnara\\Ejercicios\\BBDD\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\alfredo.garcia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\lyus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3248,7 +3243,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3288,7 +3282,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
