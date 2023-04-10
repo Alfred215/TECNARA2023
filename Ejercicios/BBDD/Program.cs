@@ -1,10 +1,12 @@
-﻿using BBDD.PruebaBBDD;
+﻿using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio6_BBDD;
+using BBDD.PruebaBBDD;
 using BBDD.PruebaBBDD.Entities;
 using Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD;
 using Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD;
 using Ejercicios.BBDD.Ejercicios.Entidades;
 using Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD;
 using Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD.Entidades;
+using Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio6_BBDD.Entidades;
 
 namespace BBDD
 {
@@ -101,6 +103,11 @@ namespace BBDD
             using (var dbEjercicio3 = new dbContextEjerciciosRelaciones())
             {
                 //await new Ejercicio3_BBDD(dbEjercicio3).BucleAsync();
+            }
+
+            using (var dbEjercicio6 = new dbContextEjerciciosRelaciones6())
+            {
+                await new Ejercicio6_Main(dbEjercicio6).MenuAsync();
             }
         }
     }

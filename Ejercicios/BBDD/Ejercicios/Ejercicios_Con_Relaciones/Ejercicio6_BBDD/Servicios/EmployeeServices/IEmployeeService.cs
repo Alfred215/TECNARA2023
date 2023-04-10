@@ -11,7 +11,9 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD.Servicios.Em
     {
         public Task<Empleado> GetById(Guid id);
         public Task<List<Empleado>> GetList();
-        public Task<Empleado> AddEditAsync(Empleado employee);
-        public Task<List<Empleado>> Delete(Guid id);
+        public Task<List<Person>> GetListPersonAsync();
+        public Task<List<Empresa>> GetListCompanyAsync();
+        public Task AddEditAsync(Empleado employee);
+        public Task Delete(Guid id);
     }
 }

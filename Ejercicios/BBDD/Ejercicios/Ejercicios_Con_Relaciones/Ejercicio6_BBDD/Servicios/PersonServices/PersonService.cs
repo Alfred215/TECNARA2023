@@ -1,4 +1,5 @@
 ﻿using Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio6_BBDD.Entidades;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +10,60 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD.Servicios.Pe
 {
     public class PersonService : IPersonService
     {
-        public Task<Person> AddEditAsync(Person person)
+        dbContextEjerciciosRelaciones6 db;
+        public PersonService(dbContextEjerciciosRelaciones6 _db)
         {
-            throw new NotImplementedException();
+            db = _db;
         }
 
-        public Task<List<Person>> Delete(Guid id)
+        #region ADDEDIT
+        public async Task AddEditAsync(Person person)
         {
-            throw new NotImplementedException();
+            if (GetById(person.Id) != null)
+            {
+                await Edit(person);
+            }
+            else
+            {
+                await AddAsync(person);
+            }
+        }
+        public async Task AddAsync(Person person)
+        {
+            await db.AddAsync(person);
+            db.SaveChanges();
+        }
+        public async Task Edit(Person person)
+        {
+            var personOld = await GetById(person.Id);
+            personOld.Name = person.Name;
+            personOld.Surname1 = person.Surname1;
+            personOld.Surname2 = person.Surname2;
+            personOld.Age = person.Age;
+
+            db.SaveChanges();
+        }
+        #endregion
+
+        #region DELETE
+        public async Task Delete(Guid id)
+        {
+            var personOld = await GetById(id);
+            db.Remove(personOld);
+            db.SaveChanges();
+        }
+        #endregion
+
+        #region GET
+        public async Task<Person> GetById(Guid id)
+        {
+            return await db.Person.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
-        public Task<Person> GetById(Guid id)
+        public async Task<List<Person>> GetList()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<Person>> GetList()
-        {
-            throw new NotImplementedException();
-        }
+            return await db.Person.ToListAsync();
+        } 
+        #endregion
     }
 }

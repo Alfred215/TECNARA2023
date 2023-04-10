@@ -11,7 +11,8 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD.Servicios.Cl
     {
         public Task<Client> GetById(Guid id);
         public Task<List<Client>> GetList();
-        public Task<Client> AddEditAsync(Client client);
-        public Task<List<Client>> Delete(Guid id);
+        public Task<List<Person>> GetListPerson();
+        public Task AddEditAsync(Client client);
+        public Task Delete(Guid id);
     }
 }

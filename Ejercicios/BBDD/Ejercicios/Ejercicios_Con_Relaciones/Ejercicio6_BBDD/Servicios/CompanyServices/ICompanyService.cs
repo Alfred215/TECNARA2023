@@ -11,7 +11,7 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD.Servicios.Co
     {
         public Task<Empresa> GetById(Guid id);
         public Task<List<Empresa>> GetList();
-        public Task<Empresa> AddEditAsync(Empresa company);
-        public Task<List<Empresa>> Delete(Guid id);
+        public Task AddEditAsync(Empresa company);
+        public Task Delete(Guid id);
     }
 }

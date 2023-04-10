@@ -1,4 +1,5 @@
 ﻿using Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio6_BBDD.Entidades;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,40 +10,66 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD.Servicios.Cl
 {
     public class ClientService : IClientService
     {
-        #region SET
-        public Task<Client> AddEditAsync(Client client)
+        dbContextEjerciciosRelaciones6 db;
+        public ClientService(dbContextEjerciciosRelaciones6 _db)
         {
-            throw new NotImplementedException();
+            db = _db;
         }
 
-        public Task<Client> AddAsync(Client client)
+        #region ADDEDIT
+        public async Task AddEditAsync(Client cliente)
         {
-            throw new NotImplementedException();
+            if (GetById(cliente.Id) != null)
+            {
+                await Edit(cliente);
+            }
+            else
+            {
+                await AddAsync(cliente);
+            }
         }
 
-        public Task<Client> EditAsync(Client client)
+        public async Task AddAsync(Client cliente)
         {
-            throw new NotImplementedException();
+            await db.AddAsync(cliente);
+            db.SaveChanges();
+        }
+
+        public async Task Edit(Client cliente)
+        {
+            var clienteOld = await GetById(cliente.Id);
+            clienteOld.PersonId = cliente.PersonId;
+            clienteOld.Saldo = cliente.Saldo;
+            clienteOld.HoraServicio = cliente.HoraServicio;
+
+            db.SaveChanges();
         }
         #endregion
 
         #region DELETE
-        public Task<List<Client>> Delete(Guid id)
+        public async Task Delete(Guid id)
         {
-            throw new NotImplementedException();
-        } 
+            var empresaOld = await GetById(id);
+            db.Remove(empresaOld);
+            db.SaveChanges();
+        }
         #endregion
 
         #region GET
-        public Task<Client> GetById(Guid id)
+        public async Task<Client> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return await db.Client.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
-        public Task<List<Client>> GetList()
+        public async Task<List<Client>> GetList()
         {
-            throw new NotImplementedException();
-        } 
+            return await db.Client.ToListAsync();
+        }
+
+        public async Task<List<Person>> GetListPerson()
+        {
+            return await db.Client.Select(x => x.Person).ToListAsync();
+        }
         #endregion
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio6_BBDD.Entidades;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +10,74 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD.Servicios.Em
 {
     public class EmployeeService : IEmployeeService
     {
-        public Task<Empleado> AddEditAsync(Empleado employee)
+        dbContextEjerciciosRelaciones6 db;
+        public EmployeeService(dbContextEjerciciosRelaciones6 _db)
         {
-            throw new NotImplementedException();
+            db = _db;
         }
 
-        public Task<List<Empleado>> Delete(Guid id)
+        #region ADDEDIT
+        public async Task AddEditAsync(Empleado empleado)
         {
-            throw new NotImplementedException();
+            if (GetById(empleado.Id) != null)
+            {
+                await Edit(empleado);
+            }
+            else
+            {
+                await AddAsync(empleado);
+            }
         }
 
-        public Task<Empleado> GetById(Guid id)
+        public async Task AddAsync(Empleado empleado)
         {
-            throw new NotImplementedException();
+            await db.AddAsync(empleado);
+            db.SaveChanges();
         }
 
-        public Task<List<Empleado>> GetList()
+        public async Task Edit(Empleado empleado)
         {
-            throw new NotImplementedException();
+            var empleadoOld = await GetById(empleado.Id);
+            empleadoOld.PersonId = empleado.PersonId;
+            empleadoOld.EmpresaId = empleado.EmpresaId;
+            empleadoOld.HoraEntrada = empleado.HoraEntrada;
+            empleadoOld.HoraSalida = empleado.HoraSalida;
+            empleadoOld.PrecioPorHora = empleado.PrecioPorHora;
+
+            db.SaveChanges();
         }
+        #endregion
+
+        #region DELETE
+        public async Task Delete(Guid id)
+        {
+            var empleadoOld = await GetById(id);
+            db.Remove(empleadoOld);
+            db.SaveChanges();
+
+        }
+        #endregion
+
+        #region GET
+        public async Task<Empleado> GetById(Guid id)
+        {
+            return await db.Empleado.Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Empleado>> GetList()
+        {
+            return await db.Empleado.ToListAsync();
+        }
+
+        public async Task<List<Person>> GetListPersonAsync()
+        {
+            return await db.Client.Select(x => x.Person).ToListAsync();
+        }
+
+        public async Task<List<Empresa>> GetListCompanyAsync()
+        {
+            return await db.Empleado.Select(x => x.Empresa).ToListAsync();
+        }
+        #endregion
     }
 }
