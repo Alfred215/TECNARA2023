@@ -8,21 +8,22 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD
 {
-    public class Metodos1_BBDD 
+    public class DB_EmpresaServicio 
     {
         dbContextEjercicios db;
-        public Metodos1_BBDD(dbContextEjercicios _db) 
+        public DB_EmpresaServicio(dbContextEjercicios _db) 
         {
             db = _db;
         }
 
+        #region GET
         public Empresa GetById(int id)
         {
             var empresa = db.Empresa.Where(x => x.Id == id).FirstOrDefault();
             //Console.WriteLine("Filtro por Id");
             //Console.WriteLine("Id: {0} Nombre: {1} P. Apellido: {2} S. Apellido: {3} Edad: {4}", empresa.Id, empresa.Nombre, empresa.Localización, empresa.CantidadEmpleados, empresa.CantidadOficinas);
             return empresa;
-            
+
         }
 
         public void GetList()
@@ -36,10 +37,7 @@ namespace Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD
             else
             {
                 Console.WriteLine("\nLista completa");
-                foreach (var empresa in empresas)
-                {
-                    Console.WriteLine("Id: {0} Nombre: {1} Localización: {2} Cantidad Empleados: {3} Cantidad Oficinas: {4}", empresa.Id, empresa.Nombre, empresa.Localización, empresa.CantidadEmpleados, empresa.CantidadOficinas);
-                }
+                empresas.ForEach(x => Console.WriteLine(" - Id: {0} Nombre: {1} Localización: {2} Cantidad Empleados: {3} Cantidad Oficinas: {4}", x.Id, x.Nombre, x.Localización, x.CantidadEmpleados, x.CantidadOficinas));
             }
         }
 
@@ -54,26 +52,45 @@ namespace Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD
             else
             {
                 Console.WriteLine("\nLista completa");
-                foreach (var empresa in empresas)
-                {
-                    Console.WriteLine("Id: {0} Nombre: {1} Localización: {2} Cantidad Empleados: {3} Cantidad Oficinas: {4}", empresa.Id, empresa.Nombre, empresa.Localización, empresa.CantidadEmpleados, empresa.CantidadOficinas);
-                }
+                empresas.ForEach(x => Console.WriteLine(" - Id: {0} Nombre: {1} Localización: {2} Cantidad Empleados: {3} Cantidad Oficinas: {4}", x.Id, x.Nombre, x.Localización, x.CantidadEmpleados, x.CantidadOficinas));
             }
         }
+        #endregion
 
-        public void AddEdit(Empresa empresa)
+        #region SET
+        public Empresa CreateEmpresa()
+        {
+            Empresa empresa = new Empresa();
+
+            Console.WriteLine("Id:");
+            empresa.Id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Nombre:");
+            empresa.Nombre = Console.ReadLine();
+            Console.WriteLine("Localización:");
+            empresa.Localización = Console.ReadLine();
+            Console.WriteLine("Cantidad de empleados");
+            empresa.CantidadEmpleados = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Cantidad de oficinas");
+            empresa.CantidadOficinas = Convert.ToInt32(Console.ReadLine());
+
+            return empresa;
+        }
+
+        public async void AddEdit(Empresa empresa)
         {
             if (GetById(empresa.Id) != null)
             {
                 Edit(empresa);
+                Console.WriteLine("Empresa guardada correctamente");
             }
             else
             {
-                AddAsync(empresa);
+                await Create(empresa);
+                Console.WriteLine("Empresa creada correctamente");
             }
         }
 
-        public async Task AddAsync(Empresa empresa)
+        public async Task Create(Empresa empresa)
         {
             empresa.Id = 0;
             await db.AddAsync(empresa);
@@ -93,14 +110,17 @@ namespace Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD
             db.SaveChanges();
             GetList();
         }
+        #endregion
 
+        #region DELETE
         public void Delete(int id)
         {
-            var person = GetById(id);
-            db.Remove(person);
+            var empr = GetById(id);
+            db.Remove(empr);
             db.SaveChanges();
 
             GetList();
-        }
+        } 
+        #endregion
     }
 }

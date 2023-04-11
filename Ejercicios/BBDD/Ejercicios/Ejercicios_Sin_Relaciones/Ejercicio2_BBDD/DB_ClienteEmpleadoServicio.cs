@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD
 {
-    public class Metodos2_BBDD
+    public class DB_ClienteEmpleadoServicio
     {
         dbContextEjercicios db;
-        public Metodos2_BBDD(dbContextEjercicios _db)
+        public DB_ClienteEmpleadoServicio(dbContextEjercicios _db)
         {
             db = _db;
         }
@@ -21,14 +21,14 @@ namespace Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD
         #region Empleado
 
         #region GET
-        public Empleado GetById(int id)
+        public Empleado GetById_EMP(int id)
         {
             var empleado = db.Empleado.Where(x => x.Id == id).FirstOrDefault();
             return empleado;
 
         }
 
-        public List<Empleado> GetListEmpleado()
+        public List<Empleado> GetList_EMP()
         {
             var empleados = db.Empleado.ToList();
 
@@ -50,30 +50,30 @@ namespace Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD
         #endregion
 
         #region AddEDIT
-        public void AddEdit(Empleado empleado)
+        public void AddEdit_EMP(Empleado empleado)
         {
-            if (GetById(empleado.Id) != null)
+            if (GetById_EMP(empleado.Id) != null)
             {
                 Edit(empleado);
             }
             else
             {
-                AddAsync(empleado);
+                Create(empleado);
             }
         }
 
-        public async Task AddAsync(Empleado empleado)
+        public async Task Create(Empleado empleado)
         {
             empleado.Id = 0;
             await db.AddAsync(empleado);
             db.SaveChanges();
 
-            GetListEmpleado();
+            GetList_EMP();
         }
 
         public void Edit(Empleado empleado)
         {
-            var empleadoOld = GetById(empleado.Id);
+            var empleadoOld = GetById_EMP(empleado.Id);
             empleadoOld.Nombre = empleado.Nombre;
             empleadoOld.Empresa = empleado.Empresa;
             empleadoOld.Puesto = empleado.Puesto;
@@ -82,31 +82,33 @@ namespace Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD
             empleadoOld.PrecioPorHora = empleado.PrecioPorHora;
 
             db.SaveChanges();
-            GetListEmpleado();
+            GetList_EMP();
         }
         #endregion
 
-        public void Delete(int id)
+        public void Delete_EMP(int id)
         {
-            var empleado = GetById(id);
+            var empleado = GetById_EMP(id);
             db.Remove(empleado);
             db.SaveChanges();
 
-            GetListEmpleado();
+            GetList_EMP();
         }
         #endregion
+
+        //---------------------------------------------------------------------------------
 
         #region Cliente
 
         #region GET
-        public Cliente GetClientById(int id)
+        public Cliente GetById_CLI(int id)
         {
             var cliente = db.Cliente.Where(x => x.Id == id).FirstOrDefault();
             return cliente;
 
         }
 
-        public List<Cliente> GetListClient()
+        public List<Cliente> GetList_CLI()
         {
             var clientes = db.Cliente.ToList();
 
@@ -128,57 +130,57 @@ namespace Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD
         #endregion
 
         #region AddEDIT
-        public void AddEdit(Cliente cliente)
+        public void AddEdit_CLI(Cliente cliente)
         {
-            if (GetClientById(cliente.Id) != null)
+            if (GetById_CLI(cliente.Id) != null)
             {
                 Edit(cliente);
             }
             else
             {
-                AddAsync(cliente);
+                Create(cliente);
             }
         }
 
-        public async Task AddAsync(Cliente empleado)
+        public async Task Create(Cliente empleado)
         {
             empleado.Id = 0;
             await db.AddAsync(empleado);
             db.SaveChanges();
 
-            GetListClient();
+            GetList_CLI();
         }
 
         public void Edit(Cliente cliente)
         {
-            var clienteOld = GetClientById(cliente.Id);
+            var clienteOld = GetById_CLI(cliente.Id);
             clienteOld.Nombre = cliente.Nombre;
             clienteOld.Saldo = cliente.Saldo;
             clienteOld.HoraDeServicio = cliente.HoraDeServicio;
        
 
             db.SaveChanges();
-            GetListClient();
+            GetList_CLI();
         }
         #endregion
 
-        public void DeleteClient(int id)
+        public void Delete_CLI(int id)
         {
-            var cliente = GetClientById(id);
+            var cliente = GetById_CLI(id);
             db.Remove(cliente);
             db.SaveChanges();
 
-            GetListClient();
+            GetList_CLI();
         }
         #endregion
 
         public void CalcularCoste(int idCliente)
         {
-            var cliente = GetClientById(idCliente);
+            var cliente = GetById_CLI(idCliente);
 
             Random rmd = new Random();
 
-            var empleado = GetById(rmd.Next(1,GetListEmpleado().Count()+1));
+            var empleado = GetById_EMP(rmd.Next(1,GetList_EMP().Count()+1));
 
             if((cliente.HoraDeServicio * empleado.PrecioPorHora) <= cliente.Saldo)
             {

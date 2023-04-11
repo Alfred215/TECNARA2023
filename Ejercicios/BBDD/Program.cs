@@ -93,14 +93,14 @@ namespace BBDD
 
             using (var dbEjercicios = new dbContextEjercicios())
             {
-                //new Ejercicio1_BBDD(dbEjercicios);
-                //new Ejercicio2_BBDD(dbEjercicios);
+                new DB_EmpresaController(dbEjercicios);
+                //new DB_CienteEmpleadoController(dbEjercicios);
 
             }
 
             using (var dbEjercicio3 = new dbContextEjerciciosRelaciones())
             {
-                await new Ejercicio3_BBDD(dbEjercicio3).BucleAsync();
+                //await new Ejercicio3_BBDD(dbEjercicio3).BucleAsync();
             }
         }
     }

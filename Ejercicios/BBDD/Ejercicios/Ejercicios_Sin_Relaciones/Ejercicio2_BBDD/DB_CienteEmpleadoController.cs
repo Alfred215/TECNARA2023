@@ -7,54 +7,63 @@ using System.Threading.Tasks;
 
 namespace Ejercicios.BBDD.Ejercicios.Ejercicio2_BBDD
 {
-    public class Ejercicio2_BBDD
+    public class DB_CienteEmpleadoController
     {
-        Metodos2_BBDD metodos;
-        dbContextEjercicios db;
-        public Ejercicio2_BBDD(dbContextEjercicios _db) 
+        DB_ClienteEmpleadoServicio service;
+
+        public DB_CienteEmpleadoController(dbContextEjercicios _db) 
         {
-            db = _db;
-            metodos = new Metodos2_BBDD(db);
-            Consultas();
+            service = new DB_ClienteEmpleadoServicio(_db);
+            IniciarMenu();
         }
 
-        public void Consultas()
+        public void IniciarMenu()
         {
             int accion = 0;
             do
             {
-                Console.WriteLine("\n1-Crear o Editar Cliente \n2-Crear o Editar Empleado \n3-Listar Clientes \n4-Listar Empleados \n5-Eliminar Cliente \n6-Eliminar Empleado \n7-Calcular Coste \n8-Salir");
+                Console.ForegroundColor= ConsoleColor.Green;
+                Console.WriteLine("1- Crear o Editar Cliente");
+                Console.WriteLine("2- Crear o Editar Empleado");
+                Console.WriteLine("3- Listar Clientes");
+                Console.WriteLine("4- Listar Empleados");
+                Console.WriteLine("5- Eliminar Cliente");
+                Console.WriteLine("6- Eliminar Empleado");
+                Console.WriteLine("7- Calcular Coste");
+                Console.WriteLine("8- Salir");
+                Console.ResetColor();
+
                 accion = Convert.ToInt32(Console.ReadLine());
 
                 switch (accion)
                 {
                     case 1:
-                        metodos.AddEdit(CreateCliente());
+                        service.AddEdit_CLI(CreateCliente());
                         Console.Clear();
                         break;
                     case 2:
-                        metodos.AddEdit(CreateEmpleado());
+                        service.AddEdit_EMP(CreateEmpleado());
                         Console.Clear();
                         break;
                     case 3:
-                        metodos.GetListClient();
+                        service.GetList_CLI();
                         break;
                     case 4:
-                        metodos.GetListEmpleado();
+                        service.GetList_EMP();
                         break;
                     case 5:
-                        Console.WriteLine("Que Cliente quieres eliminar:");
-                        metodos.DeleteClient(Convert.ToInt32(Console.ReadLine()));
+                        Console.Write("¿Qué CLIENTE quieres eliminar?");
+                        service.Delete_CLI(Convert.ToInt32(Console.ReadLine()));
                         Console.Clear();
                         break;
                     case 6:
-                        Console.WriteLine("Que Cliente quieres eliminar:");
-                        metodos.Delete(Convert.ToInt32(Console.ReadLine()));
+                        Console.Write("¿Qué EMPLEADO quieres eliminar?");
+                        service.Delete_EMP(Convert.ToInt32(Console.ReadLine()));
                         Console.Clear();
                         break;
                     case 7:
-                        Console.WriteLine("Id del cliente para calcular coste:");
-                        metodos.CalcularCoste(Convert.ToInt32(Console.ReadLine()));
+                        Console.Write("Escribe el Id del CLIENTE para calcular coste:");
+                        service.CalcularCoste(Convert.ToInt32(Console.ReadLine()));
                         break;
                     default:
                         break;
