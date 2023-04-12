@@ -1,4 +1,7 @@
-﻿using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio6_BBDD;
+﻿using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio5_BBDD;
+using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio5_BBDD.Entities;
+using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio6_BBDD;
+using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Entities;
 using BBDD.PruebaBBDD;
 using BBDD.PruebaBBDD.Entities;
 using Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD;
@@ -103,6 +106,11 @@ namespace BBDD
             using (var dbEjercicio3 = new dbContextEjerciciosRelaciones())
             {
                 //await new Ejercicio3_BBDD(dbEjercicio3).BucleAsync();
+            }
+
+            using (var dbEjercicio5 = new dbContextEjercicio5())
+            {
+                await new Ejercicio5_Main(dbEjercicio5).MenuAsync();
             }
 
             using (var dbEjercicio6 = new dbContextEjerciciosRelaciones6())

@@ -1,13 +1,13 @@
 ﻿{
    "CodeGenerationMode": 2,
-   "ContextClassName": "dbContextPrueba",
+   "ContextClassName": "dbContextEjercicio5",
    "ContextNamespace": null,
    "DefaultDacpacSchema": null,
    "FilterSchemas": false,
    "IncludeConnectionString": true,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "PruebaBBDD\\Entities",
+   "OutputPath": "Ejercicios\\Ejercicios_Con_Relaciones\\Ejercicio5_BBDD\\Entities",
    "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "BBDD",
    "Schemas": null,
@@ -15,23 +15,27 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[Cliente]",
+         "Name": "[dbo].[Alumno]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Empleado]",
+         "Name": "[dbo].[Asignatura]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Empresa]",
+         "Name": "[dbo].[Centro]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Persona]",
+         "Name": "[dbo].[Curso]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Profesor]",
          "ObjectType": 0
       }
    ],
-   "UiHint": "PORT-330\\SQLEXPRESS.BBDDTecnara",
+   "UiHint": "PORT-330\\SQLEXPRESS.BBDDTecnara_Ej5",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
