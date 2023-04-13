@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BBDD\\BBDD.csproj": {}
+    "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Ejercicios\\Ejercicios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BBDD\\BBDD.csproj": {
+    "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Ejercicios\\Ejercicios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BBDD\\BBDD.csproj",
+        "projectUniqueName": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
         "projectName": "BBDD",
-        "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BBDD\\BBDD.csproj",
+        "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
         "packagesPath": "C:\\Users\\alfredo.garcia\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BBDD\\obj\\",
         "projectStyle": "PackageReference",
@@ -45,13 +45,23 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Http.Abstractions": {
+            "ClosedXML": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[0.100.3, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[7.0.4, )"
             }
           },
           "imports": [

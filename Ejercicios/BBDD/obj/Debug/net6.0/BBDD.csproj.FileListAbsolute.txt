@@ -124,3 +124,5 @@ C:\Proyectos\Tecnara\Ejercicios\BBDD\obj\Debug\net6.0\refint\BBDD.dll
 C:\Proyectos\Tecnara\Ejercicios\BBDD\obj\Debug\net6.0\BBDD.pdb
 C:\Proyectos\Tecnara\Ejercicios\BBDD\obj\Debug\net6.0\BBDD.genruntimeconfig.cache
 C:\Proyectos\Tecnara\Ejercicios\BBDD\obj\Debug\net6.0\ref\BBDD.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\BBDD\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\BBDD\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
