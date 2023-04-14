@@ -1,5 +1,4 @@
-﻿using BD;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Mvc.Models;
 using System.Diagnostics;
 using static Azure.Core.HttpHeader;
@@ -17,15 +16,15 @@ namespace Mvc.Controllers
 
             using(AppDbContext _db = new AppDbContext())
             {
-
+                db = _db;
             }
         }
 
-        public PartialViewResult ComboPersona(string HtmlAttributes)
+        public PartialViewResult GetListPersonas(string HtmlAttributes)
         {
-            List<Person> model = {…};
+            List<Person> model = db.Persons.ToList();
             ViewBag.HtmlAttributes = HtmlAttributes;
-            return PartialView("~/ Views / utils / combo.cshtml", model);
+            return PartialView("~/ Views / Home / listPerson.cshtml", model);
         }
 
         public IActionResult Index()
