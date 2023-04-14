@@ -1,0 +1,14 @@
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\bin\Debug\net6.0\BD.deps.json
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\bin\Debug\net6.0\BD.runtimeconfig.json
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\bin\Debug\net6.0\BD.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\bin\Debug\net6.0\BD.pdb
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\BD.csproj.AssemblyReference.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\BD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\BD.AssemblyInfoInputs.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\BD.AssemblyInfo.cs
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\BD.csproj.CoreCompileInputs.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\BD.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\refint\BD.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\BD.pdb
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\BD.genruntimeconfig.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\Code_First\Code_First\BD\obj\Debug\net6.0\ref\BD.dll
