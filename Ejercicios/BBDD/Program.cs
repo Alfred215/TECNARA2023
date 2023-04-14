@@ -100,29 +100,29 @@ namespace BBDD
 
             using (var dbEjercicios = new dbContextEjercicios())
             {
-                new DB_EmpresaController(dbEjercicios);
+                //new DB_EmpresaController(dbEjercicios);
                 //new DB_CienteEmpleadoController(dbEjercicios);
 
             }
 
             using (var dbEjercicio3 = new dbContextEjerciciosRelaciones())
             {
-                //await new Ejercicio3_BBDD(dbEjercicio3).BucleAsync();
+                await new Ejercicio3_BBDD(dbEjercicio3).BucleAsync();
             }
 
             using (var dbEjercicio5 = new dbContextEjercicio5())
             {
-                await new Ejercicio5_Main(dbEjercicio5).MenuAsync();
+                //await new Ejercicio5_Main(dbEjercicio5).MenuAsync();
             }
 
             using (var dbEjercicio6 = new dbContextEjerciciosRelaciones6())
             {
-                await new Ejercicio6_Main(dbEjercicio6).MenuAsync();
+                //await new Ejercicio6_Main(dbEjercicio6).MenuAsync();
             }
 
             using (var dbEjercicio7 = new dbContextEj7())
             {
-                await new Ejercicio7_Main(dbEjercicio7).MenuAsync();
+                //await new Ejercicio7_Main(dbEjercicio7).MenuAsync();
             }
         }
     }

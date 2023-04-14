@@ -35,10 +35,10 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD
                         newClient.Nombre = Console.ReadLine();
 
                         Console.WriteLine("\nEscribe una contraseña");
-                        newClient.ContraseñaHash = Console.ReadLine();
+                        newClient.ContraseñaHash = ComputeHash(Console.ReadLine());
 
                         await client.AddAsync(newClient);
-                        var cliente = client.GetClientByNameAndPassword(newClient.Nombre, ComputeHash(newClient.ContraseñaHash));
+                        var cliente = client.GetClientByNameAndPassword(newClient.Nombre, newClient.ContraseñaHash);
                         #endregion
 
                         #region New Bank Account

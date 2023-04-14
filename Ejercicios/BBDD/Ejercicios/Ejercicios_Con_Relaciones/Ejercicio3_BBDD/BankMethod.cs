@@ -81,6 +81,7 @@ namespace Ejercicios.BBDD.Ejercicios_Con_Relaciones.Ejercicio3_BBDD
         {
             return db.BankAccount.Where(x => x.ClientId == idClient).OrderBy(x => x.Id).LastOrDefault();
         }
+
         #endregion
 
         #region SET
