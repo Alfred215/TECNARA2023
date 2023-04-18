@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Infraestructure.Entities;
 
-namespace BD_Swagger
+namespace Data
 {
     public class AppDbContext : DbContext
     {
@@ -21,14 +21,13 @@ namespace BD_Swagger
             modelBuilder.Entity<Customer>().ToTable("Customer");
 
             //Indicamos la relación que hay entre dos tablas y si hay algun tipo de DELETE
-            modelBuilder.Entity<Customer>(config =>
-            {
-                config.HasOne(o => o.Person)
-                     .WithMany()
-                     .HasForeignKey(o => o.PersonId)
-                     .OnDelete(DeleteBehavior.Cascade);
-
-            });
+            //modelBuilder.Entity<Customer>(config =>
+            //{
+            //    config.HasOne(o => o.Person)
+            //         .WithMany()
+            //         .HasForeignKey(o => o.PersonId)
+            //         .OnDelete(DeleteBehavior.Cascade);
+            //});
         }
     }
 }

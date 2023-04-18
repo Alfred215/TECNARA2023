@@ -1,5 +1,4 @@
-using BD_Swagger;
-using AutoMapper;
+using Data;
 using Microsoft.EntityFrameworkCore;
 using Infraestructure.Mapper.Extensions;
 
@@ -14,19 +13,20 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddEntityMapper();
 
+
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Prueba1"), b => b.MigrationsAssembly("BD_Swagger"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Prueba1"), b => b.MigrationsAssembly("Data"));
 });
 
 var app = builder.Build();
 
 //Es necesario comentar esta linea una vez que se cree la primera vez la base de datos para que no la cree cada vez
-//using (var scope = app.Services.CreateScope())
-//{
-//    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-//    context.Database.Migrate();
-//}
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    context.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

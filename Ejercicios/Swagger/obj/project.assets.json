@@ -1291,7 +1291,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Data": "1.0.0"
+          "Data": "1.0.0",
+          "Infraestructure": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Services.dll": {}
@@ -3788,8 +3789,8 @@
     },
     "Data/1.0.0": {
       "type": "project",
-      "path": "../BD_Swagger/Data.csproj",
-      "msbuildProject": "../BD_Swagger/Data.csproj"
+      "path": "../Data/Data.csproj",
+      "msbuildProject": "../Data/Data.csproj"
     },
     "Infraestructure/1.0.0": {
       "type": "project",
@@ -3805,6 +3806,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Data >= 1.0.0",
+      "Infraestructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.5",
       "Services >= 1.0.0",
@@ -3844,8 +3846,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BD_Swagger\\Data.csproj": {
-              "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BD_Swagger\\Data.csproj"
+            "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Data\\Data.csproj"
+            },
+            "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Entities\\Infraestructure.csproj": {
+              "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Entities\\Infraestructure.csproj"
             },
             "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Services\\Services.csproj": {
               "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Services\\Services.csproj"

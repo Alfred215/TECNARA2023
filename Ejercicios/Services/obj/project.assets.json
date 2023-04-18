@@ -3278,8 +3278,8 @@
     },
     "Data/1.0.0": {
       "type": "project",
-      "path": "../BD_Swagger/Data.csproj",
-      "msbuildProject": "../BD_Swagger/Data.csproj"
+      "path": "../Data/Data.csproj",
+      "msbuildProject": "../Data/Data.csproj"
     },
     "Infraestructure/1.0.0": {
       "type": "project",
@@ -3289,7 +3289,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Data >= 1.0.0"
+      "Data >= 1.0.0",
+      "Infraestructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3325,8 +3326,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BD_Swagger\\Data.csproj": {
-              "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\BD_Swagger\\Data.csproj"
+            "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Data\\Data.csproj"
+            },
+            "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Entities\\Infraestructure.csproj": {
+              "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Entities\\Infraestructure.csproj"
             }
           }
         }

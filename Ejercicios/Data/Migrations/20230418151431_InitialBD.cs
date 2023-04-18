@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BD_Swagger.Migrations
+namespace Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDB : Migration
+    public partial class InitialBD : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,7 +33,8 @@ namespace BD_Swagger.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Saldo = table.Column<int>(type: "int", nullable: false),
-                    PersonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    PersonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PersonId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -44,12 +45,22 @@ namespace BD_Swagger.Migrations
                         principalTable: "Person",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Customer_Person_PersonId1",
+                        column: x => x.PersonId1,
+                        principalTable: "Person",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customer_PersonId",
                 table: "Customer",
                 column: "PersonId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customer_PersonId1",
+                table: "Customer",
+                column: "PersonId1");
         }
 
         /// <inheritdoc />
