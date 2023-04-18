@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Entities;
+using Infraestructure.Entities;
 
 namespace BD_Swagger
 {

@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "c5PyYA85qOSWekPtHdvM1/XJbrrA6aX8HAaq2CkWBSIMiUAg2h8ht0uGApGCFd1cuYJxHWo5m4/mvlIU2LyB1Q==",
+  "dgSpecHash": "CiS+kf7wP/nZFUqxdmAwR/AzUvP1I1AYoEsY9OLP0sHj+U1lS8RiZSIYdRdpdsA5SNvLhLdolhSoYtajhZMyZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Entities\\Infraestructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alfredo.garcia\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\alfredo.garcia\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\alfredo.garcia\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\alfredo.garcia\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\alfredo.garcia\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\alfredo.garcia\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\alfredo.garcia\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\alfredo.garcia\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\alfredo.garcia\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\alfredo.garcia\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",

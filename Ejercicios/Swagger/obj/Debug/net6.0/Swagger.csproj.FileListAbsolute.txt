@@ -71,7 +71,6 @@ C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\De
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\Debug\net6.0\Swagger.AssemblyInfoInputs.cache
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\Debug\net6.0\Swagger.AssemblyInfo.cs
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\Debug\net6.0\Swagger.csproj.CoreCompileInputs.cache
-C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\Debug\net6.0\Swagger.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\Debug\net6.0\Swagger.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\Debug\net6.0\staticwebassets\msbuild.Swagger.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\Debug\net6.0\staticwebassets\msbuild.build.Swagger.props
@@ -89,3 +88,5 @@ C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\De
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\Debug\net6.0\ref\Swagger.dll
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Entities.dll
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Entities.pdb
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Services.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Services.pdb

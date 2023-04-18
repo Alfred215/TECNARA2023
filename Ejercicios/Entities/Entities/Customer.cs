@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using Entities;
 
-namespace Entities
+namespace Infraestructure.Entities
 {
     public class Customer
     {

@@ -1,9 +1,8 @@
-﻿using Entities;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace Entities
+namespace Infraestructure.Entities
 {
     public class Person
     {
