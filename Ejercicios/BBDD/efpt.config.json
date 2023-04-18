@@ -15,7 +15,7 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[Banco]",
+         "Name": "[dbo].[CentroBelleza]",
          "ObjectType": 0
       },
       {
@@ -35,7 +35,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "PORT-330\\SQLEXPRESS.BBDDTecnara_Ej7",
+   "UiHint": "PORT-436\\SQLEXPRESS.BellezaTecnara",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

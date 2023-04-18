@@ -8,18 +8,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities
 {
-    public partial class TrabajadorCliente
+    public partial class Cliente
     {
         [Key]
         public Guid Id { get; set; }
-        public Guid? TrabajadorId { get; set; }
-        public Guid? ClienteId { get; set; }
-
-        [ForeignKey("ClienteId")]
-        [InverseProperty("TrabajadorCliente")]
-        public virtual Cliente Cliente { get; set; }
-        [ForeignKey("TrabajadorId")]
-        [InverseProperty("TrabajadorCliente")]
-        public virtual Trabajador Trabajador { get; set; }
+        [StringLength(255)]
+        [Unicode(false)]
+        public string NombreCliente { get; set; }
+        [Column(TypeName = "decimal(10, 2)")]
+        public decimal? FacturaTotal { get; set; }
     }
 }

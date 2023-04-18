@@ -1,4 +1,7 @@
-﻿using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities;
+﻿using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio5_BBDD.Entities;
+using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Context;
+using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +23,37 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD
             //clientController = new ClientController(db);
             //personController = new PersonController(db);
             //companyController = new CompanyController(db);
+
+            var idguid = new Guid("02e2e551-d14b-4940-b602-7a596876a5e8");
+
+            var sumaFacturas = (from cliente in db.Cliente
+                                join tc in db.TrabajadorCliente on cliente.Id equals tc.ClienteId
+                                join trab in db.Trabajador on tc.TrabajadorId equals trab.Id
+                                join sucur in db.Sucursal on trab.SucursalId equals sucur.Id
+                                join cb in db.CentroBelleza on sucur.CentroId equals cb.Id
+                                //where cb.Id == "ID_DEL_CENTRO_CONCRETO"
+                                select cliente.FacturaTotal)
+                                .Sum();
+
+            var sumaFacturas2 = db.Cliente
+                    .Join(db.TrabajadorCliente,
+                          c => c.Id,
+                          tc => tc.ClienteId,
+                          (c, tc) => new { Cliente = c, TrabajadorCliente = tc })
+                    .Join(db.Trabajador,
+                          tc => tc.TrabajadorCliente.TrabajadorId,
+                          t => t.Id,
+                          (tc, t) => new { tc.Cliente, Trabajador = t })
+                    .Join(db.Sucursal,
+                          t => t.Trabajador.SucursalId,
+                          s => s.Id,
+                          (t, s) => new { t.Cliente, t.Trabajador, Sucursal = s })
+                    .Join(db.CentroBelleza,
+                          s => s.Sucursal.CentroId,
+                          cb => cb.Id,
+                          (s, cb) => new { s.Cliente, s.Trabajador, s.Sucursal, CentroBelleza = cb })
+                    //.Where(cb => cb.CentroBelleza.Id == "ID_DEL_CENTRO_CONCRETO")
+                    .Sum(cb => cb.Cliente.FacturaTotal);
         }
 
         public async Task MenuAsync()

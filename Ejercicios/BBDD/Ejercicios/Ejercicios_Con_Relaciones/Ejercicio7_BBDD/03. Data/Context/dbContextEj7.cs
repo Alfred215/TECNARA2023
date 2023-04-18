@@ -2,10 +2,11 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities
+namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Context
 {
     public partial class dbContextEj7 : DbContext
     {
@@ -18,7 +19,7 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities
         {
         }
 
-        public virtual DbSet<Banco> Banco { get; set; }
+        public virtual DbSet<CentroBelleza> CentroBelleza { get; set; }
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Sucursal> Sucursal { get; set; }
         public virtual DbSet<Trabajador> Trabajador { get; set; }
@@ -29,13 +30,13 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=BBDDTecnara_Ej7;Integrated Security=True; Encrypt=True; TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=BellezaTecnara;Integrated Security=True; Encrypt=True; TrustServerCertificate=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Banco>(entity =>
+            modelBuilder.Entity<CentroBelleza>(entity =>
             {
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
             });
@@ -49,10 +50,10 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities
             {
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
-                entity.HasOne(d => d.Banco)
+                entity.HasOne(d => d.Centro)
                     .WithMany(p => p.Sucursal)
-                    .HasForeignKey(d => d.BancoId)
-                    .HasConstraintName("FK_Sucursal_Banco");
+                    .HasForeignKey(d => d.CentroId)
+                    .HasConstraintName("FK__Sucursal__Centro__286302EC");
             });
 
             modelBuilder.Entity<Trabajador>(entity =>
@@ -62,22 +63,20 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities
                 entity.HasOne(d => d.Sucursal)
                     .WithMany(p => p.Trabajador)
                     .HasForeignKey(d => d.SucursalId)
-                    .HasConstraintName("FK_Trabajador_Sucursal");
+                    .HasConstraintName("FK__Trabajado__Sucur__2C3393D0");
             });
 
             modelBuilder.Entity<TrabajadorCliente>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.HasOne(d => d.Cliente)
-                    .WithMany(p => p.TrabajadorCliente)
+                    .WithMany()
                     .HasForeignKey(d => d.ClienteId)
-                    .HasConstraintName("FK_TrabajadorCliente_Cliente");
+                    .HasConstraintName("FK__Trabajado__Clien__30F848ED");
 
                 entity.HasOne(d => d.Trabajador)
-                    .WithMany(p => p.TrabajadorCliente)
+                    .WithMany()
                     .HasForeignKey(d => d.TrabajadorId)
-                    .HasConstraintName("FK_TrabajadorCliente_Trabajador");
+                    .HasConstraintName("FK__Trabajado__Traba__31EC6D26");
             });
 
             OnModelCreatingPartial(modelBuilder);

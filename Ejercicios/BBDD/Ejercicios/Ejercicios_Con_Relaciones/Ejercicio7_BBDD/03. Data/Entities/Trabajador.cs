@@ -10,21 +10,20 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities
 {
     public partial class Trabajador
     {
-        public Trabajador()
-        {
-            TrabajadorCliente = new HashSet<TrabajadorCliente>();
-        }
-
         [Key]
         public Guid Id { get; set; }
-        [StringLength(50)]
-        public string Nombre { get; set; }
+        [StringLength(255)]
+        [Unicode(false)]
+        public string NombreTrabajador { get; set; }
+        [StringLength(255)]
+        [Unicode(false)]
+        public string PuestoTrabajo { get; set; }
+        [Column(TypeName = "decimal(10, 2)")]
+        public decimal? CosteDelServicio { get; set; }
         public Guid? SucursalId { get; set; }
 
         [ForeignKey("SucursalId")]
         [InverseProperty("Trabajador")]
         public virtual Sucursal Sucursal { get; set; }
-        [InverseProperty("Trabajador")]
-        public virtual ICollection<TrabajadorCliente> TrabajadorCliente { get; set; }
     }
 }

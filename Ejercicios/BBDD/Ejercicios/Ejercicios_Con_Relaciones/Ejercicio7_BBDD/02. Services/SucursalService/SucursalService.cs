@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Services.SucursalService
 {
-    public class SucursalService
+    public class SucursalService : ISucursalService
     {
     }
 }

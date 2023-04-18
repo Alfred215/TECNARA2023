@@ -8,23 +8,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities
 {
-    public partial class Sucursal
+    public partial class CentroBelleza
     {
-        public Sucursal()
+        public CentroBelleza()
         {
-            Trabajador = new HashSet<Trabajador>();
+            Sucursal = new HashSet<Sucursal>();
         }
 
         [Key]
         public Guid Id { get; set; }
-        [StringLength(50)]
+        [StringLength(255)]
+        [Unicode(false)]
         public string Nombre { get; set; }
-        public Guid? BancoId { get; set; }
 
-        [ForeignKey("BancoId")]
-        [InverseProperty("Sucursal")]
-        public virtual Banco Banco { get; set; }
-        [InverseProperty("Sucursal")]
-        public virtual ICollection<Trabajador> Trabajador { get; set; }
+        [InverseProperty("Centro")]
+        public virtual ICollection<Sucursal> Sucursal { get; set; }
     }
 }

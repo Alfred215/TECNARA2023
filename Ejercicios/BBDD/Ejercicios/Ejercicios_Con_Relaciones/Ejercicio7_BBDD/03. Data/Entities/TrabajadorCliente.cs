@@ -8,19 +8,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities
 {
-    public partial class Banco
+    [Keyless]
+    public partial class TrabajadorCliente
     {
-        public Banco()
-        {
-            Sucursal = new HashSet<Sucursal>();
-        }
+        public Guid? ClienteId { get; set; }
+        public Guid? TrabajadorId { get; set; }
 
-        [Key]
-        public Guid Id { get; set; }
-        [StringLength(50)]
-        public string Nombre { get; set; }
-
-        [InverseProperty("Banco")]
-        public virtual ICollection<Sucursal> Sucursal { get; set; }
+        [ForeignKey("ClienteId")]
+        public virtual Cliente Cliente { get; set; }
+        [ForeignKey("TrabajadorId")]
+        public virtual Trabajador Trabajador { get; set; }
     }
 }
