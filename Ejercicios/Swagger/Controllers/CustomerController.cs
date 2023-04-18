@@ -37,7 +37,7 @@ namespace Swagger.Controllers
             return Ok(resultMap);
         }
 
-        [HttpGet("GetCustomerById")]
+        [HttpPost("GetCustomerById")]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(CustomerMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetCustomerByIdAsync(

@@ -25,7 +25,7 @@ namespace Services
 
         public async Task<Customer> GetByIdAsync(Guid id)
         {
-            return await db.Customers.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await db.Customers.Where(x => x.Id == id).Include(x => x.Person).FirstOrDefaultAsync();
         }
         #endregion
 

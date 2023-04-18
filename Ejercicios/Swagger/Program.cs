@@ -1,5 +1,7 @@
 using BD_Swagger;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Infraestructure.Mapper.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddEntityMapper();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

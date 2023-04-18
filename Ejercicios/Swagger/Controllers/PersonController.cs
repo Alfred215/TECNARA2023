@@ -38,7 +38,7 @@ namespace Swagger.Controllers
             return Ok(resultMap);
         }
 
-        [HttpGet("GetPersonById")]
+        [HttpPost("GetPersonById")]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(PersonMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetPersonByIdAsync(
