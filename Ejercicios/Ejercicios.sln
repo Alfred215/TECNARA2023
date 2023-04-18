@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swagger", "Swagger\Swagger.csproj", "{1FB9BE9A-1C50-4E1A-8692-9E89A43CFD37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swagger", "Swagger\Swagger.csproj", "{1FB9BE9A-1C50-4E1A-8692-9E89A43CFD37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BD_Swagger", "BD_Swagger\BD_Swagger.csproj", "{9FDD3F9F-192E-408C-9D40-EEDF82365BB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BD_Swagger", "BD_Swagger\BD_Swagger.csproj", "{9FDD3F9F-192E-408C-9D40-EEDF82365BB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{BD097118-B6B8-4351-B8D8-38CF96CE9288}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9FDD3F9F-192E-408C-9D40-EEDF82365BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FDD3F9F-192E-408C-9D40-EEDF82365BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FDD3F9F-192E-408C-9D40-EEDF82365BB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD097118-B6B8-4351-B8D8-38CF96CE9288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD097118-B6B8-4351-B8D8-38CF96CE9288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD097118-B6B8-4351-B8D8-38CF96CE9288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD097118-B6B8-4351-B8D8-38CF96CE9288}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
