@@ -27,7 +27,6 @@ namespace Swagger.Controllers
 
         #region GET CUSTOMER
         [HttpGet("GetListCustomer")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(List<CustomerMiniDTO>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetListCustomerAsync()
         {
@@ -38,7 +37,6 @@ namespace Swagger.Controllers
         }
 
         [HttpPost("GetCustomerById")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(CustomerMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetCustomerByIdAsync(
             [FromBody] Guid id)
@@ -52,7 +50,6 @@ namespace Swagger.Controllers
 
         #region ADD_EDIT CUSTOMER
         [HttpPost("AddEditCustomer")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(CustomerMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> AddEditCustomerAsync(
             [FromBody] CustomerPostDTO customer)
@@ -66,7 +63,6 @@ namespace Swagger.Controllers
 
         #region DELETE CUSTOMER
         [HttpDelete("DeleteCustomerById")]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(CustomerMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> DeleteCustomerByIdAsync(
             [FromBody] Guid id)
