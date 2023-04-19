@@ -11,9 +11,16 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio8_BBDD
     public class Ej8_Main
     {
         HotelController hotel;
+        HabitacionController habitacion;
+        ReservaController reserva;
+        ClienteController cliente;
         public Ej8_Main(dbContextEj8 db) 
         {
-            hotel= new HotelController(db);
+            hotel = new HotelController(db);
+            habitacion = new HabitacionController(db);
+            reserva = new ReservaController(db);
+            cliente = new ClienteController(db);
+
         }
 
         public async void AgregarHotel()
@@ -31,10 +38,18 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio8_BBDD
 
         public async void ReservasMes()
         {
-            int mes = 3;
+            int mes = 9;
             Guid id = Guid.Parse("CAFD90EA-C80E-4359-9E97-0735C22D12CC");
 
             await hotel.TotalReservasMesHotel(id, mes);
+        }
+
+        public async void TotalOcupacionHabitacionesHotel()
+        {
+            int año = 2023;
+            Guid id = Guid.Parse("CAFD90EA-C80E-4359-9E97-0735C22D12CC");
+
+            await habitacion.TotalOcupacionHabitacionesHotel(id, año);
         }
     }
 }

@@ -131,7 +131,8 @@ namespace BBDD
             using (var dbEjercicio8 = new dbContextEj8())
             {
                 //new Ej8_Main(dbEjercicio8).Disponibilidad();
-                new Ej8_Main(dbEjercicio8).ReservasMes();
+                //new Ej8_Main(dbEjercicio8).ReservasMes();
+                new Ej8_Main(dbEjercicio8).TotalOcupacionHabitacionesHotel();
             }
 
             Console.ReadKey();

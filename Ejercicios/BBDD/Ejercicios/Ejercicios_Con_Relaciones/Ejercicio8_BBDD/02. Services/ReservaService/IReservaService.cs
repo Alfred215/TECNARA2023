@@ -11,6 +11,6 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio8_BBDD._02._Service
     {
         Task RealizarReserva(Reserva reserva);
         Task CancelarReserva(Guid id);
-        Task ComprobarDisponibilidadReserva(Reserva reserva);
+        Task<List<Hotel>> ComprobarDisponibilidadReserva(DateTime fecahInicio, DateTime fechaFin);
     }
 }

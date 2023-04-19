@@ -10,6 +10,6 @@ namespace BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio8_BBDD._02._Service
     public interface IHabitacionService
     {
         Task AgregarHabitacion(Habitacion habitacion);
-        Task<List<Habitacion>> TotalOcupacionHabitacionesHotel(Guid hotelId);
+        Task<double> TotalOcupacionHabitacionesHotel(Guid hotelId, int año);
     }
 }
