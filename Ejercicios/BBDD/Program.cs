@@ -2,7 +2,10 @@
 using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio5_BBDD.Entities;
 using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio6_BBDD;
 using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD;
+using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Context;
 using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio7_BBDD.Entities;
+using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio8_BBDD;
+using BBDD.Ejercicios.Ejercicios_Con_Relaciones.Ejercicio8_BBDD.Data.Entities;
 using BBDD.PruebaBBDD;
 using BBDD.PruebaBBDD.Entities;
 using Ejercicios.BBDD.Ejercicios.Ejercicio1_BBDD;
@@ -107,7 +110,7 @@ namespace BBDD
 
             using (var dbEjercicio3 = new dbContextEjerciciosRelaciones())
             {
-                await new Ejercicio3_BBDD(dbEjercicio3).BucleAsync();
+                //await new Ejercicio3_BBDD(dbEjercicio3).BucleAsync();
             }
 
             using (var dbEjercicio5 = new dbContextEjercicio5())
@@ -124,6 +127,14 @@ namespace BBDD
             {
                 //await new Ejercicio7_Main(dbEjercicio7).MenuAsync();
             }
+
+            using (var dbEjercicio8 = new dbContextEj8())
+            {
+                //new Ej8_Main(dbEjercicio8).Disponibilidad();
+                new Ej8_Main(dbEjercicio8).ReservasMes();
+            }
+
+            Console.ReadKey();
         }
     }
 }

@@ -7,7 +7,7 @@
    "IncludeConnectionString": true,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "Ejercicios\\Ejercicios_Con_Relaciones\\Ejercicio7_BBDD\\Entities",
+   "OutputPath": "Ejercicios\\Ejercicios_Con_Relaciones\\Ejercicio8_BBDD\\03. Data\\Entities",
    "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "BBDD",
    "Schemas": null,
@@ -15,27 +15,23 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[CentroBelleza]",
-         "ObjectType": 0
-      },
-      {
          "Name": "[dbo].[Cliente]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Sucursal]",
+         "Name": "[dbo].[Habitacion]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Trabajador]",
+         "Name": "[dbo].[Hotel]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[TrabajadorCliente]",
+         "Name": "[dbo].[Reserva]",
          "ObjectType": 0
       }
    ],
-   "UiHint": "PORT-436\\SQLEXPRESS.BellezaTecnara",
+   "UiHint": "PORT-330\\SQLEXPRESS.BBDDTecnara_Ej8",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

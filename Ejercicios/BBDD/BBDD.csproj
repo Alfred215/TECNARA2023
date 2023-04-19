@@ -8,15 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <Compile Remove="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio8_BBDD\03. Data\Context\**" />
+    <EmbeddedResource Remove="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio8_BBDD\03. Data\Context\**" />
+    <None Remove="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio8_BBDD\03. Data\Context\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio8_BBDD\01. Presentation\Controllers\" />
-    <Folder Include="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio8_BBDD\02. Services\HotelServices\" />
-    <Folder Include="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio8_BBDD\03. Data\Context\" />
-    <Folder Include="Ejercicios\Ejercicios_Con_Relaciones\Ejercicio8_BBDD\03. Data\Entities\" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
   </ItemGroup>
 
 </Project>
