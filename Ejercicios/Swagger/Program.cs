@@ -21,7 +21,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-//Es necesario comentar esta linea una vez que se cree la primera vez la base de datos para que no la cree cada vez
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
