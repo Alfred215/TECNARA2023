@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Infraestructure.Enumerables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,6 @@ namespace Infraestructure.DTO.PersonDTOs
         public string Surname1 { get; set; }
         public string Surname2 { get; set; }
         public string Age { get; set; }
+        public EstadoPersonaType Estado { get; set; }
     }
 }

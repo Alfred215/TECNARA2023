@@ -9,28 +9,28 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class CustomerService
+    public class MedicoService
     {
         private AppDbContext db;
-        public CustomerService(AppDbContext _db)
+        public MedicoService(AppDbContext _db)
         {
             db = _db;
         }
 
         #region GET
-        public async Task<List<Customer>> GetListAsync()
+        public async Task<List<Medico>> GetListAsync()
         {
-            return await db.Customers.ToListAsync();
+            return await db.Medicos.ToListAsync();
         }
 
-        public async Task<Customer> GetByIdAsync(Guid id)
+        public async Task<Medico> GetByIdAsync(Guid id)
         {
-            return await db.Customers.Where(x => x.Id == id).Include(x => x.Person).FirstOrDefaultAsync();
+            return await db.Medicos.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
         #endregion
 
         #region ADD_EDIT
-        public async Task<Customer> AddEditAsync(Customer data, bool commit = true)
+        public async Task<Medico> AddEditAsync(Medico data, bool commit = true)
         {
             if (await GetByIdAsync(data.Id) != null)
             {
@@ -39,29 +39,32 @@ namespace Services
             return await AddAsync(data, commit);
         }
 
-        public async Task<Customer> AddAsync(Customer newData, bool commit = true)
+        public async Task<Medico> AddAsync(Medico newData, bool commit = true)
         {
             await db.AddAsync(newData);
             if (commit) { db.SaveChanges(); }
             return newData;
         }
 
-        public async Task<Customer> EditAsync(Customer newData, bool commit = true)
+        public async Task<Medico> EditAsync(Medico newData, bool commit = true)
         {
 
             var resultOld = await GetByIdAsync(newData.Id);
-            resultOld.UserName = newData.UserName;
-            resultOld.Saldo = newData.Saldo;
-            resultOld.PersonId = newData.PersonId;
+            resultOld.Area = newData.Area;
+            resultOld.Funcion = newData.Funcion;
+            resultOld.HorasDia = newData.HorasDia;
+            resultOld.PersonaId = newData.PersonaId;
+            resultOld.HospitalId = newData.HospitalId;
 
             if (commit) { db.SaveChanges(); }
 
             return resultOld;
+
         }
         #endregion
 
         #region DELETE
-        public async Task<Customer> DeleteAsync(Guid id)
+        public async Task<Medico> DeleteAsync(Guid id)
         {
             var resultOld = await GetByIdAsync(id);
 

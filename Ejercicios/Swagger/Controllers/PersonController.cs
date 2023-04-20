@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Data;
-using Infraestructure.DTO.CustomerDTOs;
 using Infraestructure.DTO.PersonDTOs;
 using Infraestructure.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -56,7 +55,7 @@ namespace Swagger.Controllers
             [FromBody] PersonPostDTO person)
         {
             var result = await personSV.AddEditAsync(mapper.Map<Person>(person));
-            var resultMap = mapper.Map<PersonDTO> (result);
+            var resultMap = mapper.Map<PersonMiniDTO> (result);
 
             return Ok(resultMap);
         }
@@ -69,7 +68,7 @@ namespace Swagger.Controllers
             [FromBody] Guid id)
         {
             var result = await personSV.DeleteAsync(id);
-            var resultMap = mapper.Map<PersonDTO>(result);
+            var resultMap = mapper.Map<PersonMiniDTO>(result);
 
             return Ok(resultMap);
         } 

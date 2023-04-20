@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infraestructure.DTO.CustomerDTOs
+namespace Infraestructure.DTO.MedicoDTOs
 {
-    public class CustomerDTO : CustomerMiniDTO
+    public class MedicoDTO : MedicoMiniDTO
     {
     }
 }

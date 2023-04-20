@@ -15,7 +15,10 @@ namespace Infraestructure.Mapper.Extensions
             var service = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new Profiles.MapperProfilePerson());
-                mc.AddProfile(new Profiles.MapperProfileCustomer());
+                mc.AddProfile(new Profiles.MapperProfileMedico());
+                mc.AddProfile(new Profiles.MapperProfilePaciente());
+                mc.AddProfile(new Profiles.MapperProfileHospital());
+
             }).CreateMapper();
             return services.AddSingleton(service);
         }

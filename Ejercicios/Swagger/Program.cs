@@ -16,7 +16,7 @@ builder.Services.AddEntityMapper();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Prueba1"), b => b.MigrationsAssembly("Data"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Hospital"), b => b.MigrationsAssembly("Data"));
 });
 
 var app = builder.Build();

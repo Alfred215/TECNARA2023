@@ -15,12 +15,12 @@ namespace Services
         #region GET
         public async Task<List<Person>> GetListAsync()
         {
-            return await db.Persons.ToListAsync();
+            return await db.Personas.ToListAsync();
         }
 
         public async Task<Person> GetByIdAsync(Guid id)
         {
-            return await db.Persons.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await db.Personas.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
         #endregion
 
@@ -49,6 +49,7 @@ namespace Services
             resultOld.Surname1 = newData.Surname1;
             resultOld.Surname2 = newData.Surname2;
             resultOld.Age = newData.Age;
+            resultOld.Estado = newData.Estado;
 
             if (commit) { db.SaveChanges(); }
 
