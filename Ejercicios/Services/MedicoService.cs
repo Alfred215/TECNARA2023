@@ -50,7 +50,6 @@ namespace Services
         {
 
             var resultOld = await GetByIdAsync(newData.Id);
-            resultOld.Area = newData.Area;
             resultOld.Funcion = newData.Funcion;
             resultOld.HorasDia = newData.HorasDia;
             resultOld.PersonaId = newData.PersonaId;

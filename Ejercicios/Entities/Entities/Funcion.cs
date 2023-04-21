@@ -18,5 +18,7 @@ namespace Infraestructure.Entities
 
         [ForeignKey("AreaId")]
         public virtual Area Area { get; set; }
+
+        public virtual ICollection<Medico> Medico { get; set; }
     }
 }

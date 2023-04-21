@@ -14,8 +14,7 @@ namespace Infraestructure.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public string Area { get; set; }
-        public string Funcion { get; set; }
+        public Guid FuncionId { get; set; }
         public TimeSpan HorasDia { get; set; }
         public Guid PersonaId { get; set; }
         public Guid HospitalId { get; set; }
@@ -25,5 +24,8 @@ namespace Infraestructure.Entities
 
         [ForeignKey("HospitalId")]
         public virtual Hospital Hospital { get; set; }
+
+        [ForeignKey("FuncionId")]
+        public virtual Funcion Funcion { get; set; }
     }
 }
