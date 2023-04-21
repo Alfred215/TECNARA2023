@@ -15,6 +15,8 @@ namespace Data
         public DbSet<Medico> Medicos { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Hospital> Hospitales { get; set; }
+        public DbSet<Area> Areas { get; set; }
+        public DbSet<Funcion> Funciones { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +25,8 @@ namespace Data
             modelBuilder.Entity<Medico>().ToTable("Medico");
             modelBuilder.Entity<Paciente>().ToTable("Paciente");
             modelBuilder.Entity<Hospital>().ToTable("Hospital");
+            modelBuilder.Entity<Area>().ToTable("Area");
+            modelBuilder.Entity<Funcion>().ToTable("Funcion");
 
 
             //Indicamos la relación que hay entre dos tablas y si hay algun tipo de DELETE
