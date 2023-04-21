@@ -14,9 +14,15 @@ namespace Infraestructure.Mapper.Profiles
         public MapperProfileArea()
         {
             CreateMap<Area, AreaDTO>()
+                .ForMember(dst => dst.HospitalNombre, options => options.MapFrom(src => src.Hospital.Nombre))
+                .ForMember(dst => dst.HospitalLocalizacion, options => options.MapFrom(src => src.Hospital.Localizacion))
+                .ForMember(dst => dst.HospitalEspecialidades, options => options.MapFrom(src => src.Hospital.Especialidad))
                 .ReverseMap();
 
             CreateMap<Area, AreaMiniDTO>()
+                .ForMember(dst => dst.HospitalNombre, options => options.MapFrom(src => src.Hospital.Nombre))
+                .ForMember(dst => dst.HospitalLocalizacion, options => options.MapFrom(src => src.Hospital.Localizacion))
+                .ForMember(dst => dst.HospitalEspecialidades, options => options.MapFrom(src => src.Hospital.Especialidad))
                 .ReverseMap();
 
             CreateMap<Area, AreaPostDTO>()

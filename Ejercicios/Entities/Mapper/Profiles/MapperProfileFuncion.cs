@@ -15,9 +15,13 @@ namespace Infraestructure.Mapper.Profiles
         public MapperProfileFuncion()
         {
             CreateMap<Funcion, FuncionDTO>()
+                .ForMember(dst => dst.AreaNombre, options => options.MapFrom(src => src.Area.Nombre))
+                .ForMember(dst => dst.AreaTamaño, options => options.MapFrom(src => src.Area.Tamaño))
                 .ReverseMap();
 
             CreateMap<Funcion, FuncionMiniDTO>()
+                .ForMember(dst => dst.AreaNombre, options => options.MapFrom(src => src.Area.Nombre))
+                .ForMember(dst => dst.AreaTamaño, options => options.MapFrom(src => src.Area.Tamaño))
                 .ReverseMap();
 
             CreateMap<Funcion, FuncionPostDTO>()
