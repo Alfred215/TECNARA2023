@@ -29,7 +29,8 @@ namespace Data
             modelBuilder.Entity<Funcion>().ToTable("Funcion");
 
 
-            //Indicamos la relación que hay entre dos tablas y si hay algun tipo de DELETE
+            //Indicamos la relación que hay entre dos tablas y si hay algun tipo de DELETE 
+            //Siempre que no hayamos hecho la relación en las entidades
             //modelBuilder.Entity<Medico>(config =>
             //{
             //    config.HasOne(o => o.Persona)
