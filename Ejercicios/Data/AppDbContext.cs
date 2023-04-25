@@ -43,19 +43,6 @@ namespace Data
             //         .HasForeignKey(o => o.HospitalId)
             //         .OnDelete(DeleteBehavior.NoAction);
             //});
-
-            //modelBuilder.Entity<Paciente>(config =>
-            //{
-            //    config.HasOne(o => o.Persona)
-            //         .WithMany()
-            //         .HasForeignKey(o => o.PersonaId)
-            //         .OnDelete(DeleteBehavior.Cascade);
-
-            //    config.HasOne(o => o.Hospital)
-            //         .WithMany()
-            //         .HasForeignKey(o => o.HospitalId)
-            //         .OnDelete(DeleteBehavior.NoAction);
-            //});
         }
     }
 }

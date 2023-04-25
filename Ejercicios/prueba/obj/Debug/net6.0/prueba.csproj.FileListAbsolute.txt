@@ -1,0 +1,12 @@
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\bin\Debug\net6.0\prueba.deps.json
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\bin\Debug\net6.0\prueba.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\bin\Debug\net6.0\prueba.pdb
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\obj\Debug\net6.0\prueba.csproj.AssemblyReference.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\obj\Debug\net6.0\prueba.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\obj\Debug\net6.0\prueba.AssemblyInfoInputs.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\obj\Debug\net6.0\prueba.AssemblyInfo.cs
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\obj\Debug\net6.0\prueba.csproj.CoreCompileInputs.cache
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\obj\Debug\net6.0\prueba.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\obj\Debug\net6.0\refint\prueba.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\obj\Debug\net6.0\prueba.pdb
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\prueba\obj\Debug\net6.0\ref\prueba.dll

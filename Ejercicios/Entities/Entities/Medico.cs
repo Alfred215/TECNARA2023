@@ -6,6 +6,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infraestructure.Entities
 {
@@ -26,6 +28,7 @@ namespace Infraestructure.Entities
         public virtual Hospital Hospital { get; set; }
 
         [ForeignKey("FuncionId")]
+        [DeleteBehavior(DeleteBehavior.NoAction)]
         public virtual Funcion Funcion { get; set; }
     }
 }

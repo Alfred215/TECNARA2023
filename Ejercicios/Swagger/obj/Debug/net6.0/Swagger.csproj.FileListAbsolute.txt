@@ -92,3 +92,9 @@ C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\De
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Data.pdb
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Infraestructure.pdb
 C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\obj\Debug\net6.0\Swagger.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Antlr3.Runtime.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\FluentNHibernate.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Iesi.Collections.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\NHibernate.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Remotion.Linq.dll
+C:\Users\alfredo.garcia\Desktop\DocTecnara\TECNARA2023\Ejercicios\Swagger\bin\Debug\net6.0\Remotion.Linq.EagerFetching.dll

@@ -205,7 +205,7 @@ namespace Data.Migrations
                     b.HasOne("Infraestructure.Entities.Funcion", "Funcion")
                         .WithMany("Medico")
                         .HasForeignKey("FuncionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Infraestructure.Entities.Hospital", "Hospital")
