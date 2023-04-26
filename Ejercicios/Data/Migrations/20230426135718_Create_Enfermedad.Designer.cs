@@ -4,6 +4,7 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230426135718_Create_Enfermedad")]
+    partial class Create_Enfermedad
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,51 +46,6 @@ namespace Data.Migrations
                     b.HasIndex("HospitalId");
 
                     b.ToTable("Area", (string)null);
-                });
-
-            modelBuilder.Entity("Infraestructure.Entities.Diagnostico", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("MedicoId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("PacienteId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MedicoId");
-
-                    b.HasIndex("PacienteId");
-
-                    b.ToTable("Diagnostico", (string)null);
-                });
-
-            modelBuilder.Entity("Infraestructure.Entities.DiagnosticoTratamiento", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("DiagnosticoId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TratamientoId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DiagnosticoId");
-
-                    b.HasIndex("TratamientoId");
-
-                    b.ToTable("DiagnosticoTratamiento", (string)null);
                 });
 
             modelBuilder.Entity("Infraestructure.Entities.Enfermedad", b =>
@@ -270,25 +228,6 @@ namespace Data.Migrations
                     b.ToTable("Person", (string)null);
                 });
 
-            modelBuilder.Entity("Infraestructure.Entities.Tratamiento", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Duracion")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("EnfermedadId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EnfermedadId");
-
-                    b.ToTable("Tratamiento", (string)null);
-                });
-
             modelBuilder.Entity("Infraestructure.Entities.Area", b =>
                 {
                     b.HasOne("Infraestructure.Entities.Hospital", "Hospital")
@@ -298,44 +237,6 @@ namespace Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Hospital");
-                });
-
-            modelBuilder.Entity("Infraestructure.Entities.Diagnostico", b =>
-                {
-                    b.HasOne("Infraestructure.Entities.Medico", "Medico")
-                        .WithMany()
-                        .HasForeignKey("MedicoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Infraestructure.Entities.Paciente", "Paciente")
-                        .WithMany()
-                        .HasForeignKey("PacienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Medico");
-
-                    b.Navigation("Paciente");
-                });
-
-            modelBuilder.Entity("Infraestructure.Entities.DiagnosticoTratamiento", b =>
-                {
-                    b.HasOne("Infraestructure.Entities.Diagnostico", "Diagnostico")
-                        .WithMany()
-                        .HasForeignKey("DiagnosticoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Infraestructure.Entities.Tratamiento", "Tratamiento")
-                        .WithMany()
-                        .HasForeignKey("TratamientoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Diagnostico");
-
-                    b.Navigation("Tratamiento");
                 });
 
             modelBuilder.Entity("Infraestructure.Entities.Enfermedad", b =>
@@ -423,17 +324,6 @@ namespace Data.Migrations
                     b.Navigation("Enfermedad");
 
                     b.Navigation("Paciente");
-                });
-
-            modelBuilder.Entity("Infraestructure.Entities.Tratamiento", b =>
-                {
-                    b.HasOne("Infraestructure.Entities.Enfermedad", "Enfermedad")
-                        .WithMany()
-                        .HasForeignKey("EnfermedadId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Enfermedad");
                 });
 
             modelBuilder.Entity("Infraestructure.Entities.Funcion", b =>
