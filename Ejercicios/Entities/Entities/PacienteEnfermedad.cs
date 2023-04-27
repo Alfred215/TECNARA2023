@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -18,6 +19,7 @@ namespace Infraestructure.Entities
         public Guid EnfermedadId { get; set; }
 
         [ForeignKey("PacienteId")]
+        [DeleteBehavior(DeleteBehavior.NoAction)]
         public virtual Paciente Paciente { get; set; }
         [ForeignKey("EnfermedadId")]
         public virtual Enfermedad Enfermedad { get; set; }
