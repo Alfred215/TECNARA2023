@@ -1,6 +1,9 @@
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Infraestructure.Mapper.Extensions;
+using System.ComponentModel;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -36,8 +36,10 @@ namespace Infraestructure.Mapper.Profiles
                 .ForMember(dst => dst.HospitalEspecialidades, options => options.MapFrom(src => src.Hospital.Especialidad))
                 .ReverseMap();
 
-            CreateMap<Medico, MedicoPostDTO>()
-                .ReverseMap();
+            CreateMap<Medico, MedicoPostDTO>();
+
+            CreateMap<MedicoPostDTO, Medico>()
+                .ForMember(dst => dst.HorasDia, options => options.MapFrom(src => new TimeSpan(src.Hora, src.Minuto, src.Segundo)));
 
             CreateMap<MedicoDTO, MedicoMiniDTO>()
                 .ReverseMap();
