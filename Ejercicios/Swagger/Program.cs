@@ -27,6 +27,18 @@ using (var scope = app.Services.CreateScope())
     context.Database.Migrate();
 }
 
+// Agrega esta línea antes de UseEndpoints()
+app.UseCors(builder => builder
+    .WithOrigins("http://localhost:4200") // Reemplaza con el dominio de tu aplicación Angular
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+);
+
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllers();
+//});
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

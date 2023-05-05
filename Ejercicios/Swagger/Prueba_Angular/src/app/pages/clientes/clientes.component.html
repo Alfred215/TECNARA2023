@@ -1,0 +1,16 @@
+<h2 class="col-10 offset-1 mb-2" style="border-bottom: solid 1px red;">Clientes</h2>
+
+<div class="col-8 offset-2 row border">
+    <div class="col-12 row">
+        <div class="col-3">Nombre</div>
+        <div class="col-3">P. Apellido</div>
+        <div class="col-3">S. Apellido</div>
+        <div class="col-3">Edad</div>
+    </div>
+    <div class="col-12 row rows" *ngFor="let person of personas">
+        <div class="col-3">{{person.name}}</div>
+        <div class="col-3">{{person.surname1}}</div>
+        <div class="col-3">{{person.surname2}}</div>
+        <div class="col-3">{{person.age}}</div>
+    </div>
+</div>
