@@ -1,16 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, OnInit } from '@angular/core';
-import { map } from 'rxjs';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
 
 @Component({
-  selector: 'app-clientes',
-  templateUrl: './clientes.component.html',
-  styleUrls: ['./clientes.component.scss']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss']
 })
-
-export class ClientesComponent implements OnInit {
+export class ListComponent {
   private _baseUrl = 'https://localhost:7152';
 
   clientes:ClienteMiniDTO[] = [];
@@ -35,13 +33,18 @@ export class ClientesComponent implements OnInit {
   } 
 
   goToDetailsClient(id: string){
-    this.router.navigate(['details',id])
+    this.router.navigate(['cliente/details',id])
   }
 
   async deleteClient(id: string){
+    await this.httpClient.delete(`${this._baseUrl}/Customer/DeleteCustomerById/${id}`).pipe(
+      map((response: any) => {
+        return response;
+      })
+    ).toPromise();
 
+    await this.getDataListCliente();
   }
-  
 }
 
 export interface ClienteMiniDTO{

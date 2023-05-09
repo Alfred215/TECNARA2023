@@ -37,10 +37,10 @@ namespace Swagger.Controllers
             return Ok(resultMap);
         }
 
-        [HttpPost("GetPersonById")]
+        [HttpPost("GetPersonById/{id}")]
         [ProducesResponseType(typeof(PersonMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetPersonByIdAsync(
-            [FromBody] Guid id)
+            Guid id)
         {
             var result = await personSV.GetByIdAsync(id);
             var resultMap = mapper.Map<PersonMiniDTO>(result);
@@ -63,10 +63,10 @@ namespace Swagger.Controllers
         #endregion
 
         #region DELETE PERSON
-        [HttpDelete("DeletePersonById")]
+        [HttpDelete("DeletePersonById/{id}")]
         [ProducesResponseType(typeof(PersonMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> DeletePersonByIdAsync(
-            [FromBody] Guid id)
+            Guid id)
         {
             var result = await personSV.DeleteAsync(id);
             var resultMap = mapper.Map<PersonDTO>(result);

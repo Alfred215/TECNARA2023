@@ -8,14 +8,14 @@
     </div>
     <div class="col-12 row rows mb-1" *ngFor="let client of clientes">
         <div class="col-2">
-            <label class="btn btn-secondary pt-3 col-3" (click)="goToDetailsClient(client.id)">
-                <i class="fa-solid fa-pen"></i>
+            <label class="btn col-3" (click)="goToDetailsClient(client.id)">
+                &#9998;
             </label>
-            <label class="btn btn-danger offset-2 pt-3 col-3" (click)="deleteClient(client.id)" value="">
-                <i class="fa-solid fa-trash"></i>
+            <label class="btn offset-2 col-3" (click)="deleteClient(client.id)" value="">
+                <b>X</b>
             </label>
         </div>
-        <div class="col-5">{{client.userName}}</div>
-        <div class="col-5">{{client.saldo}}</div>
+        <div class="col-5 pt-1">{{client.userName}}</div>
+        <div class="col-5 pt-1">{{client.saldo}}</div>
     </div>
 </div>

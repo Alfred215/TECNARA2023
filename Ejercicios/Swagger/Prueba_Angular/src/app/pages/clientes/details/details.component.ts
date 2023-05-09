@@ -13,6 +13,13 @@ export class DetailsComponent implements OnInit{
 
   clientId: string = '';
   clientExist: boolean = false;
+  clientPost: ClientePostDTO = {
+    id: '',
+    userName: '',
+    saldo: 0,
+    personId:'',
+  }
+
   client: ClienteMiniDTO = {
     id: '',
     userName: '',
@@ -47,7 +54,7 @@ export class DetailsComponent implements OnInit{
 
   async getDataClient(clientid: string){
     console.log(clientid);
-    await this.httpClient.post(`${this._baseUrl}/Customer/GetCustomerById/${clientid}`, {id: clientid}).pipe(
+    await this.httpClient.post(`${this._baseUrl}/Customer/GetCustomerById/${clientid}`, {Id: clientid}).pipe(
       map((response: any) => {
         console.log(response);
         this.client = response;
@@ -56,8 +63,36 @@ export class DetailsComponent implements OnInit{
   }
 
   async saveDataClient(){
-
+    await this.httpClient.post(`${this._baseUrl}/Customer/AddEditCustomer`, 
+    {
+      Id: this.client.id,
+      UserName: this.client.userName,
+      Saldo: this.client.saldo,
+      PersonId: this.client.personId
+    }).pipe(
+      map((response: any) => {
+        console.log(response);
+        this.client = response;
+      })
+    ).toPromise();
   }
+
+  goBack(){
+    this.router.navigate(['cliente']);
+  }
+
+  //#region onChange
+  onChangeUserName(value: any){
+    console.log(value);
+    this.client.userName = value;
+  }
+
+  onChangeSaldo(value: any){
+    console.log(value);
+    this.client.saldo = value;
+  }
+  
+  //#endregion
 }
 
 export interface ClienteMiniDTO{

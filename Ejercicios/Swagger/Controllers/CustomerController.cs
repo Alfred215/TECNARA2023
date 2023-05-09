@@ -62,10 +62,10 @@ namespace Swagger.Controllers
         #endregion
 
         #region DELETE CUSTOMER
-        [HttpDelete("DeleteCustomerById")]
+        [HttpDelete("DeleteCustomerById/{id}")]
         [ProducesResponseType(typeof(CustomerMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> DeleteCustomerByIdAsync(
-            [FromBody] Guid id)
+            Guid id)
         {
             var result = await customerSV.DeleteAsync(id);
             var resultMap = mapper.Map<CustomerMiniDTO>(result);
