@@ -34,11 +34,6 @@ app.UseCors(builder => builder
     .AllowAnyMethod()
 );
 
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapControllers();
-//});
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

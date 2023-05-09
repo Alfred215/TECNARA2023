@@ -36,10 +36,10 @@ namespace Swagger.Controllers
             return Ok(resultMap);
         }
 
-        [HttpPost("GetCustomerById")]
+        [HttpPost("GetCustomerById/{id}")]
         [ProducesResponseType(typeof(CustomerMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetCustomerByIdAsync(
-            [FromBody] Guid id)
+            Guid id)
         {
             var result = await customerSV.GetByIdAsync(id);
             var resultMap = mapper.Map<CustomerMiniDTO>(result);

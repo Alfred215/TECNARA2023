@@ -6,6 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: ClientesComponent, },
+  {
+    path: 'new', loadChildren: () => import('./details/details.module').then(m => m.DetailsModule),
+  },
+  {
+    path: 'details/:id', loadChildren: () => import('./details/details.module').then(m => m.DetailsModule),
+  },
 ];
 
 @NgModule({

@@ -2,15 +2,20 @@
 
 <div class="col-8 offset-2 row border">
     <div class="col-12 row">
-        <div class="col-3">Nombre</div>
-        <div class="col-3">P. Apellido</div>
-        <div class="col-3">S. Apellido</div>
-        <div class="col-3">Edad</div>
+        <div class="col-2"></div>
+        <div class="col-5">UserName</div>
+        <div class="col-5">Saldo</div>
     </div>
-    <div class="col-12 row rows" *ngFor="let person of personas">
-        <div class="col-3">{{person.name}}</div>
-        <div class="col-3">{{person.surname1}}</div>
-        <div class="col-3">{{person.surname2}}</div>
-        <div class="col-3">{{person.age}}</div>
+    <div class="col-12 row rows mb-1" *ngFor="let client of clientes">
+        <div class="col-2">
+            <label class="btn btn-secondary pt-3 col-3" (click)="goToDetailsClient(client.id)">
+                <i class="fa-solid fa-pen"></i>
+            </label>
+            <label class="btn btn-danger offset-2 pt-3 col-3" (click)="deleteClient(client.id)" value="">
+                <i class="fa-solid fa-trash"></i>
+            </label>
+        </div>
+        <div class="col-5">{{client.userName}}</div>
+        <div class="col-5">{{client.saldo}}</div>
     </div>
 </div>
