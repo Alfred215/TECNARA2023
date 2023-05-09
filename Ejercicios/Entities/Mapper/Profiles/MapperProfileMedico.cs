@@ -23,6 +23,7 @@ namespace Infraestructure.Mapper.Profiles
                 .ForMember(dst => dst.HospitalNombre, options => options.MapFrom(src => src.Hospital.Nombre))
                 .ForMember(dst => dst.HospitalLocalizacion, options => options.MapFrom(src => src.Hospital.Localizacion))
                 .ForMember(dst => dst.HospitalEspecialidades, options => options.MapFrom(src => src.Hospital.Especialidad))
+                .ForMember(dst => dst.FuncionNombre, options => options.MapFrom(src => src.Funcion.Nombre))
                 .ReverseMap();
 
             CreateMap<Medico, MedicoMiniDTO>()
@@ -34,6 +35,7 @@ namespace Infraestructure.Mapper.Profiles
                 .ForMember(dst => dst.HospitalNombre, options => options.MapFrom(src => src.Hospital.Nombre))
                 .ForMember(dst => dst.HospitalLocalizacion, options => options.MapFrom(src => src.Hospital.Localizacion))
                 .ForMember(dst => dst.HospitalEspecialidades, options => options.MapFrom(src => src.Hospital.Especialidad))
+                .ForMember(dst => dst.FuncionNombre, options => options.MapFrom(src => src.Funcion.Nombre))
                 .ReverseMap();
 
             CreateMap<Medico, MedicoPostDTO>();

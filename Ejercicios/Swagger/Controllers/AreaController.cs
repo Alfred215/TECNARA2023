@@ -36,12 +36,24 @@ namespace Swagger.Controllers
             return Ok(resultMap);
         }
 
-        [HttpPost("GetAreaById")]
+        [HttpGet("GetAreaById")]
         [ProducesResponseType(typeof(AreaMiniDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAreaByIdAsync(
             [FromBody] Guid id)
         {
             var result = await areaSV.GetByIdAsync(id);
+            var resultMap = mapper.Map<AreaMiniDTO>(result);
+
+            return Ok(resultMap);
+        }
+
+
+        [HttpGet("GetAreaByIdMedico")]
+        [ProducesResponseType(typeof(AreaMiniDTO), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetAreaByIDMedicoAsync(
+            [FromBody] Guid idMedico)
+        {
+            var result = await areaSV.GetAreaByIDMedicoAsync(idMedico);
             var resultMap = mapper.Map<AreaMiniDTO>(result);
 
             return Ok(resultMap);

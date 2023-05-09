@@ -46,6 +46,16 @@ namespace Swagger.Controllers
 
             return Ok(resultMap);
         }
+        
+        [HttpPost("GetEnfermedadMostRepeated")]
+        [ProducesResponseType(typeof(EnfermedadMiniDTO), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetEnfermedadMostRepeated()
+        {
+            var result = await enfermedadSV.GetEnfermedadMostRepeated();
+            var resultMap = mapper.Map<EnfermedadMiniDTO>(result);
+
+            return Ok(resultMap);
+        }
         #endregion
 
         #region ADD_EDIT

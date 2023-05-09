@@ -1,5 +1,8 @@
 ﻿using Data;
+using Infraestructure.DTO.AreaDTOs;
+using Infraestructure.DTO.HospitalDTOs;
 using Infraestructure.Entities;
+using Infraestructure.Enumerables;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -27,6 +30,19 @@ namespace Services
         public async Task<Area> GetByIdAsync(Guid id)
         {
             return await db.Areas.Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<Area> GetAreaByIDMedicoAsync(Guid IDmedicoBusqueda)
+        {
+            var areaDelMedico = (from medico in db.Medicos
+                        where medico.Id == IDmedicoBusqueda
+                        from funcion in db.Funciones
+                        where funcion.Id == medico.FuncionId
+                        from area in db.Areas
+                        where area.Id == funcion.AreaId
+                        select area).FirstOrDefaultAsync();
+                       
+            return await areaDelMedico;
         }
         #endregion
 

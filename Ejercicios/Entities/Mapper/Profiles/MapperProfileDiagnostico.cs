@@ -14,10 +14,10 @@ namespace Infraestructure.Mapper.Profiles
         public MapperProfileDiagnostico() 
         {
             CreateMap<Diagnostico, DiagnosticoDTO>()
-                    .ForMember(dst => dst.PacienteFecha, options => options.MapFrom(src => src.Paciente.Fecha))
-                    .ForMember(dst => dst.PacienteMotivo, options => options.MapFrom(src => src.Paciente.Motivo))
-                    .ForMember(dst => dst.MedicoHorasDia, options => options.MapFrom(src => src.Medico.HorasDia))
-                    .ReverseMap();
+                .ForMember(dst => dst.PacienteFecha, options => options.MapFrom(src => src.Paciente.Fecha))
+                .ForMember(dst => dst.PacienteMotivo, options => options.MapFrom(src => src.Paciente.Motivo))
+                .ForMember(dst => dst.MedicoHorasDia, options => options.MapFrom(src => src.Medico.HorasDia))
+                .ReverseMap();
 
             CreateMap<Diagnostico, DiagnosticoMiniDTO>()
                 .ForMember(dst => dst.PacienteFecha, options => options.MapFrom(src => src.Paciente.Fecha))

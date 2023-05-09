@@ -13,9 +13,12 @@ namespace Infraestructure.DTO.MedicoDTOs
     public class MedicoMiniDTO
     {
         public Guid Id { get; set; }
-        public string Area { get; set; }
-        public string Funcion { get; set; }
         public TimeSpan HorasDia { get; set; }
+
+        #region Funcion
+        public Guid FuncionId { get; set; }
+        public string FuncionNombre { get; set; }
+        #endregion
 
         #region Persona
         public Guid PersonaId { get; set; }

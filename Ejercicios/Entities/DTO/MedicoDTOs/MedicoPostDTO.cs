@@ -14,12 +14,11 @@ namespace Infraestructure.DTO.MedicoDTOs
     public class MedicoPostDTO
     {
         public Guid Id { get; set; }
-        public string Area { get; set; }
-        public string Funcion { get; set; }
         public int Hora { get; set; }
         public int Minuto { get; set; }
         public int Segundo { get; set; }
         public Guid PersonaId { get; set; }
         public Guid HospitalId { get; set; }
+        public Guid FuncionId { get; set; }
     }
 }

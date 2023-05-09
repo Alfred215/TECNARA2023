@@ -26,7 +26,17 @@ namespace Services
 
         public async Task<Enfermedad> GetByIdAsync(Guid id)
         {
-            return await db.Enfermedades.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await db.Enfermedades.Where(x => x.Id == id).Include(x => x.Area).FirstOrDefaultAsync();
+        }
+
+        public async Task<Enfermedad> GetEnfermedadMostRepeated()
+        {
+            var PacEnf_List = db.PacienteEnfermedad.GroupBy(x => x.EnfermedadId).ToList();
+            var enfermedad = PacEnf_List
+                .Where(x => x.Count() == PacEnf_List.Max(y => y.Count()))
+                .FirstOrDefault().Key;
+            var result = await GetByIdAsync(enfermedad);
+            return result;
         }
         #endregion
 
