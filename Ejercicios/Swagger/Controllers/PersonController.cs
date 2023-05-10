@@ -4,7 +4,7 @@ using Infraestructure.DTO.CustomerDTOs;
 using Infraestructure.DTO.PersonDTOs;
 using Infraestructure.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Services;
+using Services.Services.PersonServices;
 
 namespace Swagger.Controllers
 {
@@ -15,15 +15,13 @@ namespace Swagger.Controllers
         private readonly ILogger<PersonController> _logger;
         private readonly IMapper mapper;
 
-        private readonly AppDbContext db;
-        private readonly PersonService personSV;
+        private readonly IPersonService personSV;
 
-        public PersonController(ILogger<PersonController> logger, IMapper _mapper, AppDbContext _db)
+        public PersonController(ILogger<PersonController> logger, IMapper _mapper, IPersonService _personSV)
         {
             _logger = logger;
             mapper = _mapper;
-            db = _db;
-            personSV = new PersonService(_db);
+            personSV = _personSV;
         }
 
         #region GET PERSON

@@ -2,9 +2,9 @@
 using Infraestructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Services
+namespace Services.Services.PersonServices
 {
-    public class PersonService
+    public class PersonService : IPersonService
     {
         private AppDbContext db;
         public PersonService(AppDbContext _db)
@@ -27,7 +27,7 @@ namespace Services
         #region ADD_EDIT
         public async Task<Person> AddEditAsync(Person data, bool commit = true)
         {
-            if(await GetByIdAsync(data.Id) != null)
+            if (await GetByIdAsync(data.Id) != null)
             {
                 return await EditAsync(data, commit);
             }

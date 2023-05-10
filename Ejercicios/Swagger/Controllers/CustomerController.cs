@@ -3,7 +3,7 @@ using Data;
 using Infraestructure.DTO.CustomerDTOs;
 using Infraestructure.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Services;
+using Services.Services.CustomerServices;
 
 namespace Swagger.Controllers
 {
@@ -14,15 +14,13 @@ namespace Swagger.Controllers
         private readonly ILogger<CustomerController> _logger;
         private IMapper mapper;
 
-        private readonly AppDbContext db;
-        private readonly CustomerService customerSV;
+        private readonly ICustomerService customerSV;
 
-        public CustomerController(ILogger<CustomerController> logger, IMapper _mapper, AppDbContext _db)
+        public CustomerController(ILogger<CustomerController> logger, IMapper _mapper, ICustomerService _customerSV)
         {
             _logger = logger;
             mapper = _mapper;
-            db = _db;
-            customerSV = new CustomerService(_db);
+            customerSV = _customerSV;
         }
 
         #region GET CUSTOMER

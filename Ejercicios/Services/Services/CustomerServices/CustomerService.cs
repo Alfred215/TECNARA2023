@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services
+namespace Services.Services.CustomerServices
 {
-    public class CustomerService
+    public class CustomerService : ICustomerService
     {
         private AppDbContext db;
         public CustomerService(AppDbContext _db)

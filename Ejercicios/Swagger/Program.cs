@@ -1,6 +1,7 @@
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Infraestructure.Mapper.Extensions;
+using Services.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddEntityMapper();
+builder.Services.AddProjectCoreServices();
 
 
 builder.Services.AddDbContext<AppDbContext>(options =>
