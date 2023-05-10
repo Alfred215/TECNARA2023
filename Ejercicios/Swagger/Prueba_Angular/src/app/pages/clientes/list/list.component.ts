@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { map } from 'rxjs';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
   private _baseUrl = 'https://localhost:7152';
 
   clientes:ClienteMiniDTO[] = [];
@@ -29,7 +29,7 @@ export class ListComponent {
         this.clientes = asObject;
         return asObject;
       })
-    ).toPromise();
+    );
   } 
 
   goToDetailsClient(id: string){
@@ -41,7 +41,7 @@ export class ListComponent {
       map((response: any) => {
         return response;
       })
-    ).toPromise();
+    );
 
     await this.getDataListCliente();
   }

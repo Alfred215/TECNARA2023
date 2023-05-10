@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Services.Services.PersonServices
 {
-    public interface IPersonService
+    public interface IPersonService 
     {
         Task<List<Person>> GetListAsync();
         Task<Person> GetByIdAsync(Guid id);
