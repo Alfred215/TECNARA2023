@@ -12,6 +12,7 @@ export class ListComponent implements OnInit {
   private _baseUrl = 'https://localhost:7152';
 
   clientes:ClienteMiniDTO[] = [];
+
   constructor(
     private httpClient: HttpClient,
     private readonly router: Router,
@@ -29,21 +30,21 @@ export class ListComponent implements OnInit {
         this.clientes = asObject;
         return asObject;
       })
-    );
+    ).toPromise();
   } 
-
-  goToDetailsClient(id: string){
-    this.router.navigate(['cliente/details',id])
-  }
 
   async deleteClient(id: string){
     await this.httpClient.delete(`${this._baseUrl}/Customer/DeleteCustomerById/${id}`).pipe(
       map((response: any) => {
         return response;
       })
-    );
+    ).toPromise();
 
     await this.getDataListCliente();
+  }
+
+  goToDetailsClient(id: string){
+    this.router.navigate(['cliente/details',id])
   }
 }
 
