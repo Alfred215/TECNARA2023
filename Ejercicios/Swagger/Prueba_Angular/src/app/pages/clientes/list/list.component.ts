@@ -11,27 +11,48 @@ import { map } from 'rxjs';
 export class ListComponent implements OnInit {
   private _baseUrl = 'https://localhost:7152';
 
-  clientes:ClienteMiniDTO[] = [];
+  clientes: ClienteMiniDTO[] = [];
+  public filtroUserName: string = '';
+  public filtroSaldo: number | undefined;
 
   constructor(
     private httpClient: HttpClient,
     private readonly router: Router,
-  ) {}
-
+    ) {}
+    
   async ngOnInit(){
     await this.getDataListCliente();
   }
+  
+  ngAfterViewInit() {
+    const searchInput = document.getElementById('datatable-search-input');
+    searchInput?.addEventListener('input', this.searchTable.bind(this));
+  }
 
   async getDataListCliente() {
-    return await this.httpClient.get(`${this._baseUrl}/Customer/GetListCustomer`).pipe(
-      map((response: any) => {
-        console.log(response);
-        const asObject: ClienteMiniDTO [] = response;
-        this.clientes = asObject;
-        return asObject;
-      })
+      return await this.httpClient.get(`${this._baseUrl}/Customer/GetListCustomer`).pipe(
+        map((response: any) => {
+          console.log(response);
+          const asObject: ClienteMiniDTO [] = response;
+          this.clientes = asObject;
+          return asObject;
+        })
     ).toPromise();
   } 
+
+  searchTable(event: Event) {
+    const searchText = (event.target as HTMLInputElement).value.toLowerCase();
+    const rows = Array.from(document.querySelectorAll('#datatable-row')) as HTMLTableRowElement[];
+
+    rows.forEach((row) => {
+      const userName = row?.querySelector('td:nth-child(2)')?.textContent?.toLowerCase();
+      if (userName?.includes(searchText)) {
+        row.style.display = ''; // Mostrar la fila si coincide con la búsqueda
+      } else {
+        row.style.display = 'none'; // Ocultar la fila si no coincide con la búsqueda
+      }
+    });
+  }
 
   async deleteClient(id: string){
     await this.httpClient.delete(`${this._baseUrl}/Customer/DeleteCustomerById/${id}`).pipe(
@@ -45,6 +66,10 @@ export class ListComponent implements OnInit {
 
   goToDetailsClient(id: string){
     this.router.navigate(['cliente/details',id])
+  }
+
+  goToCreateClient() {
+    this.router.navigate(['cliente/new'])
   }
 }
 

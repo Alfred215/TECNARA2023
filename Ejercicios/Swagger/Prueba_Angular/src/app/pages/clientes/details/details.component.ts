@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { map } from 'rxjs';
+import { PersonMiniDTO } from '../list/list.component';
 
 @Component({
   selector: 'app-details',
@@ -17,7 +18,8 @@ export class DetailsComponent implements OnInit{
     id: '',
     userName: '',
     saldo: 0,
-    personId:'',
+    personId: '',
+    estado: EstadoType.Casado,
   }
 
   client: ClienteMiniDTO = {
@@ -28,8 +30,23 @@ export class DetailsComponent implements OnInit{
     name:'',
     surname1:'',
     surname2:'',
-    age:'',
+    age: '',
+    estado: EstadoType.Casado,
+    estadoString: ''
   };
+
+  selectedPersonId: string = '';
+  personasList: PersonMiniDTO[] = [];
+  personaSelected: PersonMiniDTO = {
+    id: '',
+    name: '',
+    surname1: '',
+    surname2: '',
+    age: ''
+  };
+
+  // enumOptions: string[] = ['Casado', 'Soltero', 'Divorciado']
+  enumOptions1 = Object.values(EstadoType).filter(option => typeof option === 'string').map(value => String(value));
 
   constructor(
     private readonly router : Router,
@@ -49,6 +66,8 @@ export class DetailsComponent implements OnInit{
         this.clientExist = true;
         await this.getDataClient(paramValue);
       }
+
+      this.getPersoList()
     });
   }
 
@@ -58,6 +77,19 @@ export class DetailsComponent implements OnInit{
       map((response: any) => {
         console.log(response);
         this.client = response;
+        this.selectedPersonId = this.client.personId;
+        this.onSelectPerson();
+      })
+    ).toPromise();
+  }
+
+  async getPersoList() {
+    return await this.httpClient.get(`${this._baseUrl}/Person/GetListPerson`).pipe(
+      map((response: any) => {
+        console.log(response);
+        const asObject: ClienteMiniDTO[] = response;
+        this.personasList = asObject;
+        return asObject;
       })
     ).toPromise();
   }
@@ -75,6 +107,32 @@ export class DetailsComponent implements OnInit{
         this.client = response;
       })
     ).toPromise();
+    this.goBack();
+  }
+
+  async onSelectPerson() {
+    await this.httpClient.post(`${this._baseUrl}/Person/GetPersonById/${this.selectedPersonId}`, { id: this.selectedPersonId }).pipe(
+      map((response: any) => {
+        this.personaSelected = response;
+      })
+    ).toPromise();
+  }
+
+  async onChangeEstado(event: any) {
+    this.client.estado = Number(event);
+  }
+
+  onSelectEstado(event: string): number {
+    switch (event) {
+      case 'Casado':
+       return 0;
+      case 'Soltero':
+        return 1;
+      case 'Divorciado':
+        return 2;
+      default:
+        return 0;
+    }
   }
 
   goBack(){
@@ -103,7 +161,9 @@ export interface ClienteMiniDTO{
   name: string,
   surname1:string,
   surname2:string,
-  age:string
+  age: string,
+  estado: EstadoType,
+  estadoString: string
 }
 
 export interface ClientePostDTO{
@@ -111,4 +171,12 @@ export interface ClientePostDTO{
   userName: string,
   saldo: number,
   personId: string,
+  estado: EstadoType
 }
+
+export enum EstadoType {
+  Casado,
+  Soltero,
+  Divorciado,
+}
+

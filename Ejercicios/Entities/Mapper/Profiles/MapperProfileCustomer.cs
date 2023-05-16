@@ -18,6 +18,7 @@ namespace Infraestructure.Mapper.Profiles
                 .ForMember(dst => dst.Surname1, options => options.MapFrom(src => src.Person.Surname1))
                 .ForMember(dst => dst.Surname2, options => options.MapFrom(src => src.Person.Surname2))
                 .ForMember(dst => dst.Age, options => options.MapFrom(src => src.Person.Age))
+                .ForMember(dst => dst.EstadoString, options => options.MapFrom(src => src.Estado.ToString()))
                 .ReverseMap();
 
             CreateMap<Customer, CustomerMiniDTO>()
@@ -25,6 +26,7 @@ namespace Infraestructure.Mapper.Profiles
                 .ForMember(dst => dst.Surname1, options => options.MapFrom(src => src.Person.Surname1))
                 .ForMember(dst => dst.Surname2, options => options.MapFrom(src => src.Person.Surname2))
                 .ForMember(dst => dst.Age, options => options.MapFrom(src => src.Person.Age))
+                .ForMember(dst => dst.EstadoString, options => options.MapFrom(src => src.Estado.ToString()))
                 .ReverseMap();
 
             CreateMap<Customer, CustomerPostDTO>()

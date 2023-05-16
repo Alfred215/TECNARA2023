@@ -52,6 +52,7 @@ namespace Services.Services.CustomerServices
             var resultOld = await GetByIdAsync(newData.Id);
             resultOld.UserName = newData.UserName;
             resultOld.Saldo = newData.Saldo;
+            resultOld.Estado = newData.Estado;
             resultOld.PersonId = newData.PersonId;
 
             if (commit) { db.SaveChanges(); }

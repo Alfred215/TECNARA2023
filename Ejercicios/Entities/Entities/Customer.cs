@@ -10,8 +10,16 @@ namespace Infraestructure.Entities
         public Guid Id { get; set; }
         public string UserName { get; set; }
         public int Saldo { get; set; }
+        public EstadoType? Estado { get; set; }
         public Guid PersonId { get; set; }
         [ForeignKey("PersonId")]
         public virtual Person Person { get; set; }
+    }
+
+    public enum EstadoType
+    {
+        Casado,
+        Soltero,
+        Divorciado
     }
 }

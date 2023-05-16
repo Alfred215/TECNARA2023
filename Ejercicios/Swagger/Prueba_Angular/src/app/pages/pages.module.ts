@@ -10,6 +10,11 @@ const routes: Routes = [
     loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesModule),
     canLoad: [], canActivate: [],
   },
+  {
+    path: 'persona',
+    loadChildren: () => import('./person/person.module').then(m => m.PersonModule),
+    canLoad: [], canActivate: [],
+  },
 
 ]
 
