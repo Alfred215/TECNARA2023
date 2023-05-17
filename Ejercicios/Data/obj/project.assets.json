@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "AutoMapper/12.0.0": {
+      "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0"
@@ -1176,7 +1176,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "AutoMapper": "12.0.0",
+          "AutoMapper": "12.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5"
         },
         "compile": {
@@ -1189,15 +1189,15 @@
     }
   },
   "libraries": {
-    "AutoMapper/12.0.0": {
-      "sha512": "0Rmg0zI5AFu1O/y//o9VGyhxKjhggWpk9mOA1tp0DEVx40c61bs+lnQv+0jUq8XbniF7FKgIVvI1perqiMtLrA==",
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
       "type": "package",
-      "path": "automapper/12.0.0",
+      "path": "automapper/12.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "automapper.12.0.0.nupkg.sha512",
+        "automapper.12.0.1.nupkg.sha512",
         "automapper.nuspec",
         "icon.png",
         "lib/netstandard2.1/AutoMapper.dll",
@@ -3561,19 +3561,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lyus\\.nuget\\packages\\": {}
+    "C:\\Users\\alfredo.garcia\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Proyectos\\Tecnara\\Ejercicios\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Proyectos\\Tecnara\\Ejercicios\\Data\\Data.csproj",
-      "packagesPath": "C:\\Users\\lyus\\.nuget\\packages\\",
-      "outputPath": "C:\\Proyectos\\Tecnara\\Ejercicios\\Data\\obj\\",
+      "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Data\\Data.csproj",
+      "packagesPath": "C:\\Users\\alfredo.garcia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Data\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\lyus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alfredo.garcia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3581,14 +3586,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Proyectos\\Tecnara\\Ejercicios\\Entities\\Infraestructure.csproj": {
-              "projectPath": "C:\\Proyectos\\Tecnara\\Ejercicios\\Entities\\Infraestructure.csproj"
+            "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Entities\\Infraestructure.csproj": {
+              "projectPath": "C:\\Users\\alfredo.garcia\\Desktop\\DocTecnara\\TECNARA2023\\Ejercicios\\Entities\\Infraestructure.csproj"
             }
           }
         }
@@ -3630,7 +3636,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
