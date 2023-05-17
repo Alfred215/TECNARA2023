@@ -41,7 +41,7 @@
 <div class="col-10 offset-1 row">
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-2">
         <label class="col-4">UserName</label>
-        <input class="col-6 form-control" #userName [value]="client.userName" (change)="onChangeUserName(userName.value)">
+        <input class="col-6 form-control" #userName [(ngModel)]="client.userName">
     </div>
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-2">
         <label class="col-4">Nombre</label>
@@ -61,7 +61,7 @@
     </div>
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-2">
         <label class="col-4">Saldo</label>
-        <input class="col-6 form-control" #saldo [value]="client.saldo" (change)="onChangeSaldo(saldo.value)">
+        <input class="col-6 form-control" #saldo [(ngModel)]="client.saldo">
     </div>
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-2">
         <label class="col-4">Estado</label>

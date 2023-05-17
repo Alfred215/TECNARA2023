@@ -11,6 +11,7 @@ namespace Services.Services.CustomerServices
     public  interface ICustomerService 
     {
         Task<List<Customer>> GetListAsync();
+        Task<List<Customer>> GetListFilterAsync(int pageIndex = 1, int pageSize = 5);
         Task<Customer> GetByIdAsync(Guid id);
         Task<Customer> AddEditAsync(Customer data, bool commit = true);
         Task<Customer> DeleteAsync(Guid id);

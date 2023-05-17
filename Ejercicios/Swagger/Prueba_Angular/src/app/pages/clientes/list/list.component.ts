@@ -12,6 +12,12 @@ export class ListComponent implements OnInit {
   private _baseUrl = 'https://localhost:7152';
 
   clientes: ClienteMiniDTO[] = [];
+
+  collectionClientes: CollectionClienteDTO = {
+    pageIndex:0,
+    pageSize:0,
+    personas:[]
+  }
   public filtroUserName: string = '';
   public filtroSaldo: number | undefined;
 
@@ -21,7 +27,7 @@ export class ListComponent implements OnInit {
     ) {}
     
   async ngOnInit(){
-    await this.getDataListCliente();
+    await this.getDataListFilterCliente();
   }
   
   ngAfterViewInit() {
@@ -39,6 +45,20 @@ export class ListComponent implements OnInit {
         })
     ).toPromise();
   } 
+
+  async getDataListFilterCliente() {
+    let filter = '';
+    if(this.collectionClientes.pageIndex > 0 && this.collectionClientes.pageSize > 0){
+      filter = `?pageIndex=${this.collectionClientes.pageIndex}&pageSize=${this.collectionClientes.pageSize}`;
+    }
+    return await this.httpClient.get(`${this._baseUrl}/Customer/GetListFilterCustomer${filter}`).pipe(
+      map((response: any) => {
+        const asObject: CollectionClienteDTO = response;
+        this.collectionClientes = asObject;
+        return asObject;
+      })
+  ).toPromise();
+} 
 
   searchTable(event: Event) {
     const searchText = (event.target as HTMLInputElement).value.toLowerCase();
@@ -71,6 +91,16 @@ export class ListComponent implements OnInit {
   goToCreateClient() {
     this.router.navigate(['cliente/new'])
   }
+
+  changePage(num: number){
+    this.collectionClientes.pageIndex += num;
+
+    if(this.collectionClientes.pageIndex < 1){
+      this.collectionClientes.pageIndex = 1;
+    }
+
+    this.getDataListFilterCliente();
+  }
 }
 
 export interface ClienteMiniDTO{
@@ -90,4 +120,10 @@ export interface PersonMiniDTO{
     surname1:string,
     surname2:string,
     age:string
+}
+
+export interface CollectionClienteDTO{
+  pageIndex: number,
+  pageSize: number,
+  personas: ClienteMiniDTO[]
 }

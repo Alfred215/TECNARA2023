@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Data;
 using Infraestructure.DTO.CustomerDTOs;
+using Infraestructure.DTO.PersonDTOs;
 using Infraestructure.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Services.Services.CustomerServices;
@@ -32,6 +33,25 @@ namespace Swagger.Controllers
             var resultMap = mapper.Map<List<CustomerMiniDTO>>(result);
 
             return Ok(resultMap);
+        }
+
+        [HttpGet("GetListFilterCustomer")]
+        [ProducesResponseType(typeof(CollectionCustomerDTO), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetListFilterCustomerAsync(
+            [FromQuery(Name = "pageIndex")] int pageIndex = 1,
+            [FromQuery(Name = "pageSize")] int pageSize = 5)
+        {
+            var result = await customerSV.GetListFilterAsync(pageIndex, pageSize);
+            var resultMap = mapper.Map<List<CustomerMiniDTO>>(result);
+
+            var collectionPersona = new CollectionCustomerDTO()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                Personas = resultMap,
+            };
+
+            return Ok(collectionPersona);
         }
 
         [HttpPost("GetCustomerById/{id}")]

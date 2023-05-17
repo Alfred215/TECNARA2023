@@ -22,6 +22,12 @@ namespace Services.Services.CustomerServices
         {
             return await db.Customers.ToListAsync();
         }
+        public async Task<List<Customer>> GetListFilterAsync(int pageIndex = 1, int pageSize = 5)
+        {
+            var list = await db.Customers.ToListAsync();
+            int index = (pageIndex - 1) * pageSize;
+            return list.GetRange(index, pageSize);
+        }
 
         public async Task<Customer> GetByIdAsync(Guid id)
         {

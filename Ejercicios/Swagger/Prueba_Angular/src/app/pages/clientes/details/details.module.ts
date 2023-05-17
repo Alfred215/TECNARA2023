@@ -16,6 +16,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule
+  ],
+  exports:[
+    DetailsComponent
   ]
 })
 export class DetailsModule { }

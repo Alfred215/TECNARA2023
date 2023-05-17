@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListComponent } from './list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { DetailspersonCompModule } from 'src/app/shared/component/detailsperson-comp/detailsperson-comp.module';
 
 const routes: Routes = [
   { path: '', component: ListComponent, },
@@ -15,7 +16,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule,
+    DetailspersonCompModule
   ]
 })
 export class ListModule { }

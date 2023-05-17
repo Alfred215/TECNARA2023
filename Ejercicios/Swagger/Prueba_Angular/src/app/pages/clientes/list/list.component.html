@@ -42,7 +42,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let client of clientes" id="datatable-row">
+            <tr *ngFor="let client of collectionClientes.personas" id="datatable-row">
                 <td class="col-2">
                     <button class="btn btn-warning ml-3 mr-3" (click)="goToDetailsClient(client.id)">Editar</button>
                     <button class="btn btn-light ml-3 mr-3" (click)="deleteClient(client.id)">Eliminar</button>
@@ -52,9 +52,17 @@
             </tr>
         </tbody>
     </table>
-
+    <div class="row">
+        <div class="col-4">
+            <label class="btn" (click)="changePage(-1)">Atras</label>
+            <label>{{collectionClientes.pageIndex}}</label>
+            <label class="btn" (click)="changePage(1)">Siguiente</label>
+        </div>
+        <input type="number" class="offset-7 col-1" [(ngModel)]="collectionClientes.pageSize" (ngModelChange)="getDataListFilterCliente()">
+    </div>
     <button type="button" class="btn btn-warning" (click)="goToCreateClient()">Crear nuevo</button>
 
 </div>
-
-
+<!-- <div class="col-10">
+    <app-detailsperson-comp></app-detailsperson-comp>
+</div> -->
