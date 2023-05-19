@@ -11,15 +11,27 @@ import { map } from 'rxjs';
 export class ListComponent implements OnInit {
   private _baseUrl = 'https://localhost:7152';
 
-  clientes: ClienteMiniDTO[] = [];
-
   collectionClientes: CollectionClienteDTO = {
     pageIndex:0,
     pageSize:0,
     personas:[]
   }
+
+  filterCustomer:FilterCustomer={
+    userName:null,
+    saldo: null,
+    estado: null
+  } 
+
+  estadosPersona: EstadosPersona[] = [
+    {id: EstadoType.Casado, description: 'Casado'},
+    {id: EstadoType.Divorciado, description: 'Divorciado'},
+    {id: EstadoType.Soltero, description: 'Soltero'},
+  ]
+
   public filtroUserName: string = '';
   public filtroSaldo: number | undefined;
+  filters: boolean = false;
 
   constructor(
     private httpClient: HttpClient,
@@ -35,23 +47,20 @@ export class ListComponent implements OnInit {
     searchInput?.addEventListener('input', this.searchTable.bind(this));
   }
 
-  async getDataListCliente() {
-      return await this.httpClient.get(`${this._baseUrl}/Customer/GetListCustomer`).pipe(
-        map((response: any) => {
-          console.log(response);
-          const asObject: ClienteMiniDTO [] = response;
-          this.clientes = asObject;
-          return asObject;
-        })
-    ).toPromise();
-  } 
-
   async getDataListFilterCliente() {
     let filter = '';
     if(this.collectionClientes.pageIndex > 0 && this.collectionClientes.pageSize > 0){
       filter = `?pageIndex=${this.collectionClientes.pageIndex}&pageSize=${this.collectionClientes.pageSize}`;
     }
-    return await this.httpClient.get(`${this._baseUrl}/Customer/GetListFilterCustomer${filter}`).pipe(
+    console.log(this.filterCustomer);
+
+    this.filterCustomer.userName = this.filterCustomer.userName == '' || null ? null : this.filterCustomer.userName;
+    this.filterCustomer.saldo = this.filterCustomer.saldo?.toString() == '' ? null : this.filterCustomer.saldo;
+    this.filterCustomer.estado = this.filterCustomer.estado?.toString() == '' || null ? null : Number(this.filterCustomer.estado);
+
+    console.log(this.filterCustomer);
+
+    return await this.httpClient.post(`${this._baseUrl}/Customer/GetListFilterCustomer${filter}`,this.filterCustomer).pipe(
       map((response: any) => {
         const asObject: CollectionClienteDTO = response;
         this.collectionClientes = asObject;
@@ -81,7 +90,7 @@ export class ListComponent implements OnInit {
       })
     ).toPromise();
 
-    await this.getDataListCliente();
+    await this.getDataListFilterCliente();
   }
 
   goToDetailsClient(id: string){
@@ -112,6 +121,7 @@ export interface ClienteMiniDTO{
   surname1:string,
   surname2:string,
   age:string
+  estado: EstadoType
 }
 
 export interface PersonMiniDTO{
@@ -126,4 +136,21 @@ export interface CollectionClienteDTO{
   pageIndex: number,
   pageSize: number,
   personas: ClienteMiniDTO[]
+}
+
+export interface EstadosPersona{
+  id: EstadoType,
+  description: string
+}
+
+export enum EstadoType {
+  Casado,
+  Soltero,
+  Divorciado,
+}
+
+export interface FilterCustomer{
+  userName: string | null,
+  saldo: number | null,
+  estado: EstadoType | null
 }

@@ -1,4 +1,5 @@
 ﻿using Data;
+using Infraestructure.DTO.CustomerDTOs;
 using Infraestructure.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -22,11 +23,23 @@ namespace Services.Services.CustomerServices
         {
             return await db.Customers.ToListAsync();
         }
-        public async Task<List<Customer>> GetListFilterAsync(int pageIndex = 1, int pageSize = 5)
+        public async Task<List<Customer>> GetListFilterAsync(CustomerFilterDTO filter, int pageIndex = 1, int pageSize = 5)
         {
-            var list = await db.Customers.ToListAsync();
-            int index = (pageIndex - 1) * pageSize;
-            return list.GetRange(index, pageSize);
+            var list = await db.Customers
+                .Where(x => filter.UserName != null ? x.UserName.Contains(filter.UserName): x.UserName == x.UserName)
+                .Where(x => filter.Saldo != null ? x.Saldo.ToString().Contains(filter.Saldo.ToString()): x.Saldo == x.Saldo)
+                .Where(x => filter.Estado != null ? x.Estado == filter.Estado: x.Estado == x.Estado)
+                .ToListAsync();
+            if(list.Count > 0)
+            {
+                int index = (pageIndex - 1) * pageSize;
+                if ((index + pageSize) > list.Count)
+                {
+                    pageSize -= (index + pageSize) - list.Count;
+                }
+                return list.GetRange(index, pageSize);
+            }
+            return null;
         }
 
         public async Task<Customer> GetByIdAsync(Guid id)

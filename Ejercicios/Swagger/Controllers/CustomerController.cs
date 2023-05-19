@@ -35,13 +35,14 @@ namespace Swagger.Controllers
             return Ok(resultMap);
         }
 
-        [HttpGet("GetListFilterCustomer")]
+        [HttpPost("GetListFilterCustomer")]
         [ProducesResponseType(typeof(CollectionCustomerDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetListFilterCustomerAsync(
+            [FromBody] CustomerFilterDTO filter,
             [FromQuery(Name = "pageIndex")] int pageIndex = 1,
             [FromQuery(Name = "pageSize")] int pageSize = 5)
         {
-            var result = await customerSV.GetListFilterAsync(pageIndex, pageSize);
+            var result = await customerSV.GetListFilterAsync(filter, pageIndex, pageSize);
             var resultMap = mapper.Map<List<CustomerMiniDTO>>(result);
 
             var collectionPersona = new CollectionCustomerDTO()

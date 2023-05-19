@@ -31,13 +31,31 @@
     <table class="table">
         <thead>
             <tr>
-                <th> </th>
                 <th>
-                    <input type="text" id="datatable-search-input"  class="form-control" [(ngModel)]="filtroUserName" placeholder="Filtrar por Username">
+                    <button class="btn btn-light ml-3 mr-3" (click)="filters = !filters">Filtros</button>
                 </th>
                 <th>
-                    <!-- <input type="text" class="form-control" [(ngModel)]="filtroSaldo" placeholder="Filtrar por Saldo"> -->
+                    <label>UserName</label>
+                </th>
+                <th>
                     <label>Saldo</label>
+                </th>
+                <th>
+                    <label>Estado</label>
+                </th>
+            </tr>
+            <tr *ngIf="filters">
+                <th></th>
+                <th>
+                    <input type="text" class="form-control" [(ngModel)]="filterCustomer.userName" placeholder="Filtrar por Username" (ngModelChange)="getDataListFilterCliente()">
+                </th>
+                <th>
+                    <input type="numer" class="form-control" [(ngModel)]="filterCustomer.saldo" placeholder="Filtrar por saldo" (ngModelChange)="getDataListFilterCliente()">
+                </th>
+                <th>
+                    <select class="form-control" [(ngModel)]="filterCustomer.estado" (ngModelChange)="getDataListFilterCliente()">
+                        <option *ngFor="let estado of estadosPersona" value="{{estado.id}}">{{estado.description}}</option>
+                    </select>
                 </th>
             </tr>
         </thead>
@@ -49,6 +67,7 @@
                 </td>
                     <td>{{ client.userName }}</td>                
                     <td>{{ client.saldo }}</td>
+                    <td>{{ client.estado }}</td>
             </tr>
         </tbody>
     </table>
