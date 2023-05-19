@@ -45,7 +45,7 @@
                 </th>
             </tr>
             <tr *ngIf="filters">
-                <th></th>
+                <th><input type="number" class="form-control" [(ngModel)]="collectionClientes.pageSize" (ngModelChange)="getDataListFilterCliente()"></th>
                 <th>
                     <input type="text" class="form-control" [(ngModel)]="filterCustomer.userName" placeholder="Filtrar por Username" (ngModelChange)="getDataListFilterCliente()">
                 </th>
@@ -67,7 +67,7 @@
                 </td>
                     <td>{{ client.userName }}</td>                
                     <td>{{ client.saldo }}</td>
-                    <td>{{ client.estado }}</td>
+                    <td>{{ client.estadoDescription }}</td>
             </tr>
         </tbody>
     </table>
@@ -77,7 +77,7 @@
             <label>{{collectionClientes.pageIndex}}</label>
             <label class="btn" (click)="changePage(1)">Siguiente</label>
         </div>
-        <input type="number" class="offset-7 col-1" [(ngModel)]="collectionClientes.pageSize" (ngModelChange)="getDataListFilterCliente()">
+        
     </div>
     <button type="button" class="btn btn-warning" (click)="goToCreateClient()">Crear nuevo</button>
 

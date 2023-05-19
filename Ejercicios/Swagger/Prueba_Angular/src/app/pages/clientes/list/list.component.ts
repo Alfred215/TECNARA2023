@@ -24,6 +24,7 @@ export class ListComponent implements OnInit {
   } 
 
   estadosPersona: EstadosPersona[] = [
+    {id: null, description: 'Todos'},
     {id: EstadoType.Casado, description: 'Casado'},
     {id: EstadoType.Divorciado, description: 'Divorciado'},
     {id: EstadoType.Soltero, description: 'Soltero'},
@@ -122,6 +123,7 @@ export interface ClienteMiniDTO{
   surname2:string,
   age:string
   estado: EstadoType
+  estadoDescription: string
 }
 
 export interface PersonMiniDTO{
@@ -139,7 +141,7 @@ export interface CollectionClienteDTO{
 }
 
 export interface EstadosPersona{
-  id: EstadoType,
+  id: EstadoType | null,
   description: string
 }
 
