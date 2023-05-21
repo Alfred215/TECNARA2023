@@ -15,7 +15,7 @@ export class DetailsComponent implements OnInit{
   clientId: string = '';
   clientExist: boolean = false;
   clientPost: ClientePostDTO = {
-    id: '',
+    id: '00000000-0000-0000-0000-000000000000',
     userName: '',
     saldo: 0,
     personId: '',
@@ -23,7 +23,7 @@ export class DetailsComponent implements OnInit{
   }
 
   client: ClienteMiniDTO = {
-    id: '',
+    id: '00000000-0000-0000-0000-000000000000',
     userName: '',
     saldo: 0,
     personId:'',
@@ -67,8 +67,8 @@ export class DetailsComponent implements OnInit{
         await this.getDataClient(paramValue);
       }
 
-      this.getPersoList()
     });
+    this.getPersoList();
   }
 
   async getDataClient(clientid: string){
@@ -100,6 +100,7 @@ export class DetailsComponent implements OnInit{
       Id: this.client.id,
       UserName: this.client.userName,
       Saldo: this.client.saldo,
+      Estado: this.client.estado,
       PersonId: this.client.personId
     }).pipe(
       map((response: any) => {
@@ -111,6 +112,7 @@ export class DetailsComponent implements OnInit{
   }
 
   async onSelectPerson() {
+    this.client.personId = this.selectedPersonId;
     await this.httpClient.post(`${this._baseUrl}/Person/GetPersonById/${this.selectedPersonId}`, { id: this.selectedPersonId }).pipe(
       map((response: any) => {
         this.personaSelected = response;
