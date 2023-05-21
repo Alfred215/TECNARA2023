@@ -57,7 +57,7 @@ export class ListComponent implements OnInit {
 
     this.filterCustomer.userName = this.filterCustomer.userName == '' || null ? null : this.filterCustomer.userName;
     this.filterCustomer.saldo = this.filterCustomer.saldo?.toString() == '' ? null : this.filterCustomer.saldo;
-    this.filterCustomer.estado = this.filterCustomer.estado?.toString() == '' || null ? null : Number(this.filterCustomer.estado);
+    this.filterCustomer.estado = this.filterCustomer.estado?.toString() !== '' && this.filterCustomer.estado != null ? Number(this.filterCustomer.estado) : null;
 
     console.log(this.filterCustomer);
 
