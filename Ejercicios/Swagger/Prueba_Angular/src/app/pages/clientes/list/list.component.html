@@ -44,20 +44,7 @@
                     <label>Estado</label>
                 </th>
             </tr>
-            <tr *ngIf="filters">
-                <th><input type="number" class="form-control" [(ngModel)]="collectionClientes.pageSize" (ngModelChange)="getDataListFilterCliente()"></th>
-                <th>
-                    <input type="text" class="form-control" [(ngModel)]="filterCustomer.userName" placeholder="Filtrar por Username" (ngModelChange)="getDataListFilterCliente()">
-                </th>
-                <th>
-                    <input type="number" class="form-control" [(ngModel)]="filterCustomer.saldo" placeholder="Filtrar por saldo" (ngModelChange)="getDataListFilterCliente()">
-                </th>
-                <th>
-                    <select class="form-control" [(ngModel)]="filterCustomer.estado" (ngModelChange)="getDataListFilterCliente()">
-                        <option *ngFor="let estado of estadosPersona" value="{{estado.id}}">{{estado.description}}</option>
-                    </select>
-                </th>
-            </tr>
+            
         </thead>
         <tbody>
             <tr *ngFor="let client of collectionClientes.personas" id="datatable-row">
@@ -80,8 +67,10 @@
         
     </div>
     <button type="button" class="btn btn-warning" (click)="goToCreateClient()">Crear nuevo</button>
+    <button type="button" class="btn btn-light" (click)="showTest()">¡Púlsame!</button>
 
 </div>
 <!-- <div class="col-10">
     <app-detailsperson-comp></app-detailsperson-comp>
 </div> -->
+

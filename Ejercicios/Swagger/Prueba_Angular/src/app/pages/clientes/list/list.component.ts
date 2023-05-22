@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
+  
 export class ListComponent implements OnInit {
   private _baseUrl = 'https://localhost:7152';
 
@@ -37,8 +39,9 @@ export class ListComponent implements OnInit {
   constructor(
     private httpClient: HttpClient,
     private readonly router: Router,
-    ) {}
-    
+    private toastrService: ToastrService
+  ) {}
+  
   async ngOnInit(){
     await this.getDataListFilterCliente();
   }
@@ -90,9 +93,27 @@ export class ListComponent implements OnInit {
         return response;
       })
     ).toPromise();
-
+    this.showSuccess();
     await this.getDataListFilterCliente();
   }
+
+  public showSuccess(): void {
+    this.toastrService.success('Cliente borrado correctamente!', 'Borrado');
+  }
+
+  public showTest(): void {
+    this.toastrService.success('Esto es un toast configurable', '¡Hola!', {
+      timeOut: 3000, // Cerrar automáticamente después de 3 segundos
+      progressBar: true // Mostrar la barra de progreso
+    });
+
+    this.toastrService.warning('Esto es como de aviso', '¡Cuidao!', {
+      positionClass: 'toast-top-left' // Mostrar en la esquina superior izquierda
+    });
+
+    this.toastrService.error('Esto es como de error', '¡ojito!');
+  }
+
 
   goToDetailsClient(id: string){
     this.router.navigate(['cliente/details',id])
