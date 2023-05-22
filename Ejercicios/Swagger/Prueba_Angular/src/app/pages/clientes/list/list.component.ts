@@ -112,8 +112,9 @@ export class ListComponent implements OnInit {
     });
 
     this.toastrService.error('Esto es como de error', '¡ojito!');
-  }
 
+    this.toastrService.info('Esto es asi como que bueno si quieres lo lees y si no no');
+  }
 
   goToDetailsClient(id: string){
     this.router.navigate(['cliente/details',id])

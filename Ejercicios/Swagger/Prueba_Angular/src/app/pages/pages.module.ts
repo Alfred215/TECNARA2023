@@ -4,7 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   /** Authentication layout */
-  { path: '', redirectTo: 'cliente', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+    canLoad: [], canActivate: [],
+  },
   {
     path: 'cliente',
     loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesModule),

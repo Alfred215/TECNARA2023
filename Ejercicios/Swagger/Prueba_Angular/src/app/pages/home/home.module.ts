@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PersonComponent } from './person.component';
+import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalCompModule } from 'src/app/shared/component/modal-comp/modal-comp.module';
 
 const routes: Routes = [
-  { path: '', component: PersonComponent, },
+  { path: '', component: HomeComponent, },
 ];
 
 @NgModule({
   declarations: [
-    PersonComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -20,4 +20,4 @@ const routes: Routes = [
     ModalCompModule
   ]
 })
-export class PersonModule { }
+export class HomeModule { }

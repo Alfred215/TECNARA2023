@@ -21,7 +21,6 @@ export class DetailsComponent implements OnInit{
     personId: '',
     estado: EstadoType.Casado,
   }
-
   client: ClienteMiniDTO = {
     id: '00000000-0000-0000-0000-000000000000',
     userName: '',
@@ -47,6 +46,7 @@ export class DetailsComponent implements OnInit{
 
   // enumOptions: string[] = ['Casado', 'Soltero', 'Divorciado']
   enumOptions1 = Object.values(EstadoType).filter(option => typeof option === 'string').map(value => String(value));
+  tittle: string = '';
 
   constructor(
     private readonly router : Router,
@@ -59,13 +59,14 @@ export class DetailsComponent implements OnInit{
   ngOnInit(): void {
     this.route.params.subscribe(async params => {
       const paramValue = params['id'];
-      console.log(paramValue);
 
-      if(paramValue !== '' || paramValue !== null){
+      if (paramValue !== undefined){
         this.clientId = paramValue;
         this.clientExist = true;
         await this.getDataClient(paramValue);
       }
+
+      this.tittle = paramValue !== undefined ? 'E D I T C L I E N T' : 'N E W  C L I E N T'
 
     });
     this.getPersoList();

@@ -1,28 +1,52 @@
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-            aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../cliente">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../persona">Persons</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
-                </li>
-            </ul>
+<app-modal-comp></app-modal-comp>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h2 class="col-10 offset-1 mb-2 newBorder pt-5">P E O P L E</h2>
+
+<div class="col-10 offset-1 row border">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <button class="btn btn-light btn-outline-warning ml-4" [title]="'open filters'">
+                        <i class="fa fa-filter"></i>
+                    </button> &nbsp;
+                    <button class="btn btn-light btn-outline-warning ml-4" [title]="'create new'">
+                        <i class="fa fa-plus"></i>
+                    </button> &nbsp;
+                    <button class="btn btn-light btn-outline-warning ml-4" [title]="'show toast'">
+                        <i class="fa fa-exclamation-circle"></i>
+                    </button>
+                </th>
+                <th>
+                    <label>A G E</label>
+                </th>
+                <th>
+                    <label>F U L L N A M E</label>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of personasList" id="datatable-row">
+                <td class="col-2">
+                    <button class="btn btn-warning ml-3 mr-3">E D I T</button>
+                    <button class="btn btn-light ml-3 mr-3">D E L E T E</button>
+                </td>
+                <td>{{ person.age }}</td>
+                <td>{{ person.surname1 }} {{ person.surname2 }}, {{ person.name }} </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row text-center">
+        <div class="col-12">
+            <label class="btn">&laquo;</label>
+            <label>1</label>
+            <label class="btn">&raquo;</label>
         </div>
     </div>
-</nav>
-<!-- Navbar -->
-<br><br><br>
-<h1>person works!</h1>
+</div>
+
+<br>
+<br>
+<br>
+<br>

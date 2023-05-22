@@ -4,6 +4,7 @@ import { ListComponent } from './list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DetailspersonCompModule } from 'src/app/shared/component/detailsperson-comp/detailsperson-comp.module';
+import { ModalCompModule } from 'src/app/shared/component/modal-comp/modal-comp.module';
 
 const routes: Routes = [
   { path: '', component: ListComponent, },
@@ -17,7 +18,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
-    DetailspersonCompModule
+    DetailspersonCompModule,
+    ModalCompModule
   ]
 })
 export class ListModule { }
