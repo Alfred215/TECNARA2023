@@ -4,3 +4,14 @@
     border: none;
      margin: 0;
  }
+
+ .logo {
+     display: inline;
+     /* Hace que la imagen sea un elemento de bloque */
+     margin: 0 auto;
+     /* Centra la imagen horizontalmente */
+     max-width: 700px;
+     /* Define el ancho máximo de la imagen */
+     height: auto;
+     /* Ajusta la altura automáticamente */
+ }
