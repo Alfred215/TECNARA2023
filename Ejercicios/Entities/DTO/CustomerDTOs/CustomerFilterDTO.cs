@@ -12,5 +12,8 @@ namespace Infraestructure.DTO.CustomerDTOs
         public string? UserName { get; set; }
         public int? Saldo { get; set; }
         public EstadoType? Estado { get; set; }
+
+        public string? OrderBy { get; set; }
+        public bool? AscOrDesc { get; set; }
     }
 }

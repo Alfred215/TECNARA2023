@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Azure.Core.HttpHeader;
 
 namespace Services.Services.CustomerServices
 {
@@ -37,9 +38,39 @@ namespace Services.Services.CustomerServices
                 {
                     pageSize -= (index + pageSize) - list.Count;
                 }
-                return list.GetRange(index, pageSize);
+
+                if (filter.OrderBy != null && filter.AscOrDesc != null)
+                {
+                    if (filter.AscOrDesc.Value)
+                    {
+                        list = list.OrderBy(x => GetFieldToOrderBy(x, filter.OrderBy)).ToList();
+                    }
+                    else
+                    {
+                        list = list.OrderByDescending(x => GetFieldToOrderBy(x, filter.OrderBy)).ToList();
+                    }
+                }
+
+                var result = list.GetRange(index, pageSize);
+                
+                return result;
             }
             return null;
+        }
+
+        public string GetFieldToOrderBy(Customer x, string orderBy)
+        {
+            switch (orderBy)
+            {
+                case "userName":
+                    return x.UserName;
+                case "saldo":
+                    return x.UserName;
+                case "estado":
+                    return x.UserName;
+                default:
+                    return null;
+            }
         }
 
         public async Task<Customer> GetByIdAsync(Guid id)

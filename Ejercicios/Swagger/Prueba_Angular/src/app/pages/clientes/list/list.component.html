@@ -19,13 +19,13 @@
                     </button>
                 </th>
                 <th>
-                    <label>U S E R N A M E</label>
+                    <label (click)="setOrderByColumn('userName')">U S E R N A M E</label>
                 </th>
                 <th>
-                    <label>C A S H</label>
+                    <label (click)="setOrderByColumn('saldo')">C A S H</label>
                 </th>
                 <th>
-                    <label>C I V I L S T A T U S</label>
+                    <label (click)="setOrderByColumn('estado')">C I V I L S T A T U S</label>
                 </th>
             </tr>
             <tr *ngIf="filters">

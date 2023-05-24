@@ -22,7 +22,9 @@ export class ListComponent implements OnInit {
   filterCustomer:FilterCustomer={
     userName:null,
     saldo: null,
-    estado: null
+    estado: null,
+    orderBy: null,
+    ascOrDesc: null
   } 
 
   estadosPersona: EstadosPersona[] = [
@@ -45,24 +47,17 @@ export class ListComponent implements OnInit {
   async ngOnInit(){
     await this.getDataListFilterCliente();
   }
-  
-  ngAfterViewInit() {
-    const searchInput = document.getElementById('datatable-search-input');
-    searchInput?.addEventListener('input', this.searchTable.bind(this));
-  }
 
+//#region GET TABLE
   async getDataListFilterCliente() {
     let filter = '';
     if(this.collectionClientes.pageIndex > 0 && this.collectionClientes.pageSize > 0){
       filter = `?pageIndex=${this.collectionClientes.pageIndex}&pageSize=${this.collectionClientes.pageSize}`;
     }
-    console.log(this.filterCustomer);
 
     this.filterCustomer.userName = this.filterCustomer.userName == '' || null ? null : this.filterCustomer.userName;
     this.filterCustomer.saldo = this.filterCustomer.saldo?.toString() == '' ? null : this.filterCustomer.saldo;
     this.filterCustomer.estado = this.filterCustomer.estado?.toString() !== '' && this.filterCustomer.estado != null ? Number(this.filterCustomer.estado) : null;
-
-    console.log(this.filterCustomer);
 
     return await this.httpClient.post(`${this._baseUrl}/Customer/GetListFilterCustomer${filter}`,this.filterCustomer).pipe(
       map((response: any) => {
@@ -71,22 +66,10 @@ export class ListComponent implements OnInit {
         return asObject;
       })
   ).toPromise();
-} 
+  } 
+//#endregion
 
-  searchTable(event: Event) {
-    const searchText = (event.target as HTMLInputElement).value.toLowerCase();
-    const rows = Array.from(document.querySelectorAll('#datatable-row')) as HTMLTableRowElement[];
-
-    rows.forEach((row) => {
-      const userName = row?.querySelector('td:nth-child(2)')?.textContent?.toLowerCase();
-      if (userName?.includes(searchText)) {
-        row.style.display = ''; // Mostrar la fila si coincide con la búsqueda
-      } else {
-        row.style.display = 'none'; // Ocultar la fila si no coincide con la búsqueda
-      }
-    });
-  }
-
+//#region Method TABLE
   async deleteClient(id: string){
     await this.httpClient.delete(`${this._baseUrl}/Customer/DeleteCustomerById/${id}`).pipe(
       map((response: any) => {
@@ -97,6 +80,42 @@ export class ListComponent implements OnInit {
     await this.getDataListFilterCliente();
   }
 
+  goToCreateClient() {
+    this.router.navigate(['cliente/new'])
+  }
+
+  goToDetailsClient(id: string){
+    this.router.navigate(['cliente/details',id])
+  }
+
+  changePage(num: number){
+    this.collectionClientes.pageIndex += num;
+
+    if(this.collectionClientes.pageIndex < 1){
+      this.collectionClientes.pageIndex = 1;
+    }
+
+    this.getDataListFilterCliente();
+  }
+
+  setOrderByColumn(column: string){
+    if(column !== this.filterCustomer.orderBy){
+      this.filterCustomer.orderBy = column;
+      this.filterCustomer.ascOrDesc = true;
+    }else{
+      if(this.filterCustomer.ascOrDesc){
+        this.filterCustomer.ascOrDesc = false;
+      }else{
+        this.filterCustomer.ascOrDesc = null;
+        this.filterCustomer.orderBy = null;
+      }
+    }
+
+    this.getDataListFilterCliente();
+  }
+//#endregion
+
+//#region TOAST
   public showSuccess(): void {
     this.toastrService.success('Cliente borrado correctamente!', 'Borrado');
   }
@@ -115,24 +134,8 @@ export class ListComponent implements OnInit {
 
     this.toastrService.info('Esto es asi como que bueno si quieres lo lees y si no no');
   }
+//#endregion
 
-  goToDetailsClient(id: string){
-    this.router.navigate(['cliente/details',id])
-  }
-
-  goToCreateClient() {
-    this.router.navigate(['cliente/new'])
-  }
-
-  changePage(num: number){
-    this.collectionClientes.pageIndex += num;
-
-    if(this.collectionClientes.pageIndex < 1){
-      this.collectionClientes.pageIndex = 1;
-    }
-
-    this.getDataListFilterCliente();
-  }
 }
 
 export interface ClienteMiniDTO{
@@ -176,5 +179,7 @@ export enum EstadoType {
 export interface FilterCustomer{
   userName: string | null,
   saldo: number | null,
-  estado: EstadoType | null
+  estado: EstadoType | null,
+  orderBy: string | null,
+  ascOrDesc: boolean | null
 }
