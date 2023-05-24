@@ -19,13 +19,28 @@
                     </button>
                 </th>
                 <th>
-                    <label (click)="setOrderByColumn('userName')">U S E R N A M E</label>
+                    <label (click)="setOrderByColumn('userName')">U S E R N A M E 
+                        <label *ngIf="filterCustomer.orderBy == 'userName'">
+                            <i *ngIf="filterCustomer.ascOrDesc" class="fa fa-arrow-up"></i>
+                            <i *ngIf="!filterCustomer.ascOrDesc" class="fa fa-arrow-down"></i>
+                        </label>
+                    </label>
                 </th>
                 <th>
-                    <label (click)="setOrderByColumn('saldo')">C A S H</label>
+                    <label (click)="setOrderByColumn('saldo')">C A S H 
+                        <label *ngIf="filterCustomer.orderBy == 'saldo'">
+                            <i *ngIf="filterCustomer.ascOrDesc" class="fa fa-arrow-up"></i>
+                            <i *ngIf="!filterCustomer.ascOrDesc" class="fa fa-arrow-down"></i>
+                        </label>
+                    </label>
                 </th>
                 <th>
-                    <label (click)="setOrderByColumn('estado')">C I V I L S T A T U S</label>
+                    <label (click)="setOrderByColumn('estado')">C I V I L S T A T U S 
+                        <label *ngIf="filterCustomer.orderBy == 'estado'">
+                            <i *ngIf="filterCustomer.ascOrDesc" class="fa fa-arrow-up"></i>
+                            <i *ngIf="!filterCustomer.ascOrDesc" class="fa fa-arrow-down"></i>
+                        </label>
+                    </label>
                 </th>
             </tr>
             <tr *ngIf="filters">
